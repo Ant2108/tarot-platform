@@ -368,8 +368,8 @@ function classifyGeminiHttpError(params: {
   if (httpStatus === 429 || geminiStatus === "RESOURCE_EXHAUSTED") {
     const msgIndicatesDaily =
       quotaInfo.isDaily ||
-      lowerMsg.includes("per day") ||
-      lowerMsg.includes("daily") ||
+      lowerMsg.includes("requests per day") ||
+      lowerMsg.includes("per day limit") ||
       lowerMsg.includes("perday");
     code = msgIndicatesDaily ? "GEMINI_DAILY_QUOTA" : "GEMINI_RATE_LIMIT";
     retryable = code === "GEMINI_RATE_LIMIT";
@@ -437,6 +437,10 @@ function classifyGeminiHttpError(params: {
       ? locale === "vi"
         ? `Gemini API trả về lỗi 503 (${geminiStatus ?? "UNAVAILABLE"}): ${rawMessage}`
         : `Gemini API returned HTTP 503 (${geminiStatus ?? "UNAVAILABLE"}): ${rawMessage}`
+      : code === "GEMINI_DAILY_QUOTA"
+      ? locale === "vi"
+        ? `Model ${model} đã chạm hạn mức ngày trên tài khoản Google AI Studio của bạn (429). Bạn có thể vào Cài Đặt AI chọn model khác (như gemini-3.5-flash-lite) hoặc dùng Giải Cục Bộ.`
+        : `Model ${model} reached its daily quota on your Google AI Studio account (429). Switch to another model in AI Settings (such as gemini-3.5-flash-lite) or use Local Mode.`
       : getUserErrorMessage(code, locale, retryAfterSeconds);
 
   return new GeminiServiceError({

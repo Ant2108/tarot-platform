@@ -1,7 +1,7 @@
 "use client";
 
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { BlenderCardModel } from "./BlenderCardModel";
 import {
@@ -28,16 +28,60 @@ interface ReadingTableSceneProps {
 
 const FAN_COUNT = 15;
 
+function ResponsiveCameraRig({
+  phase,
+  mobile,
+}: {
+  phase: ReadingPhase;
+  mobile: boolean;
+}) {
+  const { camera, size } = useThree();
+
+  useEffect(() => {
+    if (!(camera instanceof THREE.PerspectiveCamera)) return;
+    const aspect = Math.max(0.5, size.width / Math.max(1, size.height));
+    const vFovRad = (camera.fov * Math.PI) / 180;
+    const tanHalfV = Math.tan(vFovRad / 2);
+    const tanHalfH = tanHalfV * aspect;
+
+    // Desired world-space width & height that must remain fully visible inside the frame
+    let requiredWidth = 3.2;
+    let requiredHeight = 1.65;
+    if (phase === "select") {
+      requiredWidth = mobile ? 3.9 : 5.2;
+      requiredHeight = 1.9;
+    } else if (phase === "reveal" || phase === "result") {
+      requiredWidth = mobile ? 3.1 : 3.9;
+      requiredHeight = 1.75;
+    } else {
+      requiredWidth = 2.4;
+      requiredHeight = 1.65;
+    }
+
+    const zForWidth = requiredWidth / (2 * tanHalfH);
+    const zForHeight = requiredHeight / (2 * tanHalfV);
+    const targetZ = Math.max(3.35, Math.min(7.2, Math.max(zForWidth, zForHeight) * 1.12));
+
+    camera.position.set(0, 0.1, targetZ);
+    camera.lookAt(0, 0, 0);
+    camera.updateProjectionMatrix();
+  }, [camera, mobile, phase, size.height, size.width]);
+
+  return null;
+}
+
 function SharedDeckCards({
   phase,
   selectedSlots,
   isShuffling,
+  mobile,
   reducedMotion,
   onSelectSlot,
 }: {
   phase: ReadingPhase;
   selectedSlots: number[];
   isShuffling: boolean;
+  mobile: boolean;
   reducedMotion: boolean;
   onSelectSlot: (slotIndex: number) => void;
 }) {
@@ -103,9 +147,9 @@ function SharedDeckCards({
         }
       } else if (phase === "select") {
         const norm = (i / (FAN_COUNT - 1)) * 2 - 1; // [-1, 1]
-        const arcAngle = norm * 0.62;
-        tx = norm * 2.15;
-        ty = -Math.pow(norm, 2) * 0.45 + (isHovered ? 0.24 : 0) + (isPicked ? 1.8 : 0);
+        const arcAngle = norm * (mobile ? 0.48 : 0.62);
+        tx = norm * (mobile ? 1.48 : 2.15);
+        ty = -Math.pow(norm, 2) * (mobile ? 0.3 : 0.45) + (isHovered ? 0.24 : 0) + (isPicked ? 1.8 : 0);
         tz = -Math.abs(norm) * 0.3 + i * 0.006 + (isHovered ? 0.25 : 0);
         rz = -arcAngle * 0.55;
         ry = isHovered ? 0.06 : 0;
@@ -226,7 +270,7 @@ function ReadingFallback2D({
 
   if (phase === "select") {
     return (
-      <div className="flex h-full flex-wrap items-center justify-center gap-2.5 p-4">
+      <div className="grid h-full grid-cols-4 place-items-center gap-2 overflow-y-auto px-3 pb-4 pt-14 sm:grid-cols-6 sm:gap-3 sm:px-6">
         {Array.from({ length: 12 }, (_, i) => {
           const picked = selectedSlots.includes(i);
           return (
@@ -236,10 +280,10 @@ function ReadingFallback2D({
               disabled={picked}
               onClick={() => onSelectSlot(i)}
               aria-label={`Draw card ${i + 1}`}
-              className={`h-28 w-16 overflow-hidden rounded-sm border transition-transform cursor-pointer ${
+              className={`aspect-[7/12] w-full max-w-[68px] sm:max-w-[78px] overflow-hidden rounded-sm border transition-transform cursor-pointer ${
                 picked
                   ? "opacity-20 scale-90 border-white/10"
-                  : "border-[rgba(212,180,117,0.4)] hover:-translate-y-2"
+                  : "border-[rgba(212,180,117,0.4)] hover:-translate-y-1.5"
               }`}
             >
               <img
@@ -255,7 +299,7 @@ function ReadingFallback2D({
   }
 
   return (
-    <div className="grid h-full grid-cols-3 items-center gap-3 px-4 py-6 sm:gap-6">
+    <div className="grid h-full grid-cols-3 items-center gap-2.5 px-3 pb-4 pt-12 sm:gap-6 sm:px-6">
       {drawnCards.map((item, idx) => (
         <button
           key={item.card.id}
@@ -263,7 +307,7 @@ function ReadingFallback2D({
           onClick={() => !item.revealed && onRevealCard(idx)}
           className="flex flex-col items-center gap-2 cursor-pointer"
         >
-          <div className="w-24 sm:w-36 overflow-hidden rounded-md border border-[rgba(212,180,117,0.4)] shadow-xl">
+          <div className="aspect-[7/12] w-full max-w-[100px] sm:max-w-[144px] overflow-hidden rounded-md border border-[rgba(212,180,117,0.4)] bg-[#0b0d14] shadow-xl">
             <img
               src={withBasePath(
                 item.revealed
@@ -271,12 +315,12 @@ function ReadingFallback2D({
                   : "/tarot-assets/textures/card_back.png"
               )}
               alt={item.revealed ? item.card.name : "Unrevealed tarot card"}
-              className={`h-auto w-full object-cover transition-transform duration-500 ${
+              className={`h-full w-full object-cover transition-transform duration-500 ${
                 item.revealed && item.orientation === "reversed" ? "rotate-180" : ""
               }`}
             />
           </div>
-          <span className="text-[11px] uppercase tracking-[0.14em] text-[var(--arcana-gold-light)]">
+          <span className="text-center text-[10px] sm:text-[11px] uppercase tracking-[0.12em] text-[var(--arcana-gold-light)]">
             {getLocalizedPositionLabel(
               spread.id,
               idx,
@@ -302,12 +346,16 @@ export function ReadingTableScene(props: ReadingTableSceneProps) {
     setWebgl(isWebGLAvailable());
     setMobile(isMobileViewport());
     setReduced(prefersReducedMotion());
+
+    const onResize = () => setMobile(isMobileViewport());
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, []);
 
   const show3D = webgl === true && !use2D;
 
   return (
-    <div className="relative h-[340px] sm:h-[420px] w-full overflow-hidden rounded-md border border-[rgba(212,180,117,0.18)] bg-[radial-gradient(ellipse_at_center,rgba(24,29,52,0.82)_0%,rgba(7,8,13,0.96)_76%)]">
+    <div className="relative min-h-[320px] h-[340px] sm:h-[420px] w-full overflow-hidden rounded-md border border-[rgba(212,180,117,0.18)] bg-[radial-gradient(ellipse_at_center,rgba(24,29,52,0.82)_0%,rgba(7,8,13,0.96)_76%)]">
       {webgl === true && (
         <button
           type="button"
@@ -320,10 +368,12 @@ export function ReadingTableScene(props: ReadingTableSceneProps) {
 
       {show3D ? (
         <Canvas
+          className="h-full w-full"
           dpr={mobile ? [1, 1.25] : [1, 1.75]}
-          camera={{ position: [0, 0.15, mobile ? 4.4 : 3.55], fov: 38 }}
+          camera={{ position: [0, 0.1, mobile ? 5.2 : 3.7], fov: 38 }}
           gl={{ antialias: !mobile, alpha: true, powerPreference: "high-performance" }}
         >
+          <ResponsiveCameraRig phase={props.phase} mobile={mobile} />
           <ambientLight intensity={1.2} color="#f5ecdc" />
           <directionalLight position={[2, 3.5, 4]} intensity={1.65} color="#fff3dc" />
           <pointLight position={[-3, 1, 2.5]} intensity={1.3} color="#7c68a6" />
@@ -335,6 +385,7 @@ export function ReadingTableScene(props: ReadingTableSceneProps) {
                 phase={props.phase}
                 selectedSlots={props.selectedSlots}
                 isShuffling={props.isShuffling}
+                mobile={mobile}
                 reducedMotion={reduced}
                 onSelectSlot={props.onSelectSlot}
               />

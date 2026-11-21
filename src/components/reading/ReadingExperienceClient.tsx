@@ -383,7 +383,7 @@ export function ReadingExperienceClient() {
                     <p className="mt-2 text-xs leading-relaxed text-[var(--arcana-stone)]">
                       {getLocalizedSpreadDesc(sp.id, locale, sp.description)}
                     </p>
-                    <div className="mt-5 grid grid-cols-3 gap-2">
+                    <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-3">
                       {sp.positions.map((pos, idx) => (
                         <div
                           key={pos.label}

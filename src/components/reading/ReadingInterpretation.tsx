@@ -25,6 +25,7 @@ import { Button } from "@/components/ui/button";
 import { Panel } from "@/components/ui/card";
 import { GeminiDiagnosticPanel } from "@/components/ai/GeminiDiagnosticPanel";
 import { StreamingMarkdown } from "@/components/ai/StreamingMarkdown";
+import { DEFAULT_GEMINI_MODEL } from "@/config/gemini";
 import { UI_TEXT, getLocalizedTopicLabel } from "@/lib/i18n";
 import { withBasePath } from "@/lib/utils";
 import {
@@ -61,8 +62,9 @@ export function ReadingInterpretation({
   const isMountedRef = useRef(true);
 
   const { locale } = useLocaleStore();
-  const { apiKey, openSettings } = useAISettingsStore();
+  const { apiKey, model, _hasHydrated, openSettings } = useAISettingsStore();
   const hasGeminiKey = Boolean(apiKey.trim());
+  const activeModel = model.trim() || DEFAULT_GEMINI_MODEL;
   const t = UI_TEXT[locale].interpretation;
   const topicLabel = getLocalizedTopicLabel(topic.id, locale, topic.label);
 
@@ -192,12 +194,15 @@ export function ReadingInterpretation({
     };
   }, []);
 
-  // StrictMode-safe auto-generation: at most ONE request per (readingId, locale, hasGeminiKey)
-  // Never regenerates when navigating back if reading already matches readingId + locale.
+  // StrictMode-safe auto-generation: waits for localStorage hydration,
+  // triggers at most ONE request per (readingId, locale, hasGeminiKey, activeModel),
+  // and automatically re-runs when the user switches to a different model or adds an API key.
   useEffect(() => {
+    if (!_hasHydrated) return;
     if (drawnCards.length !== 3) return;
     if (aiStatus === "loading") return;
 
+    const triggerKey = `${readingId}:${locale}:${hasGeminiKey ? `gemini:${activeModel}` : "local"}`;
     const alreadyMatches =
       aiReading !== null &&
       aiReadingId === readingId &&
@@ -205,16 +210,18 @@ export function ReadingInterpretation({
       aiStatus === "success";
     const shouldUpgradeToGemini =
       alreadyMatches && hasGeminiKey && aiProvider === "local-fallback";
+    const modelChangedAfterError =
+      aiStatus === "error" && autoTriggeredKeyRef.current !== triggerKey;
 
     if (alreadyMatches && !shouldUpgradeToGemini) return;
-    if (aiStatus === "error") return;
-
-    const triggerKey = `${readingId}:${locale}:${hasGeminiKey ? "gemini" : "local"}`;
+    if (aiStatus === "error" && !modelChangedAfterError) return;
     if (autoTriggeredKeyRef.current === triggerKey) return;
-    autoTriggeredKeyRef.current = triggerKey;
 
+    autoTriggeredKeyRef.current = triggerKey;
     runGeneration(false);
   }, [
+    _hasHydrated,
+    activeModel,
     aiProvider,
     aiReading,
     aiReadingId,
@@ -343,21 +350,19 @@ export function ReadingInterpretation({
             </div>
           </div>
           <div className="flex flex-wrap gap-2">
-            {aiRetryable && (
-              <Button
-                type="button"
-                size="sm"
-                variant="gold"
-                onClick={() => runGeneration(false)}
-              >
-                <RefreshCw className="h-3.5 w-3.5" aria-hidden="true" />
-                {locale === "vi" ? "Thử Lại" : "Retry AI"}
-              </Button>
-            )}
             <Button
               type="button"
               size="sm"
-              variant={showSettingsAction ? "gold" : "outline"}
+              variant={aiRetryable ? "gold" : "outline"}
+              onClick={() => runGeneration(false)}
+            >
+              <RefreshCw className="h-3.5 w-3.5" aria-hidden="true" />
+              {locale === "vi" ? "Thử Lại" : "Retry AI"}
+            </Button>
+            <Button
+              type="button"
+              size="sm"
+              variant={showSettingsAction || aiErrorCode === "GEMINI_DAILY_QUOTA" ? "gold" : "outline"}
               onClick={openSettings}
             >
               <KeyRound className="h-3.5 w-3.5" aria-hidden="true" />
@@ -384,8 +389,8 @@ export function ReadingInterpretation({
 
   return (
     <div ref={containerRef} className="space-y-8">
-      {/* BYOK Setup Prompt when no personal Gemini API Key is configured */}
-      {!hasGeminiKey && (
+      {/* BYOK Setup Prompt when hydration is complete and no personal Gemini API Key is configured */}
+      {_hasHydrated && !hasGeminiKey && (
         <Panel className="border-[rgba(212,180,117,0.3)] bg-[rgba(212,180,117,0.05)] p-5 sm:p-6">
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
             <div className="flex items-start gap-3">

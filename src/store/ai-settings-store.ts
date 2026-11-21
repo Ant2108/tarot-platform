@@ -28,6 +28,7 @@ interface AISettingsState {
   lastTestedAt: string | null;
   lastError: string | null;
   isSettingsOpen: boolean;
+  _hasHydrated: boolean;
 
   setProvider: (provider: AIProviderId) => void;
   setApiKey: (key: string) => void;
@@ -42,6 +43,7 @@ interface AISettingsState {
   clearApiKey: () => void;
   openSettings: () => void;
   closeSettings: () => void;
+  setHasHydrated: (hydrated: boolean) => void;
 }
 
 function sanitizeStoredModel(raw: unknown): string {
@@ -68,16 +70,21 @@ export const useAISettingsStore = create<AISettingsState>()(
       lastTestedAt: null,
       lastError: null,
       isSettingsOpen: false,
+      _hasHydrated: false,
 
       setProvider: (provider) => set({ provider }),
 
       setApiKey: (key) => {
         const clean = key.trim();
-        set({
+        set((state) => ({
           apiKey: clean,
-          connectionStatus: clean ? "unconfigured" : "unconfigured",
+          connectionStatus: clean
+            ? state.apiKey === clean
+              ? state.connectionStatus
+              : "unconfigured"
+            : "unconfigured",
           lastError: null,
-        });
+        }));
       },
 
       setModel: (model) => set({ model: model.trim() }),
@@ -103,10 +110,14 @@ export const useAISettingsStore = create<AISettingsState>()(
 
       openSettings: () => set({ isSettingsOpen: true }),
       closeSettings: () => set({ isSettingsOpen: false }),
+      setHasHydrated: (hydrated) => set({ _hasHydrated: hydrated }),
     }),
     {
       name: "vespera-gemini-settings-v1",
       version: 5,
+      onRehydrateStorage: () => (state) => {
+        state?.setHasHydrated(true);
+      },
       migrate: (persistedState: unknown) => {
         const state = (persistedState ?? {}) as Partial<AISettingsState>;
         const cleanKey =
