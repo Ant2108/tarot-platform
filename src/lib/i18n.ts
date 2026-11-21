@@ -43,19 +43,19 @@ export const UI_TEXT = {
           step: "01",
           title: "Đặt Câu Hỏi & Chọn Chủ Đề",
           description:
-            "Chọn 1 trong 6 lĩnh vực (Tình yêu, Công việc, Gia đình, Tài chính, Phát triển bản thân, Tổng quan) và nhập hoàn cảnh thực tế bạn đang băn khoăn.",
+            "Chọn 1 trong 10 chủ đề (Tình yêu, Công việc, Học tập & Thi cử, Tài chính, Sức khỏe, Check năng lượng...) hoặc bốc nhanh ngay theo đúng câu hỏi riêng của bạn.",
         },
         {
           step: "02",
-          title: "Xào & Rút 3 Lá Trên Bàn 3D",
+          title: "Xào & Rút 3 Lá 3D / 2D",
           description:
-            "Tập trung vào câu hỏi khi xào bộ bài 78 lá, sau đó rút 3 lá theo trực giác từ vòng cung 3D với chiều xuôi/ngược tự nhiên.",
+            "Tập trung vào điều đang băn khoăn khi xào bộ bài 78 lá bo góc cổ điển, rút 3 lá theo trực giác với chiều xuôi/ngược tự nhiên và chuyển đổi linh hoạt giữa bàn 3D hoặc 2D.",
         },
         {
           step: "03",
-          title: "Lật Bài & Luận Giải Theo Mạch",
+          title: "Luận Giải AI & Hỏi Đáp Sâu",
           description:
-            "Xem phân tích liên kết nhân-quả giữa 3 lá bài, tương tác nguyên tố, hành động gợi ý thực tế và trò chuyện sâu thêm cùng Tarot Guide.",
+            "Nhận bài luận giải 6 phần kết nối trọn vẹn 3 lá bài cùng AI Tarot Reader theo thời gian thực (hoặc chế độ giải cục bộ), kèm khung hỏi đáp ngắn gọn đúng trọng tâm.",
         },
       ],
       sec3Label: "III · Các Lá Ẩn Chính Tiêu Biểu",
@@ -224,21 +224,21 @@ export const UI_TEXT = {
       steps: [
         {
           step: "01",
-          title: "Frame Your Situation",
+          title: "Ask & Choose Your Focus",
           description:
-            "Choose one of six life lenses and optionally write your real question so the reading weaves directly around your context.",
+            "Pick from 10 tailored topics (Love, Career, Study & Exams, Finance, Wellness, Daily Energy Check...) or draw directly around your own open question.",
         },
         {
           step: "02",
-          title: "Shuffle & Draw in 3D",
+          title: "Shuffle & Draw in 3D or 2D",
           description:
-            "Shuffle the 78-card deck and intuitively select three cards from the 3D celestial arc with natural upright or reversed orientations.",
+            "Shuffle the classic 78-card deck and intuitively draw three cards with natural upright or reversed orientations, switching seamlessly between crisp 3D and quick 2D views.",
         },
         {
           step: "03",
-          title: "Contextual Synthesis & Dialogue",
+          title: "AI Tarot Reading & Follow-Up Chat",
           description:
-            "Reveal each 3D Tarot card to read a connected three-card story, elemental interplay, practical next steps, and guided follow-up chat.",
+            "Receive a live 6-part synthesis connecting all three cards from your AI Tarot Reader (or offline mode), plus focused follow-up Q&A tailored to your situation.",
         },
       ],
       sec3Label: "III · Major Archetypes",
