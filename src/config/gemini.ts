@@ -2,7 +2,7 @@ import { useAISettingsStore } from "@/store/ai-settings-store";
 
 export const GEMINI_API_BASE_URL = "https://generativelanguage.googleapis.com";
 export const GEMINI_API_VERSION = "v1beta";
-export const DEFAULT_GEMINI_MODEL = "gemini-3.8-flash";
+export const DEFAULT_GEMINI_MODEL = "gemini-3.5-flash-lite";
 
 // Strict BYOK architecture:
 // There is NO shared NEXT_PUBLIC_GEMINI_API_KEY belonging to the site owner.
@@ -14,11 +14,11 @@ export const GEMINI_REQUEST_CONFIG = {
   readingTemperature: 0.72,
   chatTemperature: 0.72,
   topP: 0.9,
-  // First-chunk (TTFT) timeout: if Gemini sends nothing within 10s, abort cleanly
-  firstChunkTimeoutMs: 10_000,
+  // First-chunk (TTFT) timeout: 20s accommodates LTE & reasoning models while flash-lite responds in ~1.5s
+  firstChunkTimeoutMs: 20_000,
   // Overall stream ceiling once chunks are actively streaming
-  streamTotalTimeoutMs: 30_000,
-  testTimeoutMs: 10_000,
+  streamTotalTimeoutMs: 45_000,
+  testTimeoutMs: 12_000,
   maxTransientRetries: 2,
   maxAutoRetryWaitSeconds: 5,
   maxChatHistoryMessages: 4,

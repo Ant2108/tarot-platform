@@ -278,14 +278,14 @@ export function TarotChatInterface({
         </aside>
 
         {/* Right Conversation Panel */}
-        <div className="flex h-[500px] flex-col lg:col-span-8">
-          <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
+        <div className="flex h-[520px] flex-col lg:col-span-8">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 px-4 py-3.5 sm:px-6 sm:py-4">
             <div className="flex items-center gap-2">
               <MessageSquare
-                className="h-4 w-4 text-[var(--arcana-gold)]"
+                className="h-4 w-4 shrink-0 text-[var(--arcana-gold)]"
                 aria-hidden="true"
               />
-              <h3 className="font-editorial text-2xl font-semibold">
+              <h3 className="font-editorial text-xl font-semibold sm:text-2xl">
                 {t.dialogueTitle}
               </h3>
             </div>

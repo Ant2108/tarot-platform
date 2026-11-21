@@ -258,16 +258,18 @@ function parseRetryDelaySeconds(
 
 function extractQuotaViolation(
   details?: Array<Record<string, unknown>>
-): { quotaMetric?: string; isDaily: boolean } {
-  if (!Array.isArray(details)) return { isDaily: false };
+): { quotaMetric?: string; isDaily: boolean; isZeroLimit: boolean } {
+  if (!Array.isArray(details)) return { isDaily: false, isZeroLimit: false };
   for (const item of details) {
     const typeStr = String(item["@type"] || "");
     if (typeStr.includes("QuotaFailure") && Array.isArray(item.violations)) {
       for (const v of item.violations as Array<Record<string, unknown>>) {
         const quotaId = String(v.quotaId || "");
         const quotaMetric = String(v.quotaMetric || "");
+        const quotaValue = String(v.quotaValue ?? "");
         const desc = String(v.description || "");
         const combined = `${quotaId} ${quotaMetric} ${desc}`.toLowerCase();
+        const isZeroLimit = quotaValue === "0";
         const isDaily =
           combined.includes("perday") ||
           combined.includes("per_day") ||
@@ -276,11 +278,12 @@ function extractQuotaViolation(
         return {
           quotaMetric: quotaId || quotaMetric || undefined,
           isDaily,
+          isZeroLimit,
         };
       }
     }
   }
-  return { isDaily: false };
+  return { isDaily: false, isZeroLimit: false };
 }
 
 function parseGeminiErrorText(rawText: string): GeminiErrorBody {
@@ -365,8 +368,12 @@ function classifyGeminiHttpError(params: {
   let code: GeminiErrorCode;
   let retryable = false;
 
+  const isZeroFreeTierLimit =
+    quotaInfo.isZeroLimit || lowerMsg.includes("limit: 0");
+
   if (httpStatus === 429 || geminiStatus === "RESOURCE_EXHAUSTED") {
     const msgIndicatesDaily =
+      isZeroFreeTierLimit ||
       quotaInfo.isDaily ||
       lowerMsg.includes("requests per day") ||
       lowerMsg.includes("per day limit") ||
@@ -437,10 +444,14 @@ function classifyGeminiHttpError(params: {
       ? locale === "vi"
         ? `Gemini API trả về lỗi 503 (${geminiStatus ?? "UNAVAILABLE"}): ${rawMessage}`
         : `Gemini API returned HTTP 503 (${geminiStatus ?? "UNAVAILABLE"}): ${rawMessage}`
+      : code === "GEMINI_DAILY_QUOTA" && isZeroFreeTierLimit
+      ? locale === "vi"
+        ? `Model ${model} không có hạn mức miễn phí (limit: 0) trên gói Free Tier của Google AI Studio. Hãy vào Cài Đặt Gemini chọn "gemini-3.5-flash-lite" để dùng miễn phí & phản hồi nhanh (~1.5 giây).`
+        : `Model ${model} has no free-tier quota (limit: 0) on Google AI Studio. Open Gemini Settings and select "gemini-3.5-flash-lite" for fast free-tier readings.`
       : code === "GEMINI_DAILY_QUOTA"
       ? locale === "vi"
-        ? `Model ${model} đã chạm hạn mức ngày trên tài khoản Google AI Studio của bạn (429). Bạn có thể vào Cài Đặt AI chọn model khác (như gemini-3.5-flash-lite) hoặc dùng Giải Cục Bộ.`
-        : `Model ${model} reached its daily quota on your Google AI Studio account (429). Switch to another model in AI Settings (such as gemini-3.5-flash-lite) or use Local Mode.`
+        ? `Model ${model} đã chạm hạn mức ngày trên tài khoản Google AI Studio của bạn (429). Bạn có thể vào Cài Đặt Gemini chọn model khác (như gemini-3.5-flash-lite) hoặc dùng Giải Cục Bộ.`
+        : `Model ${model} reached its daily quota on your Google AI Studio account (429). Switch to another model in Gemini Settings (such as gemini-3.5-flash-lite) or use Local Mode.`
       : getUserErrorMessage(code, locale, retryAfterSeconds);
 
   return new GeminiServiceError({
@@ -918,8 +929,8 @@ async function fetchGeminiStreamWithRetry(params: {
         errMessage =
           timedOutReason === "ttft"
             ? params.locale === "vi"
-              ? "Gemini chưa trả ký tự đầu tiên sau 10 giây. Bạn có thể bấm Thử Lại, đổi sang model Flash nhanh hơn, hoặc dùng chế độ Giải Cục Bộ."
-              : "Gemini did not emit a first token within 10 seconds. You can retry, pick a faster Flash model, or switch to Local Mode."
+              ? `Model ${params.model} chưa trả ký tự đầu tiên sau ${Math.round(GEMINI_REQUEST_CONFIG.firstChunkTimeoutMs / 1000)} giây. Hãy bấm Thử Lại, đổi sang "gemini-3.5-flash-lite" nhanh hơn, hoặc dùng Giải Cục Bộ.`
+              : `Model ${params.model} did not emit a first token within ${Math.round(GEMINI_REQUEST_CONFIG.firstChunkTimeoutMs / 1000)} seconds. Retry, switch to "gemini-3.5-flash-lite", or use Local Mode.`
             : getUserErrorMessage("GEMINI_TIMEOUT", params.locale);
         retryable = true;
       } else if (gotFirstChunk) {
