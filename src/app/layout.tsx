@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { GeminiSettingsModal } from "@/components/ai/GeminiSettingsModal";
+import { OnboardingTutorial } from "@/components/tutorial/OnboardingTutorial";
 
 const headingFont = Cormorant_Garamond({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <SiteFooter />
         <GeminiSettingsModal />
+        <OnboardingTutorial />
       </body>
     </html>
   );

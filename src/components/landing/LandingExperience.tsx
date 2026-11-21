@@ -63,32 +63,37 @@ export function LandingExperience({
 
         gsap.utils.toArray<HTMLElement>(".reveal-section").forEach((section) => {
           gsap.from(section, {
-            y: 32,
+            y: 22,
             opacity: 0,
-            duration: 0.85,
+            duration: 0.7,
             ease: "power2.out",
-            clearProps: "transform",
+            immediateRender: false,
+            clearProps: "transform,opacity",
             scrollTrigger: {
               trigger: section,
-              start: "top 82%",
+              start: "top 94%",
               once: true,
             },
           });
         });
 
         gsap.from(".featured-card-item", {
-          y: 24,
+          y: 18,
           opacity: 0,
-          duration: 0.7,
-          stagger: 0.08,
+          duration: 0.6,
+          stagger: 0.06,
           ease: "power2.out",
-          clearProps: "transform",
+          immediateRender: false,
+          clearProps: "transform,opacity",
           scrollTrigger: {
             trigger: ".featured-grid",
-            start: "top 80%",
+            start: "top 95%",
             once: true,
           },
         });
+
+        const refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 350);
+        return () => clearTimeout(refreshTimer);
       });
 
       return () => mm.revert();

@@ -3,18 +3,20 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen, Compass, Globe, KeyRound, Menu, Settings2, Sparkles, X } from "lucide-react";
+import { BookOpen, Compass, Globe, HelpCircle, KeyRound, Menu, Settings2, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { UI_TEXT } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { useAISettingsStore } from "@/store/ai-settings-store";
 import { useLocaleStore } from "@/store/locale-store";
+import { useTutorialStore } from "@/store/tutorial-store";
 
 export function SiteHeader() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const { locale, setLocale } = useLocaleStore();
   const { apiKey, openSettings } = useAISettingsStore();
+  const { openTutorial } = useTutorialStore();
   const hasGeminiKey = Boolean(apiKey.trim());
   const t = UI_TEXT[locale].nav;
 
@@ -132,6 +134,16 @@ export function SiteHeader() {
             />
           </button>
 
+          <button
+            type="button"
+            onClick={openTutorial}
+            title={locale === "vi" ? "Hướng dẫn sử dụng" : "User guide"}
+            aria-label={locale === "vi" ? "Hướng dẫn sử dụng" : "User guide"}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-sm border border-[rgba(212,180,117,0.22)] bg-[rgba(7,8,13,0.7)] text-[var(--arcana-stone)] transition-colors hover:border-[rgba(212,180,117,0.45)] hover:text-[var(--arcana-gold-light)] cursor-pointer"
+          >
+            <HelpCircle className="h-4 w-4" aria-hidden="true" />
+          </button>
+
           <Button asChild size="sm" variant="gold">
             <Link href="/reading">{t.cta}</Link>
           </Button>
@@ -197,6 +209,17 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
+            <button
+              type="button"
+              onClick={() => {
+                setMobileOpen(false);
+                openTutorial();
+              }}
+              className="flex items-center gap-2 rounded-sm px-3 py-2.5 text-left text-sm uppercase tracking-[0.14em] text-[var(--arcana-stone)] hover:text-[var(--arcana-gold-light)] cursor-pointer"
+            >
+              <HelpCircle className="h-4 w-4" aria-hidden="true" />
+              {locale === "vi" ? "Hướng Dẫn Sử Dụng" : "User Guide"}
+            </button>
             <Button
               asChild
               variant="gold"

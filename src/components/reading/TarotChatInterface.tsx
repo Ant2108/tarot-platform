@@ -366,13 +366,17 @@ export function TarotChatInterface({
                   }`}
                 >
                   <div
-                    className={`max-w-[85%] rounded-md px-4 py-3 text-xs leading-relaxed sm:text-sm ${
+                    className={`max-w-[88%] rounded-md px-4 py-3 text-xs leading-relaxed sm:text-sm ${
                       msg.role === "user"
                         ? "bg-[rgba(212,180,117,0.18)] border border-[rgba(212,180,117,0.35)] text-[var(--arcana-ink)]"
                         : "bg-white/[0.04] border border-white/10 text-[var(--arcana-ink)]/92"
                     }`}
                   >
-                    <div className="whitespace-pre-line">{msg.content}</div>
+                    {msg.role === "assistant" ? (
+                      <StreamingMarkdown text={msg.content} />
+                    ) : (
+                      <div className="whitespace-pre-line">{msg.content}</div>
+                    )}
                     <p className="mt-2 text-[10px] text-[var(--arcana-stone)]">
                       {msg.timestamp}
                     </p>
@@ -441,19 +445,21 @@ export function TarotChatInterface({
             )}
           </div>
 
-          <div className="flex flex-wrap gap-1.5 border-t border-white/10 bg-[rgba(7,8,13,0.35)] px-6 py-3">
-            {suggestions.map((q) => (
-              <button
-                key={q}
-                type="button"
-                disabled={loading}
-                onClick={() => handleSend(q)}
-                className="rounded-full border border-[rgba(212,180,117,0.24)] bg-white/[0.02] px-3 py-1 text-[11px] text-[var(--arcana-stone)] transition-colors hover:border-[var(--arcana-gold)] hover:text-[var(--arcana-gold-light)] cursor-pointer disabled:opacity-40"
-              >
-                {q}
-              </button>
-            ))}
-          </div>
+          {chatHistory.length === 0 && !loading && (
+            <div className="flex flex-wrap gap-1.5 border-t border-white/10 bg-[rgba(7,8,13,0.35)] px-4 py-3 sm:px-6">
+              {suggestions.map((q) => (
+                <button
+                  key={q}
+                  type="button"
+                  disabled={loading}
+                  onClick={() => handleSend(q)}
+                  className="rounded-full border border-[rgba(212,180,117,0.24)] bg-white/[0.02] px-3 py-1 text-left text-[11px] text-[var(--arcana-stone)] transition-colors hover:border-[var(--arcana-gold)] hover:text-[var(--arcana-gold-light)] cursor-pointer disabled:opacity-40"
+                >
+                  {q}
+                </button>
+              ))}
+            </div>
+          )}
 
           <form
             onSubmit={(e) => {

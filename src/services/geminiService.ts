@@ -1500,32 +1500,50 @@ export async function sendTarotMessage(
 
   const task = (async (): Promise<ChatMessageOutput> => {
     try {
-      const compactCards = context.drawnCards
-        .map((d, i) => {
-          const pos = getLocalizedPositionLabel(
-            context.spread.id,
-            i,
-            context.locale,
-            d.position.label
-          );
-          const orient = d.orientation === "upright" ? "Upright" : "Reversed";
-          return `${i + 1}. ${pos}: ${d.card.name} (${orient})`;
-        })
-        .join(" | ");
+      // Ground follow-up answers strictly in the PDF Tarot knowledge base for these 3 drawn cards
+      const grounding = buildCompactGroundingPayload(
+        context.drawnCards,
+        context.topic,
+        context.spread,
+        context.locale
+      );
 
-      const initialTakeaway = context.initialReading
-        ? context.initialReading.overallEnergy.slice(0, 200)
-        : "";
+      const groundedCardLines = grounding.cards.map((c, i) => {
+        const orient = c.orientation === "upright" ? "Upright" : "Reversed";
+        return `${i + 1}. [${c.positionLabel}] ${c.name} (${orient}) — PDF Essence: ${c.generalMeaning.slice(0, 110)} | Topic: ${c.topicMeaning.slice(0, 130)}`;
+      });
 
-      const systemText = buildCompactSystemInstruction(context.locale);
+      const pdfSignals = [
+        ...grounding.spreadSignals,
+        ...grounding.combinationNotes,
+      ]
+        .slice(0, 2)
+        .join(" ");
+
+      const langRule =
+        context.locale === "vi"
+          ? "Respond in warm, natural, professional Vietnamese (tiếng Việt)."
+          : "Respond in warm, natural, professional English.";
+
+      const chatSystemText = [
+        "You are an experienced, empathetic Tarot Reader answering a follow-up question about a 3-card spread the user ALREADY read.",
+        langRule,
+        "STRICT RULES:",
+        "- Answer ONLY the user's exact follow-up question directly, concisely, and to the point (1–2 short paragraphs, ~80–150 words max).",
+        "- DO NOT repeat, summarize, or re-explain the 3 cards one by one — the user already read their full reading above.",
+        "- Ground your insight strictly in the provided PDF card meanings and spread signals, translated into natural human Tarot Reader language (NEVER copy textbook passages, NEVER include parenthetical PDF/page citations).",
+        "- Always end with 1 clear, practical piece of advice tailored specifically to their follow-up question.",
+        "- Never redraw cards, never claim future certainty or read another person's mind.",
+      ].join(" ");
+
       const contextBlock = [
         `Topic: ${getLocalizedTopicLabel(context.topic.id, context.locale, context.topic.label)} | Spread: ${getLocalizedSpreadName(context.spread.id, context.locale, context.spread.name)}`,
         context.userQuestion?.trim()
           ? `Original Question: ${context.userQuestion.trim()}`
           : "",
-        `Cards: ${compactCards}`,
-        initialTakeaway ? `Summary: ${initialTakeaway}` : "",
-        "Answer in 1–2 warm, concise paragraphs grounded strictly in these 3 cards. Never redraw cards.",
+        "PDF Knowledge Grounding for the 3 Drawn Cards:",
+        ...groundedCardLines,
+        pdfSignals ? `PDF Spread Signal: ${pdfSignals}` : "",
       ]
         .filter(Boolean)
         .join("\n");
@@ -1544,8 +1562,8 @@ export async function sendTarotMessage(
             {
               text:
                 context.locale === "vi"
-                  ? "Mình đã nắm rõ trải bài của bạn. Bạn hãy đặt câu hỏi nhé."
-                  : "I have your three-card spread in mind. What would you like to ask?",
+                  ? "Mình đã nắm rõ ý nghĩa 3 lá bài từ tài liệu. Bạn hỏi điều gì mình sẽ trả lời thẳng trọng tâm và đưa lời khuyên cụ thể."
+                  : "I have your three cards and their knowledge base meanings ready. Ask your follow-up and I will answer directly and concisely.",
             },
           ],
         },
@@ -1574,7 +1592,7 @@ export async function sendTarotMessage(
       }
 
       const promptChars =
-        systemText.length +
+        chatSystemText.length +
         contents.reduce((sum, c) => sum + (c.parts[0]?.text.length ?? 0), 0);
 
       const { text, diagnostic } = await fetchGeminiStreamWithRetry({
@@ -1586,7 +1604,7 @@ export async function sendTarotMessage(
         externalSignal: options?.signal,
         onChunk: options?.onChunk,
         body: {
-          system_instruction: { parts: [{ text: systemText }] },
+          system_instruction: { parts: [{ text: chatSystemText }] },
           contents,
           generationConfig: {
             temperature: GEMINI_REQUEST_CONFIG.chatTemperature,
