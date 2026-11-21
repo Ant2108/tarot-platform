@@ -36,7 +36,7 @@ const CardInspectScene = dynamic(
     ssr: false,
     loading: () => (
       <div className="flex h-full items-center justify-center text-xs uppercase tracking-widest text-[var(--arcana-stone)]">
-        Loading 3D Blender Asset...
+        Loading 3D Card...
       </div>
     ),
   }

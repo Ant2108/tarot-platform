@@ -339,8 +339,8 @@ export function GeminiSettingsModal() {
             />
             <span>
               {isVi
-                ? "API key chỉ lưu trên trình duyệt này (localStorage). Nếu dùng máy công cộng, hãy bấm Xóa sau khi xem bài xong."
-                : "Your key is stored only in this browser (localStorage). Delete it when finished on a shared device."}
+                ? "API key chỉ lưu ngay trên trình duyệt này. Nếu dùng máy công cộng, hãy bấm Xóa sau khi xem bài xong."
+                : "Your key is stored only in this browser. Delete it when finished on a shared device."}
             </span>
           </div>
 

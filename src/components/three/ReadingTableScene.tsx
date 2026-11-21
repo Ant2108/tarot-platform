@@ -89,8 +89,17 @@ function SharedDeckCards({
     THREE.TextureLoader,
     withBasePath("/tarot-assets/textures/card_back.png")
   );
+  const gl = useThree((s) => s.gl);
   const [hoveredSlot, setHoveredSlot] = useState<number | null>(null);
   const groupRefs = useRef<(THREE.Group | null)[]>([]);
+
+  useEffect(() => {
+    backTexture.anisotropy = Math.min(16, gl.capabilities.getMaxAnisotropy());
+    backTexture.minFilter = THREE.LinearMipmapLinearFilter;
+    backTexture.magFilter = THREE.LinearFilter;
+    backTexture.colorSpace = THREE.SRGBColorSpace;
+    backTexture.needsUpdate = true;
+  }, [backTexture, gl]);
 
   const geometry = useMemo(() => new THREE.BoxGeometry(0.68, 1.16, 0.01), []);
   const materials = useMemo(() => {
@@ -369,15 +378,20 @@ export function ReadingTableScene(props: ReadingTableSceneProps) {
       {show3D ? (
         <Canvas
           className="h-full w-full"
-          dpr={mobile ? [1, 1.25] : [1, 1.75]}
+          dpr={[1.5, 2.5]}
           camera={{ position: [0, 0.1, mobile ? 5.2 : 3.7], fov: 38 }}
-          gl={{ antialias: !mobile, alpha: true, powerPreference: "high-performance" }}
+          gl={{
+            antialias: true,
+            alpha: true,
+            powerPreference: "high-performance",
+            toneMapping: THREE.NoToneMapping,
+          }}
         >
           <ResponsiveCameraRig phase={props.phase} mobile={mobile} />
-          <ambientLight intensity={1.2} color="#f5ecdc" />
-          <directionalLight position={[2, 3.5, 4]} intensity={1.65} color="#fff3dc" />
-          <pointLight position={[-3, 1, 2.5]} intensity={1.3} color="#7c68a6" />
-          <pointLight position={[3, -1, 2]} intensity={0.95} color="#d4b475" />
+          <ambientLight intensity={1.08} color="#ffffff" />
+          <directionalLight position={[2, 3.5, 4.5]} intensity={1.15} color="#fffaf0" />
+          <pointLight position={[-3, 1, 2.5]} intensity={0.45} color="#8b78b8" />
+          <pointLight position={[3, -1, 2]} intensity={0.35} color="#d4b475" />
 
           <Suspense fallback={null}>
             {(props.phase === "shuffle" || props.phase === "select") && (

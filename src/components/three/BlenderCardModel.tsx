@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef } from "react";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import { withBasePath } from "@/lib/utils";
@@ -40,20 +40,35 @@ export function BlenderCardModel({
 }: BlenderCardModelProps) {
   const fullUrl = withBasePath(glbPath);
   const { scene } = useGLTF(fullUrl);
+  const gl = useThree((s) => s.gl);
   const groupRef = useRef<THREE.Group>(null);
   const flipProgressRef = useRef(revealed ? 1 : 0);
 
   const clonedScene = useMemo(() => {
+    const maxAnisotropy = Math.min(16, gl.capabilities.getMaxAnisotropy());
     const clone = scene.clone(true);
     clone.traverse((child) => {
       if ((child as THREE.Mesh).isMesh) {
         const mesh = child as THREE.Mesh;
         mesh.castShadow = true;
         mesh.receiveShadow = true;
+        const mats = Array.isArray(mesh.material)
+          ? mesh.material
+          : [mesh.material];
+        mats.forEach((m) => {
+          const std = m as THREE.MeshStandardMaterial;
+          if (std?.map) {
+            std.map.anisotropy = maxAnisotropy;
+            std.map.minFilter = THREE.LinearMipmapLinearFilter;
+            std.map.magFilter = THREE.LinearFilter;
+            std.map.colorSpace = THREE.SRGBColorSpace;
+            std.map.needsUpdate = true;
+          }
+        });
       }
     });
     return clone;
-  }, [scene]);
+  }, [gl, scene]);
 
   useEffect(() => {
     return () => {

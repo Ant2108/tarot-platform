@@ -471,8 +471,8 @@ export function AIConfigurationClient() {
               </p>
               <p>
                 {isVi
-                  ? "API Key của bạn chỉ được lưu ngay trên trình duyệt này (localStorage) và gửi thẳng tới Google Gemini — không qua máy chủ trung gian. Tuy nhiên, nếu bạn đang dùng máy tính công cộng hoặc điện thoại dùng chung, hãy bấm \"Xóa Key\" sau khi xem bài xong."
-                  : "Your API Key is saved only in this browser (localStorage) and sent directly to Google Gemini — never to any third-party server. However, browser storage is not completely secure on shared devices, so always click \"Delete Key\" when using a public computer."}
+                  ? "API Key của bạn chỉ được lưu ngay trên trình duyệt này và gửi thẳng tới Google Gemini — không qua máy chủ trung gian. Nếu bạn đang dùng máy tính công cộng hoặc thiết bị dùng chung, hãy bấm \"Xóa Key\" sau khi xem bài xong."
+                  : "Your API Key is saved only in this browser and sent directly to Google Gemini — never to any third-party server. Always click \"Delete Key\" when using a shared or public device."}
               </p>
             </div>
           </div>

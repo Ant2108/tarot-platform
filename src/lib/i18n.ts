@@ -27,7 +27,7 @@ export const UI_TEXT = {
       heroTitle1: "Lắng Lại Tâm Trí.",
       heroTitle2: "Lắng Nghe Thông Điệp Tarot.",
       heroDesc:
-        "Không gian trải bài 3 lá bằng mô hình 3D tạo từ Blender kết hợp thư viện học thuật đầy đủ 78 lá—luận giải có logic theo đúng hoàn cảnh và câu hỏi của bạn.",
+        "Không gian trải bài 3 lá 3D chân thực kết hợp thư viện học thuật đầy đủ 78 lá—luận giải có logic theo đúng hoàn cảnh và câu hỏi của bạn.",
       startReading: "Bắt Đầu Trải Bài",
       exploreLibrary: "Khám Phá Thư Viện 78 Lá",
       sec1Label: "I · Tinh Thần Tarot",
@@ -84,7 +84,7 @@ export const UI_TEXT = {
       savedHistory: "Lịch Sử Trải Bài Cục Bộ",
       clearHistory: "Xóa Lịch Sử",
       noHistory:
-        "Các lượt trải bài hoàn tất sẽ tự động lưu trong trình duyệt (localStorage) để bạn xem lại bất cứ lúc nào.",
+        "Các lượt trải bài hoàn tất sẽ tự động lưu ngay trên trình duyệt để bạn xem lại bất cứ lúc nào.",
       chooseTopicTitle: "Chọn Chủ Đề & Chia Sẻ Hoàn Cảnh",
       chooseTopicDesc:
         "Mỗi chủ đề sẽ thiết lập vị trí 3 lá bài phù hợp. Nhập thêm câu hỏi hoặc bối cảnh cụ thể để phần luận giải bám sát thực tế của bạn nhất.",
@@ -167,7 +167,7 @@ export const UI_TEXT = {
       resetAll: "Đặt Lại Bộ Lọc",
       backToLibrary: "Quay Lại Thư Viện 78 Lá",
       drawReading: "Trải Bài 3 Lá",
-      inspect3D: "Xoay Xem Mô Hình 3D (Blender)",
+      inspect3D: "Xoay Xem Lá Bài 3D",
       return2D: "Quay Về Ảnh 2D",
       arcana: "Bộ Ẩn",
       number: "Số Thứ Tự",
@@ -238,7 +238,7 @@ export const UI_TEXT = {
           step: "03",
           title: "Contextual Synthesis & Dialogue",
           description:
-            "Reveal each Blender-sculpted card to read a connected three-card story, elemental interplay, practical next steps, and guided follow-up chat.",
+            "Reveal each 3D Tarot card to read a connected three-card story, elemental interplay, practical next steps, and guided follow-up chat.",
         },
       ],
       sec3Label: "III · Major Archetypes",
@@ -267,7 +267,7 @@ export const UI_TEXT = {
       savedHistory: "Saved Local Reading History",
       clearHistory: "Clear History",
       noHistory:
-        "Completed readings are saved locally in your browser's localStorage. Complete a reading to record it here.",
+        "Completed readings are saved locally in your browser. Complete a reading to record it here.",
       chooseTopicTitle: "Select Topic & Share Your Context",
       chooseTopicDesc:
         "Each topic configures tailored three-card positions. Add your specific question or situation so the interpretation reads like a real session.",
@@ -350,7 +350,7 @@ export const UI_TEXT = {
       resetAll: "Reset All Filters",
       backToLibrary: "Back to 78-Card Library",
       drawReading: "Draw Three-Card Reading",
-      inspect3D: "Inspect 3D Blender Model",
+      inspect3D: "Inspect 3D Card",
       return2D: "Return to 2D Scan",
       arcana: "Arcana",
       number: "Number",

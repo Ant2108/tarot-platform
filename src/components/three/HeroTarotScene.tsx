@@ -103,15 +103,20 @@ export function HeroTarotScene() {
     <div className="relative h-full w-full">
       {webglReady === true && (
         <Canvas
-          dpr={mobile ? [1, 1.25] : [1, 1.75]}
+          dpr={[1.5, 2.5]}
           camera={{ position: [0, 0.1, mobile ? 4.3 : 3.45], fov: 38 }}
-          gl={{ antialias: !mobile, alpha: true, powerPreference: "high-performance" }}
+          gl={{
+            antialias: true,
+            alpha: true,
+            powerPreference: "high-performance",
+            toneMapping: THREE.NoToneMapping,
+          }}
           aria-label="Interactive 3D Rider-Waite-Smith Tarot cards"
         >
-          <ambientLight intensity={1.15} color="#f5ecdc" />
-          <directionalLight position={[2.5, 3.5, 4]} intensity={1.6} color="#fff4df" />
-          <pointLight position={[-3, 1.2, 2.5]} intensity={1.4} color="#7c68a6" />
-          <pointLight position={[2.8, -1.5, 2]} intensity={0.9} color="#d4b475" />
+          <ambientLight intensity={1.05} color="#ffffff" />
+          <directionalLight position={[2.2, 3.2, 4.5]} intensity={1.15} color="#fffaf0" />
+          <pointLight position={[-3, 1.2, 2.5]} intensity={0.45} color="#8b78b8" />
+          <pointLight position={[2.8, -1.5, 2]} intensity={0.35} color="#d4b475" />
 
           <CelestialDust count={mobile ? 45 : 110} reducedMotion={reduced} />
 
