@@ -4,15 +4,17 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import {
   AlertCircle,
+  BookOpen,
   Check,
   CheckCircle2,
+  ChevronDown,
+  ChevronUp,
   ExternalLink,
   Eye,
   EyeOff,
   KeyRound,
   Loader2,
   PlugZap,
-  Settings2,
   ShieldAlert,
   Sparkles,
   Trash2,
@@ -21,7 +23,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { GeminiDiagnosticPanel } from "@/components/ai/GeminiDiagnosticPanel";
-import { DEFAULT_GEMINI_MODEL } from "@/config/gemini";
 import {
   testGeminiConnection,
   type GeminiConnectionTestResult,
@@ -33,11 +34,8 @@ export function GeminiSettingsModal() {
   const { locale } = useLocaleStore();
   const {
     apiKey,
-    model,
-    availableModels,
     isSettingsOpen,
     setApiKey,
-    setModel,
     setConnectionResult,
     clearApiKey,
     closeSettings,
@@ -46,8 +44,8 @@ export function GeminiSettingsModal() {
   const hasSavedKey = Boolean(apiKey.trim());
   const [isEditingKey, setIsEditingKey] = useState(!hasSavedKey);
   const [newKeyInput, setNewKeyInput] = useState("");
-  const [draftModel, setDraftModel] = useState(model || DEFAULT_GEMINI_MODEL);
   const [showKey, setShowKey] = useState(false);
+  const [showGuide, setShowGuide] = useState(!hasSavedKey);
   const [savedFlash, setSavedFlash] = useState(false);
   const [testing, setTesting] = useState(false);
   const [testResult, setTestResult] =
@@ -56,16 +54,17 @@ export function GeminiSettingsModal() {
 
   useEffect(() => {
     if (isSettingsOpen) {
-      setIsEditingKey(!Boolean(apiKey.trim()));
+      const hasKey = Boolean(apiKey.trim());
+      setIsEditingKey(!hasKey);
+      setShowGuide(!hasKey);
       setNewKeyInput("");
-      setDraftModel(model || DEFAULT_GEMINI_MODEL);
       setShowKey(false);
       setSavedFlash(false);
       setTestResult(null);
     } else {
       testAbortRef.current?.abort();
     }
-  }, [isSettingsOpen, apiKey, model]);
+  }, [isSettingsOpen, apiKey]);
 
   useEffect(() => {
     if (!isSettingsOpen) return;
@@ -83,22 +82,10 @@ export function GeminiSettingsModal() {
     ? newKeyInput.trim() || apiKey.trim()
     : apiKey.trim();
 
-  const handleSave = (e: React.FormEvent) => {
+  const handleTestAndSave = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (isEditingKey && newKeyInput.trim()) {
-      setApiKey(newKeyInput.trim());
-      setNewKeyInput("");
-      setIsEditingKey(false);
-    }
-    setModel(draftModel.trim() || DEFAULT_GEMINI_MODEL);
-    setSavedFlash(true);
-    setTimeout(() => {
-      closeSettings();
-    }, 300);
-  };
-
-  const handleTestConnection = async () => {
     if (testing || !effectiveKey) return;
+
     testAbortRef.current?.abort();
     const controller = new AbortController();
     testAbortRef.current = controller;
@@ -108,7 +95,6 @@ export function GeminiSettingsModal() {
     try {
       const result = await testGeminiConnection(locale, controller.signal, {
         apiKey: effectiveKey,
-        model: draftModel,
       });
       if (controller.signal.aborted) return;
       setTestResult(result);
@@ -118,13 +104,14 @@ export function GeminiSettingsModal() {
           setNewKeyInput("");
           setIsEditingKey(false);
         }
-        setDraftModel(result.model);
-        setModel(result.model);
         setConnectionResult({
           status: "connected",
           error: null,
-          models: result.availableModels,
         });
+        setSavedFlash(true);
+        setTimeout(() => {
+          closeSettings();
+        }, 550);
       } else {
         setConnectionResult({
           status: "error",
@@ -140,6 +127,7 @@ export function GeminiSettingsModal() {
     clearApiKey();
     setNewKeyInput("");
     setIsEditingKey(true);
+    setShowGuide(true);
     setTestResult(null);
   };
 
@@ -166,7 +154,7 @@ export function GeminiSettingsModal() {
         <div className="flex items-center gap-2 text-[var(--arcana-gold)]">
           <Sparkles className="h-4 w-4" aria-hidden="true" />
           <span className="text-[11px] font-medium uppercase tracking-[0.2em]">
-            Bring Your Own Key (BYOK)
+            Gemini 3.5 Flash-Lite · {isVi ? "Miễn Phí & Nhanh" : "Fast & Free"}
           </span>
         </div>
 
@@ -174,10 +162,10 @@ export function GeminiSettingsModal() {
           id="gemini-settings-title"
           className="mt-2 font-editorial text-2xl text-[var(--arcana-ink)] sm:text-3xl"
         >
-          {isVi ? "Cấu Hình Gemini Cá Nhân" : "Personal Gemini Configuration"}
+          {isVi ? "Kết Nối Gemini AI" : "Connect Gemini AI"}
         </h2>
 
-        <form onSubmit={handleSave} className="mt-4 space-y-4">
+        <form onSubmit={handleTestAndSave} className="mt-4 space-y-4">
           <div className="space-y-1.5">
             <div className="flex items-center justify-between gap-2">
               <span className="flex items-center gap-1.5 text-xs font-medium text-[var(--arcana-ink)]">
@@ -193,7 +181,7 @@ export function GeminiSettingsModal() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-[11px] text-[var(--arcana-gold-light)] hover:underline"
               >
-                {isVi ? "Lấy key tại AI Studio" : "Get key on AI Studio"}
+                {isVi ? "Lấy key miễn phí" : "Get free key"}
                 <ExternalLink className="h-3 w-3" aria-hidden="true" />
               </a>
             </div>
@@ -221,7 +209,9 @@ export function GeminiSettingsModal() {
                   type={showKey ? "text" : "password"}
                   value={newKeyInput}
                   onChange={(e) => setNewKeyInput(e.target.value)}
-                  placeholder="AIzaSy..."
+                  placeholder={
+                    isVi ? "Dán API Key vào đây (AIza...)" : "Paste API Key here (AIza...)"
+                  }
                   autoComplete="off"
                   spellCheck={false}
                   className="pr-10 font-mono text-xs"
@@ -242,42 +232,77 @@ export function GeminiSettingsModal() {
             )}
           </div>
 
-          <div className="space-y-1.5">
-            <label
-              htmlFor="gemini-modal-model"
-              className="text-xs font-medium text-[var(--arcana-ink)]"
+          {/* Collapsible 4-step beginner guide */}
+          <div className="rounded-sm border border-white/10 bg-white/[0.02]">
+            <button
+              type="button"
+              onClick={() => setShowGuide((v) => !v)}
+              className="flex w-full items-center justify-between px-3.5 py-2.5 text-left text-xs font-medium text-[var(--arcana-gold-light)] cursor-pointer"
             >
-              {isVi ? "Model Gemini" : "Gemini Model"}
-            </label>
-            {availableModels.length > 0 ? (
-              <select
-                id="gemini-modal-model"
-                value={draftModel}
-                onChange={(e) => setDraftModel(e.target.value)}
-                className="flex h-10 w-full rounded-sm border border-[rgba(212,180,117,0.22)] bg-[rgba(7,8,13,0.8)] px-3 py-2 font-mono text-xs text-[var(--arcana-ink)] focus:border-[var(--arcana-gold)] focus:outline-none"
-              >
-                {!availableModels.some((m) => m.id === draftModel) && (
-                  <option value={draftModel} className="bg-[#0c0e17]">
-                    {draftModel}
-                  </option>
+              <span className="inline-flex items-center gap-1.5">
+                <BookOpen className="h-3.5 w-3.5" aria-hidden="true" />
+                {isVi
+                  ? "Chưa có key? Xem hướng dẫn 4 bước (1 phút)"
+                  : "New here? 4-step guide to get a free key (1 min)"}
+              </span>
+              {showGuide ? (
+                <ChevronUp className="h-4 w-4" aria-hidden="true" />
+              ) : (
+                <ChevronDown className="h-4 w-4" aria-hidden="true" />
+              )}
+            </button>
+            {showGuide && (
+              <ol className="space-y-1.5 border-t border-white/10 px-3.5 py-3 text-[11px] leading-relaxed text-[var(--arcana-stone)] list-decimal list-inside">
+                {isVi ? (
+                  <>
+                    <li>
+                      Mở{" "}
+                      <a
+                        href="https://aistudio.google.com/apikey"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[var(--arcana-gold-light)] underline"
+                      >
+                        Google AI Studio
+                      </a>{" "}
+                      và đăng nhập bằng Gmail (miễn phí, không cần thẻ).
+                    </li>
+                    <li>
+                      Bấm nút <strong className="text-[var(--arcana-ink)]">Create API key</strong> → chọn dự án mặc định.
+                    </li>
+                    <li>
+                      Bấm <strong className="text-[var(--arcana-ink)]">Copy</strong> để sao chép chuỗi mã vừa tạo.
+                    </li>
+                    <li>
+                      Dán vào ô trên rồi bấm <strong className="text-[var(--arcana-ink)]">Kiểm Tra & Lưu</strong> — xong!
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li>
+                      Open{" "}
+                      <a
+                        href="https://aistudio.google.com/apikey"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[var(--arcana-gold-light)] underline"
+                      >
+                        Google AI Studio
+                      </a>{" "}
+                      and sign in with Gmail (free, no card needed).
+                    </li>
+                    <li>
+                      Click <strong className="text-[var(--arcana-ink)]">Create API key</strong> and choose the default project.
+                    </li>
+                    <li>
+                      Click <strong className="text-[var(--arcana-ink)]">Copy</strong> to copy the generated key.
+                    </li>
+                    <li>
+                      Paste it above and click <strong className="text-[var(--arcana-ink)]">Test & Save</strong> — done!
+                    </li>
+                  </>
                 )}
-                {availableModels.map((m) => (
-                  <option key={m.id} value={m.id} className="bg-[#0c0e17]">
-                    {m.id} — {m.displayName}
-                  </option>
-                ))}
-              </select>
-            ) : (
-              <Input
-                id="gemini-modal-model"
-                type="text"
-                value={draftModel}
-                onChange={(e) => setDraftModel(e.target.value)}
-                placeholder={DEFAULT_GEMINI_MODEL}
-                autoComplete="off"
-                spellCheck={false}
-                className="font-mono text-xs"
-              />
+              </ol>
             )}
           </div>
 
@@ -314,30 +339,13 @@ export function GeminiSettingsModal() {
             />
             <span>
               {isVi
-                ? "API key chỉ lưu trên trình duyệt của bạn (localStorage) — không an toàn tuyệt đối trên máy dùng chung. Hãy xóa key sau khi dùng xong."
-                : "Your API key is stored only in your browser (localStorage) — not fully secure on shared devices. Delete your key when done."}
+                ? "API key chỉ lưu trên trình duyệt này (localStorage). Nếu dùng máy công cộng, hãy bấm Xóa sau khi xem bài xong."
+                : "Your key is stored only in this browser (localStorage). Delete it when finished on a shared device."}
             </span>
           </div>
 
           <div className="flex flex-wrap items-center justify-between gap-2 pt-2">
             <div className="flex items-center gap-2">
-              <Button
-                type="button"
-                variant="outline"
-                size="sm"
-                onClick={handleTestConnection}
-                disabled={testing || !effectiveKey}
-              >
-                {testing ? (
-                  <Loader2
-                    className="h-3.5 w-3.5 animate-spin"
-                    aria-hidden="true"
-                  />
-                ) : (
-                  <PlugZap className="h-3.5 w-3.5" aria-hidden="true" />
-                )}
-                {isVi ? "Kiểm Tra & Tải Model" : "Test & Fetch Models"}
-              </Button>
               {hasSavedKey && (
                 <Button
                   type="button"
@@ -346,33 +354,46 @@ export function GeminiSettingsModal() {
                   onClick={handleClear}
                 >
                   <Trash2 className="h-3.5 w-3.5" aria-hidden="true" />
-                  {isVi ? "Xóa" : "Delete"}
+                  {isVi ? "Xóa Key" : "Delete Key"}
                 </Button>
               )}
-            </div>
-
-            <div className="flex items-center gap-2">
               <Link
                 href="/settings"
                 onClick={closeSettings}
-                className="inline-flex items-center gap-1 px-2 text-[11px] text-[var(--arcana-stone)] hover:text-[var(--arcana-gold-light)]"
+                className="text-[11px] text-[var(--arcana-stone)] hover:text-[var(--arcana-gold-light)]"
               >
-                <Settings2 className="h-3.5 w-3.5" aria-hidden="true" />
-                {isVi ? "Trang Cài Đặt" : "Full Page"}
+                {isVi ? "Xem hướng dẫn chi tiết" : "Full guide page"}
               </Link>
-              <Button type="submit" variant="gold" size="sm">
-                {savedFlash ? (
-                  <>
-                    <Check className="h-3.5 w-3.5" aria-hidden="true" />
-                    {isVi ? "Đã Lưu" : "Saved"}
-                  </>
-                ) : isVi ? (
-                  "Lưu"
-                ) : (
-                  "Save"
-                )}
-              </Button>
             </div>
+
+            <Button
+              type="submit"
+              variant="gold"
+              size="sm"
+              disabled={testing || !effectiveKey}
+            >
+              {testing ? (
+                <Loader2
+                  className="h-3.5 w-3.5 animate-spin"
+                  aria-hidden="true"
+                />
+              ) : savedFlash ? (
+                <Check className="h-3.5 w-3.5" aria-hidden="true" />
+              ) : (
+                <PlugZap className="h-3.5 w-3.5" aria-hidden="true" />
+              )}
+              {testing
+                ? isVi
+                  ? "Đang kiểm tra..."
+                  : "Testing..."
+                : savedFlash
+                ? isVi
+                  ? "Đã Lưu!"
+                  : "Saved!"
+                : isVi
+                ? "Kiểm Tra & Lưu"
+                : "Test & Save"}
+            </Button>
           </div>
         </form>
       </div>

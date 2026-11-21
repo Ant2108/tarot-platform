@@ -1266,7 +1266,7 @@ export async function fetchAvailableGeminiModels(options?: {
 export async function testGeminiConnection(
   locale: Locale = "en",
   signal?: AbortSignal,
-  overrides?: { apiKey?: string; model?: string }
+  overrides?: { apiKey?: string }
 ): Promise<GeminiConnectionTestResult> {
   const cfg = getGeminiConfig(overrides);
 
@@ -1323,19 +1323,16 @@ export async function testGeminiConnection(
 
     return {
       ok: true,
-      model: effectiveModel,
+      model: cfg.model,
       availableModels: models,
       selectedModelSupported: selectedSupported,
-      message: selectedSupported
-        ? locale === "vi"
-          ? `Kết nối thành công! Tìm thấy ${models.length} model khả dụng. Model đang chọn (${cfg.model}) được hỗ trợ.`
-          : `Connected! Found ${models.length} available models. Your selected model (${cfg.model}) is supported.`
-        : locale === "vi"
-        ? `API Key hợp lệ (tìm thấy ${models.length} model), nhưng model "${cfg.model}" không có trong danh sách. Đã tự động gợi ý "${effectiveModel}".`
-        : `API Key is valid (${models.length} models found), but "${cfg.model}" is not in your key's list. Switched suggestion to "${effectiveModel}".`,
+      message:
+        locale === "vi"
+          ? "Kết nối thành công! API Key của bạn đã sẵn sàng để giải bài Tarot bằng Gemini AI."
+          : "Connected! Your API Key is ready for AI Tarot readings.",
       diagnostic: {
         ...diagnostic,
-        model: effectiveModel,
+        model: cfg.model,
       },
     };
   } catch (err) {

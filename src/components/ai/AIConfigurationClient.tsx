@@ -6,16 +6,15 @@ import {
   AlertCircle,
   AlertTriangle,
   ArrowLeft,
+  BookOpen,
   Check,
   CheckCircle2,
-  Cpu,
   ExternalLink,
   Eye,
   EyeOff,
   KeyRound,
   Loader2,
   PlugZap,
-  RefreshCw,
   ShieldAlert,
   Sparkles,
   Trash2,
@@ -30,11 +29,7 @@ import {
   testGeminiConnection,
   type GeminiConnectionTestResult,
 } from "@/services/geminiService";
-import {
-  maskApiKey,
-  useAISettingsStore,
-  type AIProviderId,
-} from "@/store/ai-settings-store";
+import { maskApiKey, useAISettingsStore } from "@/store/ai-settings-store";
 import { useLocaleStore } from "@/store/locale-store";
 
 export function AIConfigurationClient() {
@@ -42,16 +37,11 @@ export function AIConfigurationClient() {
   const isVi = locale === "vi";
 
   const {
-    provider,
     apiKey,
-    model,
-    availableModels,
     connectionStatus,
     lastTestedAt,
     lastError,
-    setProvider,
     setApiKey,
-    setModel,
     setConnectionResult,
     clearApiKey,
   } = useAISettingsStore();
@@ -60,18 +50,11 @@ export function AIConfigurationClient() {
   const [isEditingKey, setIsEditingKey] = useState(!hasSavedKey);
   const [newKeyInput, setNewKeyInput] = useState("");
   const [showKeyInput, setShowKeyInput] = useState(false);
-  const [selectedModel, setSelectedModel] = useState(
-    model || DEFAULT_GEMINI_MODEL
-  );
   const [testing, setTesting] = useState(false);
   const [savedFeedback, setSavedFeedback] = useState(false);
   const [testResult, setTestResult] =
     useState<GeminiConnectionTestResult | null>(null);
   const abortRef = useRef<AbortController | null>(null);
-
-  useEffect(() => {
-    setSelectedModel(model || DEFAULT_GEMINI_MODEL);
-  }, [model]);
 
   useEffect(() => {
     if (!hasSavedKey) {
@@ -89,8 +72,10 @@ export function AIConfigurationClient() {
     ? newKeyInput.trim() || apiKey.trim()
     : apiKey.trim();
 
-  const handleTestAndFetchModels = async () => {
-    if (testing) return;
+  const handleTestAndSave = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    if (testing || !effectiveKeyForAction) return;
+
     abortRef.current?.abort();
     const controller = new AbortController();
     abortRef.current = controller;
@@ -101,7 +86,6 @@ export function AIConfigurationClient() {
     try {
       const result = await testGeminiConnection(locale, controller.signal, {
         apiKey: effectiveKeyForAction,
-        model: selectedModel,
       });
       if (controller.signal.aborted) return;
 
@@ -114,13 +98,12 @@ export function AIConfigurationClient() {
           setShowKeyInput(false);
           setIsEditingKey(false);
         }
-        setSelectedModel(result.model);
-        setModel(result.model);
         setConnectionResult({
           status: "connected",
           error: null,
-          models: result.availableModels,
         });
+        setSavedFeedback(true);
+        setTimeout(() => setSavedFeedback(false), 2200);
       } else {
         setConnectionResult({
           status: "error",
@@ -130,19 +113,6 @@ export function AIConfigurationClient() {
     } finally {
       setTesting(false);
     }
-  };
-
-  const handleSaveConfig = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (isEditingKey && newKeyInput.trim()) {
-      setApiKey(newKeyInput.trim());
-      setNewKeyInput("");
-      setShowKeyInput(false);
-      setIsEditingKey(false);
-    }
-    setModel(selectedModel.trim() || DEFAULT_GEMINI_MODEL);
-    setSavedFeedback(true);
-    setTimeout(() => setSavedFeedback(false), 2000);
   };
 
   const handleDeleteKey = () => {
@@ -161,10 +131,10 @@ export function AIConfigurationClient() {
           label: isVi
             ? hasSavedKey
               ? "Đã lưu (Chưa kiểm tra)"
-              : "Chưa cấu hình"
+              : "Chưa kết nối"
             : hasSavedKey
             ? "Saved (Untested)"
-            : "Not Configured",
+            : "Not Connected",
         }
       : connectionStatus === "connected"
       ? {
@@ -175,6 +145,44 @@ export function AIConfigurationClient() {
           tone: "violet" as const,
           label: isVi ? "Lỗi kết nối" : "Connection Error",
         };
+
+  const guideSteps = isVi
+    ? [
+        {
+          title: "Mở Google AI Studio & đăng nhập Gmail",
+          desc: "Bấm nút \"Mở Google AI Studio\" bên dưới và đăng nhập bằng tài khoản Google (Gmail) bình thường của bạn. Không cần thẻ ngân hàng.",
+        },
+        {
+          title: "Bấm nút \"Create API key\" (Tạo khóa API)",
+          desc: "Ở góc trên bên phải trang Google AI Studio, bấm \"Create API key\" → chọn dự án mặc định (hoặc tạo dự án mới theo gợi ý sẵn).",
+        },
+        {
+          title: "Sao chép (Copy) mã API Key vừa tạo",
+          desc: "Một chuỗi ký tự sẽ hiện ra (thường bắt đầu bằng AIza... hoặc AQ...). Hãy bấm nút Copy để sao chép nguyên vẹn.",
+        },
+        {
+          title: "Dán vào ô bên trên & bấm \"Kiểm Tra & Lưu\"",
+          desc: "Quay lại trang này, dán mã vào ô Gemini API Key rồi bấm \"Kiểm Tra & Lưu\". Hệ thống tự chọn sẵn model nhanh và miễn phí nhất cho bạn!",
+        },
+      ]
+    : [
+        {
+          title: "Open Google AI Studio & sign in with Gmail",
+          desc: "Click \"Open Google AI Studio\" below and sign in with your regular Google account. No credit card is required.",
+        },
+        {
+          title: "Click \"Create API key\"",
+          desc: "In the top-right corner of Google AI Studio, click \"Create API key\" and pick the default project (or create a new one).",
+        },
+        {
+          title: "Copy your new API key",
+          desc: "Copy the generated string (usually starts with AIza... or AQ...).",
+        },
+        {
+          title: "Paste above & click \"Test & Save\"",
+          desc: "Return here, paste your key into the box above, and click \"Test & Save\". The fastest free-tier model is pre-configured automatically!",
+        },
+      ];
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
@@ -190,16 +198,16 @@ export function AIConfigurationClient() {
           <div className="mt-3 flex items-center gap-2 text-[var(--arcana-gold)]">
             <Sparkles className="h-4 w-4" aria-hidden="true" />
             <span className="text-xs font-medium uppercase tracking-[0.2em]">
-              {isVi ? "Bring Your Own Key (BYOK)" : "Bring Your Own Key (BYOK)"}
+              Google Gemini · {DEFAULT_GEMINI_MODEL}
             </span>
           </div>
           <h1 className="mt-2 font-editorial text-4xl font-semibold text-[var(--arcana-ink)] sm:text-5xl">
-            {isVi ? "Cấu Hình AI Tarot Reader" : "AI Tarot Reader Configuration"}
+            {isVi ? "Kết Nối AI Tarot Reader" : "Connect AI Tarot Reader"}
           </h1>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[var(--arcana-stone)]">
             {isVi
-              ? "Mỗi người dùng sử dụng Gemini API Key của riêng mình. Website hoạt động 100% trên trình duyệt, không có máy chủ trung gian và không dùng chung API Key."
-              : "Every visitor uses their own Google Gemini API Key. This website runs 100% in your browser with no backend server and no shared application API key."}
+              ? "Chỉ cần dán Gemini API Key miễn phí của bạn một lần duy nhất. Website tự động dùng sẵn model nhanh và ổn định nhất (Gemini 3.5 Flash-Lite), không cần chỉnh thông số kỹ thuật."
+              : "Just paste your free Google Gemini API Key once. The app automatically uses our fastest free-tier model (Gemini 3.5 Flash-Lite) — no technical setup needed."}
           </p>
         </div>
 
@@ -217,337 +225,238 @@ export function AIConfigurationClient() {
         </div>
       </div>
 
-      <form onSubmit={handleSaveConfig} className="space-y-6">
-        {/* 1. AI Provider Selection */}
-        <Panel className="p-6 sm:p-7">
-          <div className="flex items-center gap-2 text-[var(--arcana-gold)]">
-            <Cpu className="h-4 w-4" aria-hidden="true" />
-            <h2 className="text-xs font-semibold uppercase tracking-[0.18em]">
-              {isVi ? "1. Nhà Cung Cấp AI" : "1. AI Provider"}
-            </h2>
-          </div>
-
-          <div className="mt-4 grid gap-3 sm:grid-cols-2">
-            <button
-              type="button"
-              onClick={() => setProvider("google-gemini" as AIProviderId)}
-              className={`rounded-sm border p-4 text-left transition-colors cursor-pointer ${
-                provider === "google-gemini"
-                  ? "border-[var(--arcana-gold)] bg-[rgba(212,180,117,0.1)]"
-                  : "border-white/10 bg-white/[0.02] hover:border-white/20"
-              }`}
-            >
-              <div className="flex items-center justify-between">
-                <span className="font-editorial text-xl font-semibold text-[var(--arcana-ink)]">
-                  Google Gemini
-                </span>
-                <Badge tone="gold">{isVi ? "Đang chọn" : "Selected"}</Badge>
+      <div className="space-y-6">
+        {/* 1. API Key Input & 1-Click Test + Save */}
+        <form onSubmit={handleTestAndSave}>
+          <Panel className="p-6 sm:p-7">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div className="flex items-center gap-2 text-[var(--arcana-gold)]">
+                <KeyRound className="h-4 w-4" aria-hidden="true" />
+                <h2 className="text-xs font-semibold uppercase tracking-[0.18em]">
+                  {isVi ? "Gemini API Key Của Bạn" : "Your Gemini API Key"}
+                </h2>
               </div>
-              <p className="mt-1 text-xs leading-relaxed text-[var(--arcana-stone)]">
+              <Badge tone="muted">
                 {isVi
-                  ? "Gọi trực tiếp Google Gemini API từ trình duyệt của bạn bằng API Key cá nhân."
-                  : "Direct browser calls to Google Gemini API using your personal API key."}
-              </p>
-            </button>
-
-            <div className="rounded-sm border border-dashed border-white/10 bg-white/[0.01] p-4 opacity-70">
-              <div className="flex items-center justify-between">
-                <span className="font-editorial text-xl font-semibold text-[var(--arcana-stone)]">
-                  {isVi ? "Chế Độ Cục Bộ (Offline)" : "Offline Fallback Engine"}
-                </span>
-                <Badge tone="muted">{isVi ? "Luôn sẵn sàng" : "Always Ready"}</Badge>
-              </div>
-              <p className="mt-1 text-xs leading-relaxed text-[var(--arcana-stone)]">
-                {isVi
-                  ? "Tự động kích hoạt khi chưa có API Key hoặc khi quota Gemini của bạn đã hết."
-                  : "Automatically available whenever no API key is configured or your Gemini quota is exhausted."}
-              </p>
+                  ? "Model mặc định: Gemini 3.5 Flash-Lite"
+                  : "Auto Model: Gemini 3.5 Flash-Lite"}
+              </Badge>
             </div>
-          </div>
-        </Panel>
 
-        {/* 2. API Key Management (Masked after saving) */}
-        <Panel className="p-6 sm:p-7">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <div className="flex items-center gap-2 text-[var(--arcana-gold)]">
-              <KeyRound className="h-4 w-4" aria-hidden="true" />
-              <h2 className="text-xs font-semibold uppercase tracking-[0.18em]">
-                {isVi ? "2. Gemini API Key Cá Nhân" : "2. Your Personal Gemini API Key"}
-              </h2>
-            </div>
-            <a
-              href="https://aistudio.google.com/apikey"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-xs text-[var(--arcana-gold-light)] hover:underline"
-            >
-              {isVi ? "Tạo API Key tại Google AI Studio" : "Create API Key in Google AI Studio"}
-              <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-            </a>
-          </div>
-
-          {hasSavedKey && !isEditingKey ? (
-            <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-sm border border-[rgba(212,180,117,0.28)] bg-[rgba(212,180,117,0.06)] px-4 py-3.5">
-              <div>
-                <p className="text-[11px] uppercase tracking-wider text-[var(--arcana-stone)]">
-                  {isVi ? "API Key đang lưu (đã che bảo mật)" : "Saved API Key (Masked)"}
-                </p>
-                <p className="mt-0.5 font-mono text-sm text-[var(--arcana-gold-light)]">
-                  {maskApiKey(apiKey)}
-                </p>
+            {hasSavedKey && !isEditingKey ? (
+              <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-sm border border-[rgba(212,180,117,0.28)] bg-[rgba(212,180,117,0.06)] px-4 py-3.5">
+                <div>
+                  <p className="text-[11px] uppercase tracking-wider text-[var(--arcana-stone)]">
+                    {isVi
+                      ? "API Key đang lưu (đã che bảo mật)"
+                      : "Saved API Key (Masked)"}
+                  </p>
+                  <p className="mt-0.5 font-mono text-sm text-[var(--arcana-gold-light)]">
+                    {maskApiKey(apiKey)}
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <Button
+                    type="button"
+                    size="sm"
+                    variant="outline"
+                    onClick={() => {
+                      setNewKeyInput("");
+                      setShowKeyInput(false);
+                      setIsEditingKey(true);
+                    }}
+                  >
+                    {isVi ? "Đổi Key" : "Update Key"}
+                  </Button>
+                  <Button
+                    type="button"
+                    size="sm"
+                    variant="outline"
+                    onClick={handleDeleteKey}
+                  >
+                    <Trash2 className="h-3.5 w-3.5" aria-hidden="true" />
+                    {isVi ? "Xóa Key" : "Delete Key"}
+                  </Button>
+                </div>
               </div>
-              <div className="flex flex-wrap gap-2">
-                <Button
-                  type="button"
-                  size="sm"
-                  variant="outline"
-                  onClick={() => {
-                    setNewKeyInput("");
-                    setShowKeyInput(false);
-                    setIsEditingKey(true);
-                  }}
-                >
-                  {isVi ? "Đổi Key" : "Update Key"}
-                </Button>
-                <Button
-                  type="button"
-                  size="sm"
-                  variant="outline"
-                  onClick={handleDeleteKey}
-                >
-                  <Trash2 className="h-3.5 w-3.5" aria-hidden="true" />
-                  {isVi ? "Xóa Key" : "Delete Key"}
-                </Button>
-              </div>
-            </div>
-          ) : (
-            <div className="mt-4 space-y-3">
-              <div className="relative">
-                <label htmlFor="settings-gemini-key" className="sr-only">
-                  Gemini API Key
-                </label>
-                <Input
-                  id="settings-gemini-key"
-                  type={showKeyInput ? "text" : "password"}
-                  value={newKeyInput}
-                  onChange={(e) => setNewKeyInput(e.target.value)}
-                  placeholder="AIzaSy..."
-                  autoComplete="off"
-                  spellCheck={false}
-                  className="pr-10 font-mono text-xs"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowKeyInput((v) => !v)}
-                  aria-label={showKeyInput ? "Hide API key" : "Show API key"}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[var(--arcana-stone)] hover:text-[var(--arcana-ink)] cursor-pointer"
-                >
-                  {showKeyInput ? (
-                    <EyeOff className="h-4 w-4" aria-hidden="true" />
-                  ) : (
-                    <Eye className="h-4 w-4" aria-hidden="true" />
-                  )}
-                </button>
-              </div>
-              {hasSavedKey && (
-                <button
-                  type="button"
-                  onClick={() => {
-                    setNewKeyInput("");
-                    setIsEditingKey(false);
-                  }}
-                  className="text-xs text-[var(--arcana-stone)] hover:text-[var(--arcana-ink)] cursor-pointer"
-                >
-                  {isVi ? "Hủy đổi key (giữ key hiện tại)" : "Cancel update (keep saved key)"}
-                </button>
-              )}
-            </div>
-          )}
-
-          {/* Test Connection & Fetch Models Action */}
-          <div className="mt-4 flex flex-wrap items-center gap-3">
-            <Button
-              type="button"
-              variant="gold"
-              size="sm"
-              onClick={handleTestAndFetchModels}
-              disabled={testing || !effectiveKeyForAction}
-            >
-              {testing ? (
-                <Loader2 className="h-3.5 w-3.5 animate-spin" aria-hidden="true" />
-              ) : (
-                <PlugZap className="h-3.5 w-3.5" aria-hidden="true" />
-              )}
-              {isVi
-                ? "Kiểm Tra Kết Nối & Tải Danh Sách Model"
-                : "Test Connection & Fetch Available Models"}
-            </Button>
-
-            {hasSavedKey && (
-              <Button
-                type="button"
-                variant="outline"
-                size="sm"
-                onClick={handleDeleteKey}
-              >
-                <Trash2 className="h-3.5 w-3.5" aria-hidden="true" />
-                {isVi ? "Xóa API Key khỏi trình duyệt" : "Remove API Key"}
-              </Button>
-            )}
-          </div>
-
-          {/* Connection Feedback */}
-          {testResult && (
-            <div
-              className={`mt-4 rounded-sm border p-3.5 text-xs ${
-                testResult.ok
-                  ? "border-emerald-400/30 bg-emerald-500/10 text-emerald-200"
-                  : "border-amber-400/30 bg-amber-500/10 text-amber-200"
-              }`}
-            >
-              <div className="flex items-start gap-2">
-                {testResult.ok ? (
-                  <CheckCircle2
-                    className="mt-0.5 h-4 w-4 shrink-0"
-                    aria-hidden="true"
+            ) : (
+              <div className="mt-4 space-y-3">
+                <div className="relative">
+                  <label htmlFor="settings-gemini-key" className="sr-only">
+                    Gemini API Key
+                  </label>
+                  <Input
+                    id="settings-gemini-key"
+                    type={showKeyInput ? "text" : "password"}
+                    value={newKeyInput}
+                    onChange={(e) => setNewKeyInput(e.target.value)}
+                    placeholder={
+                      isVi
+                        ? "Dán Gemini API Key của bạn vào đây (AIza...)"
+                        : "Paste your Gemini API Key here (AIza...)"
+                    }
+                    autoComplete="off"
+                    spellCheck={false}
+                    className="pr-10 font-mono text-xs"
                   />
-                ) : (
-                  <AlertCircle
-                    className="mt-0.5 h-4 w-4 shrink-0"
-                    aria-hidden="true"
-                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowKeyInput((v) => !v)}
+                    aria-label={showKeyInput ? "Hide API key" : "Show API key"}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[var(--arcana-stone)] hover:text-[var(--arcana-ink)] cursor-pointer"
+                  >
+                    {showKeyInput ? (
+                      <EyeOff className="h-4 w-4" aria-hidden="true" />
+                    ) : (
+                      <Eye className="h-4 w-4" aria-hidden="true" />
+                    )}
+                  </button>
+                </div>
+                {hasSavedKey && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setNewKeyInput("");
+                      setIsEditingKey(false);
+                    }}
+                    className="text-xs text-[var(--arcana-stone)] hover:text-[var(--arcana-ink)] cursor-pointer"
+                  >
+                    {isVi
+                      ? "Hủy đổi key (giữ key hiện tại)"
+                      : "Cancel update (keep saved key)"}
+                  </button>
                 )}
-                <span className="leading-relaxed">{testResult.message}</span>
               </div>
-              <GeminiDiagnosticPanel diagnostic={testResult.diagnostic} />
-            </div>
-          )}
+            )}
 
-          {!testResult && connectionStatus === "error" && lastError && (
-            <div className="mt-4 flex items-start gap-2 rounded-sm border border-amber-400/30 bg-amber-500/10 p-3.5 text-xs text-amber-200">
-              <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
-              <span>{lastError}</span>
-            </div>
-          )}
-        </Panel>
-
-        {/* 3. Model Selection */}
-        <Panel className="p-6 sm:p-7">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <div className="flex items-center gap-2 text-[var(--arcana-gold)]">
-              <Sparkles className="h-4 w-4" aria-hidden="true" />
-              <h2 className="text-xs font-semibold uppercase tracking-[0.18em]">
-                {isVi ? "3. Chọn Model Gemini" : "3. Select Gemini Model"}
-              </h2>
-            </div>
-            {hasSavedKey && (
-              <button
-                type="button"
-                disabled={testing}
-                onClick={handleTestAndFetchModels}
-                className="inline-flex items-center gap-1 text-xs text-[var(--arcana-stone)] hover:text-[var(--arcana-gold-light)] cursor-pointer disabled:opacity-50"
+            <div className="mt-4 flex flex-wrap items-center gap-3">
+              <Button
+                type="submit"
+                variant="gold"
+                disabled={testing || !effectiveKeyForAction}
               >
-                <RefreshCw
-                  className={`h-3 w-3 ${testing ? "animate-spin" : ""}`}
+                {testing ? (
+                  <Loader2
+                    className="h-4 w-4 animate-spin"
+                    aria-hidden="true"
+                  />
+                ) : savedFeedback ? (
+                  <Check className="h-4 w-4" aria-hidden="true" />
+                ) : (
+                  <PlugZap className="h-4 w-4" aria-hidden="true" />
+                )}
+                {testing
+                  ? isVi
+                    ? "Đang kiểm tra kết nối..."
+                    : "Testing connection..."
+                  : savedFeedback
+                  ? isVi
+                    ? "Đã Kết Nối & Lưu!"
+                    : "Connected & Saved!"
+                  : isVi
+                  ? "Kiểm Tra & Lưu API Key"
+                  : "Test & Save API Key"}
+              </Button>
+
+              {hasSavedKey && connectionStatus === "connected" && (
+                <Button asChild variant="outline">
+                  <Link href="/reading">
+                    {isVi ? "Bắt Đầu Trải Bài Ngay" : "Start Reading Now"}
+                  </Link>
+                </Button>
+              )}
+            </div>
+
+            {testResult && (
+              <div
+                className={`mt-4 rounded-sm border p-3.5 text-xs ${
+                  testResult.ok
+                    ? "border-emerald-400/30 bg-emerald-500/10 text-emerald-200"
+                    : "border-amber-400/30 bg-amber-500/10 text-amber-200"
+                }`}
+              >
+                <div className="flex items-start gap-2">
+                  {testResult.ok ? (
+                    <CheckCircle2
+                      className="mt-0.5 h-4 w-4 shrink-0"
+                      aria-hidden="true"
+                    />
+                  ) : (
+                    <AlertCircle
+                      className="mt-0.5 h-4 w-4 shrink-0"
+                      aria-hidden="true"
+                    />
+                  )}
+                  <span className="leading-relaxed">{testResult.message}</span>
+                </div>
+                <GeminiDiagnosticPanel diagnostic={testResult.diagnostic} />
+              </div>
+            )}
+
+            {!testResult && connectionStatus === "error" && lastError && (
+              <div className="mt-4 flex items-start gap-2 rounded-sm border border-amber-400/30 bg-amber-500/10 p-3.5 text-xs text-amber-200">
+                <AlertTriangle
+                  className="mt-0.5 h-4 w-4 shrink-0"
                   aria-hidden="true"
                 />
-                {isVi ? "Tải lại danh sách model" : "Refresh model list"}
-              </button>
+                <span>{lastError}</span>
+              </div>
             )}
-          </div>
+          </Panel>
+        </form>
 
-          <p className="mt-2 text-xs text-[var(--arcana-stone)]">
-            {isVi
-              ? "Tất cả tính năng AI (Luận Giải 3 Lá & Hỏi Đáp Tarot) đều sử dụng duy nhất model bạn chọn dưới đây."
-              : "All AI features (Three-Card Reading & Follow-Up Chat) use the single model selected below."}
-          </p>
-
-          {availableModels.length > 0 ? (
-            <div className="mt-4 space-y-3">
-              <label
-                htmlFor="settings-model-select"
-                className="block text-xs font-medium text-[var(--arcana-ink)]"
-              >
+        {/* 2. Beginner-Friendly 4-Step Guide to Get a Free Gemini API Key */}
+        <Panel className="p-6 sm:p-7">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-center gap-2 text-[var(--arcana-gold)]">
+              <BookOpen className="h-4 w-4" aria-hidden="true" />
+              <h2 className="text-xs font-semibold uppercase tracking-[0.18em]">
                 {isVi
-                  ? `Model được API Key của bạn hỗ trợ (${availableModels.length})`
-                  : `Available Models Supported by Your Key (${availableModels.length})`}
-              </label>
-              <select
-                id="settings-model-select"
-                value={selectedModel}
-                onChange={(e) => setSelectedModel(e.target.value)}
-                className="flex h-11 w-full rounded-sm border border-[rgba(212,180,117,0.28)] bg-[rgba(7,8,13,0.85)] px-3 py-2 font-mono text-xs text-[var(--arcana-ink)] focus:border-[var(--arcana-gold)] focus:outline-none"
-              >
-                {!availableModels.some((m) => m.id === selectedModel) && (
-                  <option value={selectedModel} className="bg-[#0c0e17]">
-                    {selectedModel}
-                  </option>
-                )}
-                {availableModels.map((m) => (
-                  <option key={m.id} value={m.id} className="bg-[#0c0e17]">
-                    {m.id} — {m.displayName}
-                  </option>
-                ))}
-              </select>
-
-              {(() => {
-                const activeMeta = availableModels.find(
-                  (m) => m.id === selectedModel
-                );
-                if (!activeMeta?.description) return null;
-                return (
-                  <p className="rounded-sm border border-white/10 bg-white/[0.02] px-3.5 py-2.5 text-xs leading-relaxed text-[var(--arcana-stone)]">
-                    <span className="font-medium text-[var(--arcana-ink)]">
-                      {activeMeta.displayName}:{" "}
-                    </span>
-                    {activeMeta.description}
-                  </p>
-                );
-              })()}
+                  ? "Hướng Dẫn Lấy Gemini API Key Miễn Phí (Chỉ Mất 1 Phút)"
+                  : "How to Get Your Free Gemini API Key (Takes 1 Minute)"}
+              </h2>
             </div>
-          ) : (
-            <div className="mt-4 space-y-2">
-              <label
-                htmlFor="settings-model-manual"
-                className="block text-xs font-medium text-[var(--arcana-ink)]"
+            <Button asChild size="sm" variant="gold">
+              <a
+                href="https://aistudio.google.com/apikey"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                {isVi
-                  ? "Model ID hiện tại (bấm Kiểm Tra Kết Nối để tải danh sách model thực tế)"
-                  : "Current Model ID (click Test Connection to fetch your key's live model list)"}
-              </label>
-              <Input
-                id="settings-model-manual"
-                type="text"
-                value={selectedModel}
-                onChange={(e) => setSelectedModel(e.target.value)}
-                placeholder={DEFAULT_GEMINI_MODEL}
-                className="font-mono text-xs"
-              />
-            </div>
-          )}
-
-          <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-5">
-            <span className="text-xs text-[var(--arcana-stone)]">
-              {isVi
-                ? "Cấu hình được lưu cục bộ trên trình duyệt này."
-                : "Configuration is saved locally in this browser."}
-            </span>
-            <Button type="submit" variant="gold">
-              {savedFeedback ? (
-                <>
-                  <Check className="h-4 w-4" aria-hidden="true" />
-                  {isVi ? "Đã Lưu Cấu Hình" : "Configuration Saved"}
-                </>
-              ) : isVi ? (
-                "Lưu Cấu Hình"
-              ) : (
-                "Save Configuration"
-              )}
+                {isVi ? "Mở Google AI Studio" : "Open Google AI Studio"}
+                <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+              </a>
             </Button>
           </div>
+
+          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+            {guideSteps.map((step, index) => (
+              <div
+                key={step.title}
+                className="rounded-sm border border-white/10 bg-white/[0.02] p-4"
+              >
+                <div className="flex items-center gap-2.5">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[rgba(212,180,117,0.5)] bg-[rgba(212,180,117,0.12)] font-mono text-xs font-semibold text-[var(--arcana-gold-light)]">
+                    {index + 1}
+                  </span>
+                  <h3 className="text-sm font-medium text-[var(--arcana-ink)]">
+                    {step.title}
+                  </h3>
+                </div>
+                <p className="mt-2 pl-8 text-xs leading-relaxed text-[var(--arcana-stone)]">
+                  {step.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-4 text-xs text-[var(--arcana-stone)]">
+            {isVi
+              ? "Mẹo nhỏ: Nếu bạn chưa muốn tạo API Key, bạn vẫn có thể trải bài Tarot bình thường bằng chế độ Giải Cục Bộ (Offline) miễn phí ngay trên web."
+              : "Tip: Don't want to create an API key right now? You can still enjoy full Tarot readings immediately using the built-in Offline Reading mode."}
+          </p>
         </Panel>
 
-        {/* 4. Honest Browser Storage Security Notice */}
+        {/* 3. Honest Browser Storage Security Notice */}
         <Panel className="border-[rgba(212,180,117,0.22)] bg-[rgba(212,180,117,0.03)] p-5 sm:p-6">
           <div className="flex items-start gap-3">
             <ShieldAlert
@@ -557,18 +466,18 @@ export function AIConfigurationClient() {
             <div className="space-y-1.5 text-xs leading-relaxed text-[var(--arcana-stone)]">
               <p className="font-medium text-[var(--arcana-ink)]">
                 {isVi
-                  ? "Lưu ý bảo mật về lưu trữ trình duyệt (localStorage)"
-                  : "Browser Storage Security Notice (localStorage)"}
+                  ? "Lưu ý bảo mật về API Key trên trình duyệt"
+                  : "Browser Storage Security Notice"}
               </p>
               <p>
                 {isVi
-                  ? "API Key của bạn chỉ được lưu trong trình duyệt này và gửi trực tiếp tới Google Gemini API — không bao giờ gửi về máy chủ của website. Tuy nhiên, lưu trữ trên trình duyệt (localStorage) không an toàn tuyệt đối (có thể bị truy cập bởi tiện ích mở rộng độc hại hoặc người dùng chung máy). Hãy luôn bấm \"Xóa Key\" nếu bạn đang dùng máy tính công cộng hoặc thiết bị dùng chung."
-                  : "Your API Key is stored only in this browser and sent directly to Google's Gemini API — never to any website-owned server. However, browser storage (localStorage) is not completely secure (malicious browser extensions or anyone with access to this browser profile could read it). Always click \"Delete Key\" if you are on a shared or public device."}
+                  ? "API Key của bạn chỉ được lưu ngay trên trình duyệt này (localStorage) và gửi thẳng tới Google Gemini — không qua máy chủ trung gian. Tuy nhiên, nếu bạn đang dùng máy tính công cộng hoặc điện thoại dùng chung, hãy bấm \"Xóa Key\" sau khi xem bài xong."
+                  : "Your API Key is saved only in this browser (localStorage) and sent directly to Google Gemini — never to any third-party server. However, browser storage is not completely secure on shared devices, so always click \"Delete Key\" when using a public computer."}
               </p>
             </div>
           </div>
         </Panel>
-      </form>
+      </div>
     </div>
   );
 }

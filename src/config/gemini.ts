@@ -34,17 +34,15 @@ export interface ResolvedGeminiConfig {
 
 export function getGeminiConfig(overrides?: {
   apiKey?: string;
-  model?: string;
 }): ResolvedGeminiConfig {
   const storeState = useAISettingsStore.getState();
   const apiKey = (overrides?.apiKey ?? storeState.apiKey).trim();
-  const model =
-    (overrides?.model ?? storeState.model).trim() || DEFAULT_GEMINI_MODEL;
 
   return {
     provider: "google-gemini",
     apiKey,
-    model,
+    // Fixed fast free-tier model for all users (no complex model selection needed)
+    model: DEFAULT_GEMINI_MODEL,
     apiVersion: GEMINI_API_VERSION,
     apiBaseUrl: GEMINI_API_BASE_URL,
   };

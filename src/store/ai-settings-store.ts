@@ -114,7 +114,7 @@ export const useAISettingsStore = create<AISettingsState>()(
     }),
     {
       name: "vespera-gemini-settings-v1",
-      version: 5,
+      version: 6,
       onRehydrateStorage: () => (state) => {
         state?.setHasHydrated(true);
       },
@@ -125,10 +125,9 @@ export const useAISettingsStore = create<AISettingsState>()(
         return {
           provider: "google-gemini" as AIProviderId,
           apiKey: cleanKey,
-          model: sanitizeStoredModel(state.model),
-          availableModels: Array.isArray(state.availableModels)
-            ? state.availableModels
-            : [],
+          // Always reset stored model to "" so everyone uses DEFAULT_GEMINI_MODEL (gemini-3.5-flash-lite)
+          model: "",
+          availableModels: [],
           connectionStatus: cleanKey
             ? state.connectionStatus ?? "unconfigured"
             : "unconfigured",
