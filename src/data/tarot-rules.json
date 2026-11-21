@@ -1,0 +1,100 @@
+{
+  "source": "Tổng hợp kiến thức về Tarot (pg. 10–17, 24–36, 164–167)",
+  "numberStages": {
+    "early": "Các lá Ace, 2, 3 cho thấy hoàn cảnh đang ở giai đoạn khởi đầu (pg. 17).",
+    "middle": "Các lá 4, 5, 6 cho thấy vấn đề đang ở giai đoạn giữa—đang hình thành cơ cấu, thử thách hoặc tái cân bằng (pg. 17).",
+    "late": "Các lá 7, 8, 9 cho thấy bạn đã bước gần tới việc giải quyết vấn đề (pg. 17).",
+    "completion": "Các lá 10 chỉ ra kết quả cuối cùng hoặc sự khép lại của một chu trình (pg. 17)."
+  },
+  "courtRule": "Xuất hiện nhiều lá Hoàng Gia (Page, Knight, Queen, King) cho thấy có nhiều người đang liên quan hoặc tác động tới tình huống hiện tại (pg. 17).",
+  "speedRule": "Lá Knight hoặc Eight of Wands cho thấy tình huống đang diễn biến rất nhanh (pg. 17).",
+  "loveSwordsWarning": "Trong trải bài tình cảm, nếu xuất hiện nhiều lá Swords mà thiếu Cups (đặc biệt kèm lá số 4), tổng thể mối quan hệ dễ có mâu thuẫn lý trí và rơi vào trì trệ (pg. 17).",
+  "topLoveCards": [
+    "The Lovers",
+    "Two of Cups",
+    "Ten of Cups",
+    "Four of Wands",
+    "Ace of Cups",
+    "Knight of Cups",
+    "The Empress",
+    "The Emperor",
+    "The Hierophant"
+  ],
+  "topTravelCards": [
+    "The World",
+    "Knight of Pentacles",
+    "Eight of Wands",
+    "Three of Wands",
+    "Two of Wands",
+    "Six of Swords",
+    "The Fool",
+    "The Chariot",
+    "Page of Swords",
+    "Knight of Wands"
+  ],
+  "pairCombinations": [
+    {
+      "cards": [
+        "The Fool",
+        "The Devil"
+      ],
+      "note": "The Fool + The Devil (pg. 24): Cảnh báo tạo niềm vui bằng sự mạo hiểm thái quá, lừa đảo hoặc rời bỏ mối quan hệ ổn định để đi theo lựa chọn thiếu an toàn."
+    },
+    {
+      "cards": [
+        "The Fool",
+        "The Magician"
+      ],
+      "note": "The Fool + The Magician (pg. 24, 30): Nếu cùng chỉ một người, đây là cơ hội tuyệt vời để phá vỡ mơ mộng và biến tài năng thành thành công thực tế; nếu khác người, cần cảnh giác bị dụ dỗ."
+    },
+    {
+      "cards": [
+        "The Fool",
+        "The Sun"
+      ],
+      "note": "The Fool + The Sun (pg. 24): Kết hợp rất đẹp, truyền cảm hứng mạnh mẽ cho mục tiêu và mang lại kết quả hữu hình."
+    },
+    {
+      "cards": [
+        "The Fool",
+        "The Star"
+      ],
+      "note": "The Fool + The Star (pg. 24): Truyền cảm hứng sâu sắc, nuôi dưỡng niềm tin và tầm nhìn sáng rõ."
+    },
+    {
+      "cards": [
+        "The Fool",
+        "The Moon"
+      ],
+      "note": "The Fool + The Moon (pg. 24): Khơi gợi trực giác và cảm xúc sâu sắc, nhưng cần tỉnh táo giữa mơ và thực."
+    },
+    {
+      "cards": [
+        "The Magician",
+        "The Sun"
+      ],
+      "note": "The Magician + The Sun (pg. 30): Tỏa ra nguồn năng lượng làm việc khổng lồ, nhưng cần tránh khuynh hướng ích kỷ."
+    },
+    {
+      "cards": [
+        "The Magician",
+        "The Moon"
+      ],
+      "note": "The Magician + The Moon (pg. 30): Ham muốn mạnh có thể che mắt những gì bạn đang có—cẩn trọng cái giá phải trả."
+    },
+    {
+      "cards": [
+        "The Magician",
+        "Temperance"
+      ],
+      "note": "The Magician + Temperance (pg. 30): Sự kết hợp hài hòa, bạn nhiệt tình giúp đỡ người khác nhưng nhớ giữ cân bằng cho chính mình."
+    },
+    {
+      "cards": [
+        "The Magician",
+        "Three of Wands"
+      ],
+      "note": "The Magician + Three of Wands (pg. 30): Rất thuận lợi—báo hiệu một thành công mới nối tiếp thành công hiện tại."
+    }
+  ]
+}

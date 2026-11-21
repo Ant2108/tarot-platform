@@ -1,26 +1,92 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--arcana-bg);
+  --color-foreground: var(--arcana-ink);
+  --color-surface: var(--arcana-navy);
+  --color-surface-elevated: var(--arcana-panel);
+  --color-gold: var(--arcana-gold);
+  --color-gold-soft: var(--arcana-gold-light);
+  --color-celestial: var(--arcana-violet);
+  --color-muted: var(--arcana-stone);
+  --color-border-subtle: var(--arcana-hairline);
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-montserrat), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --arcana-bg: #07080d;
+  --arcana-navy: #0c101d;
+  --arcana-panel: #121829;
+  --arcana-ink: #f4efe6;
+  --arcana-stone: #a39d91;
+  --arcana-gold: #d4b475;
+  --arcana-gold-light: #e7d1a3;
+  --arcana-violet: #6e5c8e;
+  --arcana-hairline: rgba(212, 180, 117, 0.17);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--arcana-bg);
+  color: var(--arcana-ink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--arcana-bg);
+  color: var(--arcana-ink);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-editorial {
+  font-family: var(--font-serif);
+  letter-spacing: -0.012em;
+}
+
+.celestial-backdrop {
+  background-image: radial-gradient(
+      ellipse 70% 45% at 22% 10%,
+      rgba(110, 92, 142, 0.14) 0%,
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 55% 40% at 84% 6%,
+      rgba(212, 180, 117, 0.08) 0%,
+      transparent 52%
+    );
+}
+
+.surface-panel {
+  background: linear-gradient(
+    180deg,
+    rgba(18, 24, 41, 0.86) 0%,
+    rgba(11, 15, 27, 0.94) 100%
+  );
+  border: 1px solid var(--arcana-hairline);
+  backdrop-filter: blur(10px);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--arcana-gold);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

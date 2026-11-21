@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vespera Tarot — 100% Frontend-Only BYOK Gemini AI Tarot Reader & 78-Card Library
 
-## Getting Started
+An immersive **100% Frontend-Only** 3D Tarot Reading Platform and 78-Card Rider-Waite-Smith Knowledge Library powered by **Bring Your Own Key (BYOK) Google Gemini AI** directly in the browser, deployable straight to **GitHub Pages** (`output: "export"`).
 
-First, run the development server:
+- **Zero Backend / Zero Supabase / Zero Database / Zero Server API Routes**
+- **Strict BYOK (No Shared Owner API Key)**: Every visitor brings their own [Google AI Studio](https://aistudio.google.com/apikey) Gemini API Key via the dedicated **`/settings`** AI Configuration page (or the quick **Gemini AI** button in the header).
+  - Stored strictly in the user's own browser (`localStorage`), masked after saving, never sent to any website-owned server, and removable in one click.
+  - Built-in **Test Connection & Fetch Available Models** (`GET /v1beta/models`) dynamically lists all `generateContent`-capable Gemini models supported by the user's key.
+- **Offline Tarot Fallback**: Works immediately even without an API key (or when the user's own Gemini quota is exhausted) using the local structured Tarot knowledge base extracted from the Tarot PDFs.
+- **78 Blender-Sculpted `.glb` Cards**: Loaded strictly on demand in Three.js / React Three Fiber, paired with fast 2D archival scans for the 78-card Library.
+- **Bilingual VI | EN**: Full Vietnamese & English UI and AI reading support.
+
+---
+
+## Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`:
+1. Visit **`/settings`** (or click **Gemini AI** in the top navigation bar).
+2. Paste your personal Gemini API key from [Google AI Studio](https://aistudio.google.com/apikey).
+3. Click **Test Connection & Fetch Available Models** to verify your key and choose from your supported models.
+4. Click **Save Configuration** and start a 3-card Tarot reading at **`/reading`**.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To test a production static export locally:
+```bash
+npm run build
+```
+All static HTML, JS, CSS, 2D scans, and 78 `.glb` assets are exported to `./out/`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Security & Browser Storage Notice
 
-To learn more about Next.js, take a look at the following resources:
+- This project **never** embeds a shared owner `NEXT_PUBLIC_GEMINI_API_KEY` into the frontend bundle.
+- User API keys are stored only in `localStorage` on the user's own browser and sent directly to `https://generativelanguage.googleapis.com`.
+- **Limitation**: `localStorage` is not completely secure on shared/public computers or against malicious browser extensions. Users should always click **Delete Key** when finished on a shared device.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## GitHub Pages Deployment
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+No API keys or backend secrets are required in GitHub Actions:
+1. Push to `main`.
+2. In your GitHub repo, go to **Settings → Pages → Build and deployment → Source** and select **GitHub Actions**.
+3. `.github/workflows/deploy.yml` automatically sets `NEXT_PUBLIC_BASE_PATH="/${{ github.event.repository.name }}"` and deploys `./out` to GitHub Pages.

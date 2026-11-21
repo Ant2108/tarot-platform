@@ -1,0 +1,631 @@
+{
+  "schemaVersion": "1.1.0",
+  "status": "populated",
+  "notes": "Extracted verbatim summaries & exact page references from the user's two Tarot PDF guides, maintained separately from normalized UI interpretations.",
+  "entries": [
+    {
+      "cardId": "00_the_fool",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 1–2 | PDF 2: pg. 22–27",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Dự đoán sự bắt đầu của một hành trình mới và những chuyển tiếp lớn trong cuộc sống. Con số 0 đại diện cho tiềm năng vô hạn, năng lượng nhiệt huyết, khao khát tự do phá bỏ giới hạn cũ và dũng cảm đương đầu thử thách. | [Chiều ngược - PDF 2]: Cảnh báo hành động thiếu suy nghĩ, liều lĩnh, phung phí năng lượng sáng tạo hoặc dễ bị lợi dụng khi vội vàng tin vào thỏa thuận chưa hiểu rõ. Thời điểm chưa phù hợp cho cam kết thiếu chuẩn bị. | [Tình yêu]: Tài liệu 1 cảnh báo mối quan hệ hiện tại có thể xuất hiện rạn nứt do quá chìm đắm vào mục tiêu cá nhân hoặc rủi ro xa cách—cần quan tâm và vun đắp nhiều hơn. Ở chiều tích cực (Tài liệu 2), mở ra tình yêu mới mẻ, tự do. | [Công việc]: Có thể gặp khó khăn khi định hướng ban đầu; nếu kinh doanh hoặc triển khai dự án mới cần xác định rõ mục tiêu cụ thể, thận trọng để tránh sơ suất và quan tâm chia sẻ với đồng nghiệp. | [Tiền bạc]: Cảnh báo sự hoang phí, đầu tư hoặc chi trả theo đam mê thiếu chừng mực—cần xem xét và điều chỉnh lại kế hoạch chi tiêu hợp lý. | [Sức khỏe]: Sức khỏe cần tránh lơ là, chủ quan hoặc lạm dụng rượu/chất kích thích. Về tinh thần, lá bài tiếp thêm ý chí vượt qua nỗi sợ hãi và thúc đẩy hành động tỉnh táo.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "01_the_magician",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 3–4 | PDF 2: pg. 28–32",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Nếu thực sự quyết tâm và khai thác hết óc sáng tạo cùng năng lực tiềm ẩn, mọi mong ước có thể thành hiện thực. Lá bài đại diện cho sức mạnh ý chí, kỹ năng làm chủ công cụ và sự tập trung cao độ. | [Chiều ngược - PDF 2]: Báo hiệu sự bối rối, do dự, lập kế hoạch kém, khó tận dụng đúng thời điểm và tài năng; cũng cảnh báo sự thao túng hoặc thiếu niềm tin vào bản thân. | [Tình yêu]: Tình yêu thăng hoa, hòa thuận, thấu hiểu và có triển vọng tiến tới hôn nhân. Tuy nhiên, nếu đi cùng lá bài xấu cần cảnh giác dấu hiệu thiếu chung thủy hoặc lời mật ngọt giả dối. | [Công việc]: Mọi sự chuẩn bị được đền đáp; thời điểm vàng để khởi đầu kinh doanh, dốc toàn lực cho mục tiêu đã vạch ra. Cần đầu tư nghiêm túc và bình tĩnh quyết đoán trước rắc rối nhỏ. | [Tiền bạc]: Dấu hiệu sung túc, nguồn thu dồi dào và nhiều cơ hội sinh lời hấp dẫn. Tuy nhiên cần tỉnh táo, bảo quản tốt tiền bạc và tránh mất mát khi vay mượn. | [Sức khỏe]: Áp lực từ quyết tâm cao dễ gây căng thẳng, mệt mỏi hoặc ốm dai dẳng—nên tập luyện đều, giữ tâm lý vui vẻ và lắng nghe cơ thể.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "02_the_high_priestess",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 5–6 | PDF 2: pg. 33–37",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Biểu tượng của trực giác, sự thông thái và những bí mật sắp được bật mí. Lá bài nhắc bạn tĩnh tâm quan sát, lắng nghe tiếng nói bên trong và khai phá nguồn tri thức tiềm ẩn. | [Chiều ngược - PDF 2]: Cảnh báo sự phớt lờ cảm xúc thật, thiếu tầm nhìn xa hoặc hoàn cảnh không giống vẻ bề ngoài vì bạn chưa nắm đủ sự thật. | [Tình yêu]: Không phải dấu hiệu thuận lợi nếu hai người còn che giấu bí mật, ngại ngùng hoặc nghi kỵ lẫn nhau—cần thẳng thắn chia sẻ vướng mắc để đi đường dài. | [Công việc]: Chuyển biến tích cực nhờ sự dẫn dắt của người có kinh nghiệm; thời điểm tốt để xây dựng dự án riêng hoặc chiêu mộ nhân tài sáng giá. | [Tiền bạc]: Tài chính dần ổn định nhờ thắt chặt chi tiêu chắc chắn; tuy nhiên mọi vay mượn, ký kết bắt buộc phải có giấy tờ chứng thực rõ ràng. | [Sức khỏe]: Cảnh báo hiểm họa sức khỏe tiềm ẩn cần kiểm tra sớm, đặc biệt với nữ giới. Về nội tâm, hãy kiên trì tìm tòi và tin vào trực giác.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "03_the_empress",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 7–8 | PDF 2: pg. 38–40",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Đại diện cho sự sinh sôi, phát triển và thành quả ngọt ngào sau thời gian nỗ lực. Tượng trưng cho tình mẫu tử, vẻ đẹp tự nhiên, sự đầy đủ và đôi khi là tin vui thai kỳ. | [Chiều ngược - PDF 2]: Sự phụ thuộc vào người khác, trục trặc gia đình, khó khăn tài chính, cằn cỗi ý tưởng hoặc sự quan tâm bảo vệ quá đà gây phản tác dụng. | [Tình yêu]: Mối quan hệ ổn định dựa trên tôn trọng, ngọt ngào và triển vọng lâu dài. Người độc thân sớm gặp đối tượng phù hợp; hàn gắn người cũ diễn ra suôn sẻ. | [Công việc]: Công việc kinh doanh phát triển ổn định, lâu dài; gặt hái thành công sau gian khổ và ý tưởng mới nên mạnh dạn thử sức. | [Tiền bạc]: Thời cơ tốt cho đầu tư sinh lời mạnh mẽ và tài chính dần ổn định; song cần có kế hoạch hợp lý để tránh tiêu pha phung phí. | [Sức khỏe]: Sức khỏe khởi sắc, nhanh hồi phục nếu chăm sóc kỹ; tránh làm việc quá sức, nên nghỉ ngơi, du lịch hoặc hoạt động ngoài trời.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "04_the_emperor",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 9–10 | PDF 2: pg. 41",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Tượng trưng cho quyền lực, cấu trúc, kỷ luật và sự hỗ trợ từ người có địa vị. Kiên trì theo đuổi mục tiêu với lộ trình rõ ràng sẽ mang lại thành công bền vững. | [Chiều ngược - PDF 2]: Sự cứng nhắc, bảo thủ, thiếu linh hoạt, non nớt hoặc xung đột với cấp trên, chính quyền hay cha mẹ. | [Tình yêu]: Không mấy mềm mại vì dễ gặp đối phương thích kiểm soát, độc đoán và rập khuôn; cần tìm sự đồng cảm để tránh bế tắc. Tuy nhiên (Tài liệu 2) gợi ý một đối tượng nam giới vững chãi, lâu dài. | [Công việc]: Công việc lên như diều gặp gió nhờ tham vọng và sự trợ giúp từ quý nhân/người thầy nghiêm khắc; chịu áp lực cao nhưng học hỏi được nhiều. | [Tiền bạc]: Cần đặt sự thận trọng lên hàng đầu trước hợp đồng béo bở; tuân theo nguyên tắc quen thuộc, tránh mạo hiểm đi đường mới. | [Sức khỏe]: Cảnh báo dấu hiệu lạ trên cơ thể do áp lực tham vọng—nên đi kiểm tra sớm, tập gym/đi bộ/thiền và tiết chế tham vọng để giải tỏa căng thẳng.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "05_the_hierophant",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 11–12 | PDF 2: pg. 42",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Mang đến giá trị tinh thần, sự học hỏi, người thầy/cố vấn giàu kinh nghiệm và các sinh hoạt gắn với đạo đức, niềm tin truyền thống. | [Chiều ngược - PDF 2]: Cảnh giác lời khuyên gây lạc lối, bóp méo sự thật, quảng cáo sai lệch hoặc thái độ thách thức hiện trạng; thời điểm xấu để ký thỏa thuận vội vàng. | [Tình yêu]: Tích cực: người độc thân nên chủ động mở lòng; người đang yêu có dấu hiệu tiến tới hôn nhân bền chặt. Lắng nghe góp ý nhưng chính bạn mới là người quyết định cuối cùng. | [Công việc]: Giai đoạn học hỏi nghiêm túc sẽ được đền đáp; nếu nhảy việc dễ bỡ ngỡ nên rất cần lời khuyên từ người đi trước. | [Tiền bạc]: Không phải lúc mạo hiểm đầu tư mới lạ; nên giữ thói quen chi tiêu ổn định, quản lý chặt và hỏi chuyên gia trước khi vay mượn/đầu tư. | [Sức khỏe]: Không bỏ sót dấu hiệu lạ từ cơ thể; tập thể dục nhẹ, tâm sự với người lớn tuổi và nuôi dưỡng niềm tin tinh thần giúp cải thiện sức khỏe.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "06_the_lovers",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 13–14 | PDF 2: pg. 43–45",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Biểu tượng của đam mê, sự hòa hợp sâu sắc và một lựa chọn quan trọng mang tính bước ngoặt đòi hỏi kết hợp trực giác, lý trí và giá trị sống chân thật. | [Chiều ngược - PDF 2]: Mất cân bằng, sai lệch giá trị, xung đột nội tâm hoặc đổ lỗi sau quyết định vội vàng theo ham muốn nhất thời; lời khuyên là chưa nên quyết định lúc này. | [Tình yêu]: Tín hiệu rất đẹp: người độc thân sớm gặp một nửa, cặp đôi thuận lợi ra mắt gia đình và tiến xa. Nếu có hiềm khích hãy chủ động làm lành và lắng nghe nhiều hơn. | [Công việc]: Đối diện lựa chọn mang lại lợi ích dài hạn; cảnh báo cần phân minh công – tư, không để cảm tính chi phối công việc và đừng quên hoài bão bản thân. | [Tiền bạc]: Có thể nhận hỗ trợ vật chất từ người thân/bạn chí cốt khi xoay vốn; cảnh báo không nên cho bạn thân vay mượn kẻo sứt mẻ tình cảm. | [Sức khỏe]: Nên đi khám bác sĩ thay vì tự ý đoán bệnh/uống thuốc; đặc biệt lưu ý sức khỏe liên quan đến đời sống tình ái.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "07_the_chariot",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 15–16 | PDF 2: pg. 46",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Đại diện cho chiến thắng áp đảo, sức mạnh ý chí, sự tự kiểm soát và thành quả sau nhiều năm gieo trồng. Nhắc nhở giữ khiêm tốn, tránh khoe khoang gây thị phi. | [Chiều ngược - PDF 2]: Mất quyền kiểm soát, hỗn loạn do sai sót cá nhân, hiếu chiến hoặc đặt tham vọng và kỳ vọng quá cao. | [Tình yêu]: Người độc thân sớm bước vào tình yêu lãng mạn; người mới tìm hiểu đừng quá đường đột. Cặp đôi lâu năm cần mềm mỏng, tránh tự tin thái quá và ương ngạnh. | [Công việc]: Đạt thành tựu tốt nếu tập trung làm tròn nhiệm vụ thay vì sa đà xử lý kẻ chơi xấu sau lưng; nên tham khảo ý kiến người có cấp bậc và kinh nghiệm. | [Tiền bạc]: Tài chính khả quan, thích hợp xoay vốn kinh doanh nhưng cần chi tiêu chừng mực và cân nhắc kỹ khả năng hoàn trả trước khi cho vay. | [Sức khỏe]: Hòa mình vào thiên nhiên, tập yoga/thiền, tránh thức khuya và chất kích thích để không suy yếu sức khỏe.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "08_strength",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 17–18 | PDF 2: pg. 47–50",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Biểu trưng cho sức mạnh nội tâm, lòng can đảm, sự kiên nhẫn và cách kiểm soát 'ăn mềm không ăn cứng' bằng tình thương và sự điềm tĩnh. | [Chiều ngược - PDF 2]: Nghi ngờ bản thân, mất tự tin, cảm thấy không đủ tốt, bi quan hoặc thiếu kiểm soát sự nóng nảy và phản ứng bản năng. | [Tình yêu]: Người độc thân nên tận hưởng và hoàn thiện mình; cặp đôi cần tin tưởng củng cố tình cảm trước tác động bên ngoài và tìm sự bình an nơi gia đình khi căng thẳng. | [Công việc]: Thuận lợi cho kinh doanh riêng hoặc tìm việc mới; xử lý êm xuôi rắc rối nhờ nội lực. Nên cân nhắc rời công việc nếu công sức không được đền đáp xứng đáng. | [Tiền bạc]: Thích hợp đầu tư kinh doanh có nghiên cứu kỹ, nhưng phải cảnh giác cao độ trước lời mời hợp tác nghe quá hoàn hảo. | [Sức khỏe]: Tăng cường vận động/gym, ăn uống thanh lọc giảm đạm và chất béo, tin tưởng bác sĩ nếu đang điều trị—bệnh tình sẽ sớm bình phục.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "09_the_hermit",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 19–20 | PDF 2: pg. 51–53",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Giai đoạn cần không gian riêng tư để chiêm nghiệm, tìm hiểu sự thật sâu thẳm bên trong và rèn luyện sự độc lập, tự chủ trong suy nghĩ. | [Chiều ngược - PDF 2]: Tự cô lập cực đoan, từ chối lời khuyên hoặc sự trợ giúp, hoài nghi vô căn cứ và duy trì thói quen cũ thiếu hiệu quả. | [Tình yêu]: Không phải lá bài thuận lợi nếu bạn khao khát quan tâm nhưng không mở lời dẫn đến thất vọng, rạn nứt hoặc cô độc trong tình cảm—cần lắng nghe và bày tỏ nhiều hơn. | [Công việc]: Con đường sự nghiệp có thể cô đơn, quá tải và ít nhận được ủng hộ tức thì; hãy vững tin tập trung chuyên môn vì thành quả đang đến gần. | [Tiền bạc]: Cảnh báo cân nhắc kỹ đầu tư để tránh thâm hụt ngân sách; có thể bị cắt giảm nguồn thu nên cần tiết kiệm và tránh vay mượn. | [Sức khỏe]: Dễ ốm dai dẳng do thay đổi thời tiết/môi trường sống—cần che chắn kỹ và đón nhận sự động viên từ gia đình, bạn thân.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "10_wheel_of_fortune",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 21–22 | PDF 2: pg. 54",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Dự báo vận may, bước ngoặt định mệnh và sự chuyển tiếp tích cực sang một chu kỳ mới; những nỗ lực trước đó sắp đơm hoa kết trái. | [Chiều ngược - PDF 2]: Gián đoạn bất ngờ, vận rủi tạm thời, trì hoãn hoặc tâm lý chống lại sự thay đổi; cảnh báo việc đánh bạc và mạo hiểm quá đà. | [Tình yêu]: Lý tưởng để người độc thân mở lòng đón tình yêu mới; cặp đôi nên giữ chuyện tình cảm riêng tư, hâm nóng bằng cử chỉ lãng mạn nhỏ và chia sẻ đời thường. | [Công việc]: Thời điểm rất đẹp để khởi nghiệp nhờ sự trợ giúp của người khác; người nhảy việc nên hỏi đồng nghiệp có kinh nghiệm; giai đoạn khó khăn sắp kết thúc. | [Tiền bạc]: May mắn tài chính, sắp dư dả trở lại nếu đang khó khăn; nếu kinh tế đang tốt cần tiêu có chủ đích để tránh phung phí. | [Sức khỏe]: Cần bỏ thói quen thiếu lành mạnh, vận động nhẹ tăng tỉnh táo và chú ý tác nhân bên ngoài nếu đang chữa bệnh.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "11_justice",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 23–24 | PDF 2: pg. 55",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Gắn liền với pháp luật, hợp đồng, sự công bằng và nguyên tắc nhân quả. Mọi vướng mắc hoặc oan ức sẽ sớm được làm sáng tỏ theo lẽ công bằng. | [Chiều ngược - PDF 2]: Sự bất công, thiên vị, thiếu trách nhiệm, không trung thực hoặc rắc rối liên quan đến pháp lý, thuế và đàm phán kéo dài. | [Tình yêu]: Có thể liên quan đến người làm ngành luật; đề cao sự bình đẳng, tôn trọng và mềm mỏng nhường nhịn khi tranh cãi. Nếu bị đối xử tệ bạc, lá bài dự báo sự rời bỏ dứt khoát. | [Công việc]: Chú trọng thuế má, báo cáo tài chính, lương thưởng và đọc kỹ điều khoản pháp lý khi ký hợp đồng; thuận lợi bắt đầu công việc và hợp đồng lao động mới. | [Tiền bạc]: Thành quả lao động được ghi nhận, có thể nhận khoản tiền thừa kế; tuyệt đối tránh hoạt động kinh doanh phi pháp kẻo bị truy tố. | [Sức khỏe]: Tìm lại sự cân bằng qua nghỉ ngơi/du lịch ngắn ngày; nếu ốm dài ngày thì bệnh sắp dứt, cần kiên trì dùng thuốc đúng chỉ định.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "12_the_hanged_man",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 25–26 | PDF 2: pg. 56",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Thông điệp về sự buông bỏ và hy sinh tự nguyện để đạt mục tiêu lớn hơn. Thời điểm của sự bình tĩnh, chờ đợi và thay đổi góc nhìn thay vì nóng vội. | [Chiều ngược - PDF 2]: Trì hoãn, thiếu cam kết, thờ ơ với mục tiêu hoặc bám víu vào điều đã mất khiến không thể tiến lên. | [Tình yêu]: Buông bỏ cảm xúc mơ hồ để có kết quả rõ ràng; nếu mối quan hệ đã chấm dứt hãy chấp nhận thanh thản. Người độc thân không nên vội vàng, hãy từ từ tìm hiểu. | [Công việc]: Chưa phải thời cơ sinh lợi nhuận nhanh; cần kiểm soát chặt hoạt động, nghiên cứu thị trường/khách hàng chậm rãi và cân nhắc kỹ trước khi nhảy việc. | [Tiền bạc]: Cảnh báo mơ hồ và tranh cãi vì tiền; tự chủ quản lý thu chi, tiết kiệm nếu khó khăn hoặc xoay vòng vốn thận trọng nếu dư dả. | [Sức khỏe]: Áp lực dễ gây biến cố sức khỏe—nên tham khảo bác sĩ, ăn uống lành mạnh và tập luyện đều đặn.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "13_death",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 27–28 | PDF 2: pg. 57",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Đánh dấu một sự kết thúc cần thiết của giai đoạn mệt mỏi để mở ra cuộc sống mới. Dù đi kèm cảm giác mất mát, đây là bước chuyển hóa giúp bạn mạnh mẽ hơn. | [Chiều ngược - PDF 2]: Từ chối đối mặt nỗi sợ thay đổi, giữ quán tính cũ dẫn đến trì trệ và kiệt sức về thể chất, tinh thần lẫn cảm xúc. | [Tình yêu]: Giai đoạn nhiều sự cố, căng thẳng dễ dẫn tới xa cách hoặc chia tay; cần lắng nghe, nhẫn nhịn hoặc dũng cảm chấp nhận kết thúc để hướng tới tương lai. | [Công việc]: Nếu công việc lâu năm không có tín hiệu thăng tiến, hãy cân nhắc đổi môi trường và lập kế hoạch thích nghi rõ ràng. | [Tiền bạc]: Có thay đổi lớn về tài chính (khởi sắc sau thâm hụt hoặc phát sinh khoản chi lớn)—nên xin cố vấn chuyên môn để cân đối thu chi. | [Sức khỏe]: Chú ý khám sức khỏe định kỳ, không bỏ qua dấu hiệu bất thường; giữ tinh thần phấn chấn và chấm dứt thói quen thiếu lành mạnh.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "14_temperance",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 29–30 | PDF 2: pg. 58",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Mang ý nghĩa cân bằng, điều độ, kiên nhẫn và hài lòng với hiện tại. Sự điềm tĩnh giúp bạn sáng suốt, dễ thích nghi và hài hòa các khía cạnh cuộc sống. | [Chiều ngược - PDF 2]: Mất cân bằng, vượt quá giới hạn, thiếu tầm nhìn xa, bồn chồn hoặc cố kết hợp quá nhiều thứ sai thời điểm. | [Tình yêu]: Người độc thân không nên yêu tạm vì cô đơn; người đang yêu tránh chìm đắm quá mức đến mức bỏ bê công việc/học tập—hãy yêu bản thân trước. | [Công việc]: Khi áp lực vắt kiệt sức, hãy đặt lại mục tiêu thiết thực hơn; dễ thích nghi môi trường mới và được đồng nghiệp, cấp trên yêu mến. | [Tiền bạc]: Tiết chế các khoản chi không cần thiết và cân nhắc kỹ khi đầu tư; đây cũng là lúc phù hợp để đề xuất tăng lương xứng đáng với năng lực. | [Sức khỏe]: Dấu hiệu y tế tốt, bệnh nhanh hồi phục; cần cân bằng công việc và nghỉ ngơi, tập luyện nhẹ và tránh tham vọng quá sức.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "15_the_devil",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 31–32 | PDF 2: pg. 59–61",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Phản ánh những ước muốn, tham vọng vật chất, thói quen gây nghiện hoặc vòng lặp tiêu cực khiến bạn tưởng mình bị trói buộc, nhưng thực tế bạn có quyền tự cởi bỏ xiềng xích. | [Chiều ngược - PDF 2]: Sự thức tỉnh và khát khao tháo bỏ mối ràng buộc không lành mạnh (nợ nần, thói quen xấu, quan hệ lệ thuộc) để lấy lại tự do và làm chủ chính mình. | [Tình yêu]: Cảnh giác mối quan hệ mập mờ, màu mè; sự cứng nhắc và quá lý trí dễ đẩy đến đổ vỡ—cần ngồi lại tâm sự nhẹ nhàng hoặc dứt khoát nếu không còn phù hợp. | [Công việc]: Cần lộ trình rõ ràng, tránh ngang bướng mù quáng vì lợi trước mắt; nếu công việc hiện tại mù mịt dù đã dốc sức, hãy mạnh dạn tìm hướng mới. | [Tiền bạc]: Kiểm soát tiền bạc, đừng để tiền kiểm soát mình; cảnh giác cao độ với hành động lươn lẹo, mờ ám dễ bị lừa dối. | [Sức khỏe]: Dễ gặp vấn đề sức khỏe kèm tâm lý chán nản—cần vực dậy tinh thần, tránh rượu bia/chất kích thích; nếu ốm dài ngày thì sắp qua giai đoạn khó.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "16_the_tower",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 33–34 | PDF 2: pg. 62",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Đại diện cho biến động đột ngột phá vỡ bức tường cũ kỹ sau thời gian chịu đựng quá sức—dù gây sốc nhưng giúp bạn lột xác, mạnh mẽ và đón ánh sáng sự thật. | [Chiều ngược - PDF 2]: Tâm lý sợ hãi hoặc trốn tránh thay đổi; biến cố thường ít dữ dội hơn chiều xuôi nhưng vẫn nhắc bạn chủ động điều chỉnh trước khi quá muộn. | [Tình yêu]: Cần làm mới bản thân; với cặp đôi dễ có cãi vã gay gắt—hoặc thỏa hiệp thấu hiểu để sang trang mới, hoặc giải thoát khỏi mối quan hệ đầy tổn thương. | [Công việc]: Thời điểm nhạy cảm—mọi bước đi cần tính toán kỹ, tránh hấp tấp sơ sẩy và thận trọng khi đầu tư do tác động xấu từ bên ngoài. | [Tiền bạc]: Chi phí phát sinh và biến động công việc dễ làm eo hẹp kinh tế; chưa nên đầu tư sản phẩm mới, hãy chuẩn bị quỹ dự phòng vững. | [Sức khỏe]: Sự đổ vỡ dễ làm kiệt sức cả thể chất lẫn tinh thần—ưu tiên nghỉ ngơi, dạo phố thư giãn và tránh xa chất kích thích.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "17_the_star",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 35–36 | PDF 2: pg. 63",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Lá bài của hy vọng, sự chữa lành, thanh bình sau bão tố và dấu hiệu ước mơ sắp thành hiện thực. Nhắc bạn giữ khiêm tốn để tránh thị phi đố kỵ. | [Chiều ngược - PDF 2]: Thiếu niềm tin, nghi ngờ bản thân, tâm trí cứng nhắc hoặc miễn cưỡng thích nghi khiến bỏ lỡ cơ hội tốt. | [Tình yêu]: Người độc thân dễ gặp tri kỷ quanh mình; cặp đôi nên thành thật chia sẻ, đừng tự ti trước đối phương và làm mới hẹn hò bằng những bất ngờ nhỏ. | [Công việc]: Tín hiệu rất tích cực cho nỗ lực, sáng tạo và kinh doanh riêng; cần lên lộ trình tránh quá tải và thận trọng khi chia sẻ thành tích lên mạng xã hội. | [Tiền bạc]: Nhiều cơ hội đầu tư, hợp đồng thuận lợi; nhưng cảnh giác với lợi nhuận quá khủng dễ là bẫy lừa đảo, chi tiêu khoa học và không khoe khoang. | [Sức khỏe]: Sức khỏe cải thiện và có tin vui điều trị; tuy nhiên tránh làm việc quá sức (đề phòng đột quỵ), nên nghỉ ngơi và khám định kỳ.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "18_the_moon",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 37–38 | PDF 2: pg. 64",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Đại diện cho tiềm thức, giấc mơ, trực giác sắc bén nhưng đồng thời cảnh báo sự mơ hồ, bí mật bị che giấu hoặc lừa dối—cần bình tĩnh đánh giá kỹ trước khi hành động. | [Chiều ngược - PDF 2]: Bối rối, bất ổn, trốn vào ảo tưởng thay vì đối diện thực tế, hoặc nguy cơ gặp thủ đoạn gian trá từ thế lực ẩn giấu. | [Tình yêu]: Thông điệp chưa rõ ràng—có thể bắt đầu hoặc kết thúc một giai đoạn; không để tác nhân ngoài chi phối và lắng nghe bản thân để tránh nhầm lẫn 'trăng đáy sông'. | [Công việc]: Cảnh báo đánh giá quá cao bản thân hoặc chưa thấy hết bất cập khi đầu tư/kinh doanh; tránh nóng giận xung đột với đồng nghiệp và cấp trên. | [Tiền bạc]: Dòng tiền chảy chậm, cần 'thắt lưng buộc bụng', chủ động tự lực xoay xở và đề phòng dối trá, lừa lọc tiền bạc. | [Sức khỏe]: Kiệt sức do áp lực kéo dài—rất cần thư giãn, nghỉ ngơi và đi khám bác sĩ ngay khi cơ thể có dấu hiệu bất ổn.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "19_the_sun",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 39–40 | PDF 2: pg. 65",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Ánh sáng sau đêm đen—biểu tượng của hạnh phúc, sức sống, sự minh bạch và thành công xứng đáng sau quá trình chăm chỉ nỗ lực. | [Chiều ngược - PDF 2]: Áp lực tạm thời khiến niềm vui và thành công bị trì hoãn; cảnh báo tính kiêu ngạo, xét đoán sai hoặc hợp đồng/cam kết trục trặc. | [Tình yêu]: Kết quả có hậu, thăng hoa và có thể tiến tới hôn nhân; người độc thân sớm tìm thấy nửa kia. Hãy mở lòng đón nhận sự chân thành của đối phương. | [Công việc]: Thăng tiến rõ rệt, khó khăn được tháo gỡ, dự án mới và kinh doanh riêng thuận lợi; vẫn cần duy trì sự chăm chỉ 'có làm có hưởng'. | [Tiền bạc]: Tài chính dồi dào từ nhiều nguồn; cần cân đối chi tiêu, ưu tiên đầu tư sinh lời thay vì phung phí. | [Sức khỏe]: Sức khỏe may mắn, tràn đầy năng lượng; nên tham gia hoạt động ngoài trời/dã ngoại và bệnh tình đang điều trị sẽ sớm chuyển biến tốt.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "20_judgement",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 41–42 | PDF 2: pg. 66–68",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Đánh dấu cột mốc thay đổi lớn, sự thức tỉnh và thời điểm mọi nỗ lực cho ra kết quả. Bạn có nhận thức rõ ràng để tha thứ quá khứ và đưa ra quyết định đổi đời. | [Chiều ngược - PDF 2]: Tự phê bình quá khắc nghiệt, trì trệ vì sợ thay đổi, bỏ lỡ cơ hội hoặc miễn cưỡng rời bỏ hoàn cảnh không còn phù hợp. | [Tình yêu]: Giai đoạn thử thách và quyết định trọng đại: đồng lòng vượt xung đột sẽ sang trang mới/hôn nhân, còn cứng đầu sẽ khép lại. Người độc thân chưa vội gặp nửa kia ngay. | [Công việc]: Công việc đang bị giám sát chặt—cần cực kỳ cẩn trọng từng chi tiết nhỏ và đọc kỹ điều khoản hợp đồng; cũng là thời điểm tốt để chuyển nghề nếu đã sẵn sàng. | [Tiền bạc]: Thu hồi khoản tiền lớn từ đầu tư hoặc thu nhập cá nhân; tuyệt đối đảm bảo nguồn tiền minh bạch, tránh xa nguồn tiền phi pháp. | [Sức khỏe]: Chữa lành tổn thương tâm lý từ quá khứ, học cách chung sống hòa bình với bệnh mãn tính, ăn ngủ đúng giờ và nghỉ ngơi đầy đủ.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "21_the_world",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài) & Tổng hợp kiến thức về Tarot",
+      "pdfFile": "PDF 1 & PDF 2",
+      "pageRange": "PDF 1: tr. 43–44 | PDF 2: pg. 69",
+      "rawExcerpt": "[Tổng quan & Xuôi]: Lá bài của sự trọn vẹn, hoàn thành một chặng đường lớn và gặt hái thành quả xứng đáng; thường gắn liền với di chuyển, du lịch hoặc bước sang chương mới. | [Chiều ngược - PDF 2]: Sự kiện gần hoàn tất nhưng còn bị chậm trễ, thiếu cái kết thỏa mãn do do dự hoặc ngại bước qua thay đổi. | [Tình yêu]: Cặp đôi gắn bó lâu năm sẵn sàng sang giai đoạn mới (về chung một nhà); nếu còn thiếu trung thực/rõ ràng thì đây là lúc quyết định để mọi chuyện sáng tỏ. | [Công việc]: Người tìm việc tích cực phỏng vấn sẽ gặp vị trí phù hợp; nếu muốn mở công ty riêng hãy chuẩn bị thật kỹ trước khi bắt tay làm. | [Tiền bạc]: Giai đoạn eo hẹp nhanh qua đi nhưng vẫn cần lập kế hoạch tiết kiệm dự phòng; nếu cần vay vốn hãy tìm người thân, cân nhắc kỹ trước khi cho vay. | [Sức khỏe]: Tình hình sức khỏe chung chuyển biến tốt nhờ thả lỏng nghỉ ngơi; tuy nhiên không bỏ qua dấu hiệu lạ của bệnh cũ phát sinh từ lâu.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "22_ace_of_cups",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 73–74",
+      "rawExcerpt": "[Khởi đầu tình yêu] Tổng quan: Khởi đầu mới thuần khiết tràn đầy yêu thương, trực giác và sự thỏa mãn cảm xúc; thời điểm đẹp để gác lại tổn thương quá khứ và bắt đầu lại. | Tình yêu: Lý tưởng để người độc thân bước vào mối quan hệ mới; cặp đôi hòa hợp chia sẻ, nếu có vướng mắc hãy trò chuyện nhẹ nhàng bằng tình cảm. | Công việc: Giai đoạn lý tưởng bắt đầu công việc hoặc dự án kinh doanh mới đầy triển vọng thăng tiến; thực hiện chậm rãi và đón nhận giúp đỡ từ đồng nghiệp. | Tiền bạc: Có thể phát sinh vấn đề tài chính bất ngờ nhưng sớm êm xuôi nhờ bạn bè/người thân; mọi ký kết tiền bạc cần minh bạch pháp lý. | Sức khỏe: Sức khỏe dễ bị chi phối bởi cảm xúc và nghi ngờ trong tình cảm; cần bình tĩnh thả lỏng và cân bằng cuộc sống.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "23_two_of_cups",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 75–76",
+      "rawExcerpt": "[Tình yêu đích thực] Tổng quan: Dự đoán tình yêu đích thực, sự hợp tác bình đẳng tôn trọng lẫn nhau và kết nối chân thành; tránh mềm lòng quá mức để cảm xúc phá vỡ cân bằng. | Tình yêu: Thời điểm không thể tốt hơn cho tình yêu: người độc thân dễ gặp nửa kia, cặp đôi tháo gỡ vướng mắc bằng sự tin tưởng và cảm thông. | Công việc: Không thật sự thuận lợi về công việc nếu nảy sinh tự mãn hoặc xử lý quá cảm tính—cần giữ sự cân bằng và tỉnh táo. | Tiền bạc: Tránh để toan tính tài chính làm sứt mẻ tình cảm; nếu gặp rắc rối sẽ được người thân hỗ trợ; khá phù hợp đầu tư phát triển sản phẩm mới. | Sức khỏe: Không có cảnh báo xấu về sức khỏe; tinh thần hài hòa thỏa mãn và sự động viên của người thân giúp hồi phục nhanh.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "24_three_of_cups",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 77–78",
+      "rawExcerpt": "[Vui vẻ, tận hưởng] Tổng quan: Lá bài của tiệc ăn mừng, hội ngộ hạnh phúc bên bạn bè/gia đình và sự kết thúc của giai đoạn rắc rối; tránh né tránh thử thách. | Tình yêu: Mối quan hệ hòa hợp cao, ngọt ngào và lãng mạn; rất tốt để du lịch cùng nhau, tỏ tình hoặc bắt đầu tình yêu mới. | Công việc: Lá bài may mắn về công việc: đầu tư/kinh doanh thuận lợi, đàm phán nhanh gọn hiệu quả và có dấu hiệu thăng tiến. | Tiền bạc: Xung đột tiền bạc sớm được giải quyết, có thể nhận phần thưởng; giao lưu đối tác mở ra mối làm ăn tốt nhưng vẫn nên ưu tiên chi tiêu thiết yếu. | Sức khỏe: Tín hiệu tích cực: dễ gặp thầy thuốc giỏi và nhanh hồi phục sau chấn thương; vẫn cần sinh hoạt lành mạnh, không chủ quan.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "25_four_of_cups",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 79–80",
+      "rawExcerpt": "[Chán nản, bế tắc] Tổng quan: Phản ánh cảm giác nhàm chán, thờ ơ, mất động lực và bướng bỉnh không chịu nhìn lên cơ hội đang ở ngay trước mắt. | Tình yêu: Cặp đôi dễ mệt mỏi vì tranh cãi và im lặng kéo dài—hãy nhớ lại kỷ niệm ngọt ngào để làm mới; người độc thân chưa thật sự sẵn sàng yêu. | Công việc: Thay đổi bất ngờ trong công việc nhưng cũng là lúc có thể tự khởi nghiệp nếu nghiên cứu từ từ, kỹ càng và tránh cẩu thả. | Tiền bạc: Khó khăn tài chính nhưng có người thân hỗ trợ; ưu tiên tiết kiệm và hạn chế vay mượn bên ngoài. | Sức khỏe: Không xem thường cảnh báo của cơ thể; khám định kỳ và giữ tinh thần tích cực nhờ sự ủng hộ của gia đình, bạn bè.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "26_five_of_cups",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 81–82",
+      "rawExcerpt": "[Thất vọng, mệt mỏi] Tổng quan: Tượng trưng cho nỗi buồn, sự tiếc nuối quá khứ nhưng nhắc bạn vẫn còn hai chiếc cốc đứng vững—buông quá khứ để đứng lên mạnh mẽ hơn. | Tình yêu: Chưa nên bước vào tình yêu mới khi vết thương cũ chưa lành; cặp đôi đang căng thẳng cần đủ quyết tâm vượt qua hoặc chấp nhận buông bỏ. | Công việc: Kinh doanh kém khả quan với nhiều rắc rối liên tiếp; thận trọng trước dự án bất ngờ và xem thử thách là bài học kinh nghiệm quý. | Tiền bạc: Cảnh báo tranh cãi tiền bạc dễ làm mất đi mối quan hệ thân thiết; biết điểm dừng khi đầu tư, không tham lam bất chấp. | Sức khỏe: Áp lực làm mất sức và bệnh cũ dễ tái phát; tinh thần chính là liều thuốc quan trọng nhất để tự đứng dậy.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "27_six_of_cups",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 83–84",
+      "rawExcerpt": "[Ký ức quay về] Tổng quan: Đại diện cho hồi ức tuổi thơ, sự đoàn tụ gia đình, trở về nơi quen thuộc và cơ hội cũ quay lại; tránh bỏ bê hiện tại. | Tình yêu: Người độc thân thích hợp đón tình yêu mới; người từng chia tay cần cẩn thận kẻo mãi sống trong ám ảnh người cũ. | Công việc: Công việc có thể xoay chuyển bất lợi (đổi nơi làm, thanh lọc nhân sự); hãy chấp nhận vai trò mới để tìm cơ hội trong biến cố. | Tiền bạc: Khoản trợ cấp hoặc nguồn thu đầu tư giảm dần; cần tiết kiệm và lập quy định kiểm soát chi tiêu chặt chẽ. | Sức khỏe: Dễ khó thích nghi hoặc dị ứng nhẹ khi thay đổi môi trường sống nhưng không quá nghiêm trọng—kiên trì rèn luyện sẽ vượt qua.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "28_seven_of_cups",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 85–86",
+      "rawExcerpt": "[Quá nhiều lựa chọn] Tổng quan: Nhiều lựa chọn và ước mơ có giới hạn thời gian; cần ngừng mơ mộng viển vông, chọn lọc lời khuyên và hành động thực tế. | Tình yêu: Bối rối trong tình cảm—cần xác định rõ điều mình muốn và ngồi xuống trò chuyện thay vì suy diễn quá nhiều. | Công việc: Cảnh báo đánh giá quá cao năng lực bản thân dễ dẫn đến nợ nần; giữ sự tỉnh táo thực tế trước cơ hội đi kèm thách thức. | Tiền bạc: Cảnh báo lòng tham và mối quan hệ gắn lợi ích tiền bạc dễ gây rạn nứt; thận trọng lời mời hợp tác và hạn chế vay mượn. | Sức khỏe: Áp lực công việc dễ gây kiệt sức tâm lý—nên tập yoga/thiền, hoạt động ngoài trời và hạn chế nhậu nhẹt.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "29_eight_of_cups",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 87–88",
+      "rawExcerpt": "[Từ bỏ mọi thứ để tìm hướng mới] Tổng quan: Lá bài của sự khởi hành và chuyển đổi—rũ bỏ điều quen thuộc không còn mang lại thỏa mãn để tìm mục tiêu cao hơn. | Tình yêu: Mối quan hệ dễ nhàm chán, lung lay niềm tin hoặc có dấu hiệu phản bội; cần nói chuyện thẳng thắn và nhường nhịn nếu còn tình cảm. | Công việc: Dù có trái ngọt ban đầu nhưng bạn không thỏa mãn; mạnh dạn tìm hướng đi mới để nhận phần thưởng lớn hơn. | Tiền bạc: Tài chính ổn định—có thể đầu tư lĩnh vực mới hoặc đóng góp dự án xã hội ý nghĩa. | Sức khỏe: Không có dấu hiệu bất lợi lớn; chỉ cần giải tỏa căng thẳng và bất an bằng thiền hoặc yoga.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "30_nine_of_cups",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 89–90",
+      "rawExcerpt": "[Mơ ước thành hiện thực] Tổng quan: Lá bài của sự viên mãn, hài lòng cả vật chất lẫn tinh thần và ước mơ thành sự thật; cảnh báo không thỏa mãn quá sớm. | Tình yêu: Nhiều phút giây lãng mạn, đồng cảm và có thể tiến xa; người độc thân rất thuận lợi gặp đối tác trong mơ. | Công việc: Đừng bỏ cuộc vì thành tích vẻ vang và sự trọng dụng từ cấp trên đang rất gần—hãy tăng tốc thúc đẩy dự án. | Tiền bạc: Tài chính chuyển biến tốt, đầu tư dự án mới thuận lợi; để tiền lưu động, tiết kiệm hợp lý và tránh tham lam mạo hiểm. | Sức khỏe: Tâm trạng lạc quan giúp sức khỏe đảm bảo; bỏ thói quen xấu và giữ tinh thần vui vẻ.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "31_ten_of_cups",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 91–92",
+      "rawExcerpt": "[Kết thúc viên mãn] Tổng quan: Kết thúc có hậu, hạnh phúc gia đình trọn vẹn và ước mơ thành hiện thực; nhắc bạn đáp ứng đủ nỗ lực cho điều mình mong muốn. | Tình yêu: Hạnh phúc trọn vẹn nhưng nếu có biến cố cảm xúc hãy đợi bình tĩnh lắng xuống trước khi quyết định đường đột. | Công việc: Đỉnh cao sự nghiệp với tin vui thăng chức/thưởng; thích hợp bắt đầu kế hoạch mới có chuẩn bị kỹ để ứng phó bất ngờ. | Tiền bạc: Tài chính sung túc, được gia đình ủng hộ; tuy nhiên đầu tư tràn lan không hiệu quả—chỉ nên tập trung một lĩnh vực. | Sức khỏe: Cảnh báo chú ý sức khỏe các thành viên gia đình (đặc biệt trẻ em) và bệnh di truyền/thời tiết; khám bác sĩ khi có dấu hiệu lạ.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "32_page_of_cups",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 93–94",
+      "rawExcerpt": "[Nhạy cảm & Mơ mộng] Tổng quan: Đại diện cho sự nhạy cảm, trí tưởng tượng mơ mộng và tinh thần cởi mở với ý tưởng mới; cần bớt e dè và giữ sự bền bỉ. | Tình yêu: Chu đáo muốn gắn bó lâu dài nhưng ngại bày tỏ—hãy can đảm tỏ tình; tránh mải làm việc bỏ bê người yêu và cảnh giác lợi dụng. | Công việc: Công việc ổn định nhưng tiến độ quá nhanh dễ phát sinh sai sót và quên cân bằng cuộc sống; hãy sống chậm lại, không ôm đồm. | Tiền bạc: Tài chính dư dả nhưng cần cẩn thận sai sót do cẩu thả; lập kế hoạch chi tiêu và quan tâm đãi ngộ nhân viên nếu là cấp trên. | Sức khỏe: Sức khỏe nhìn chung khá tốt, chỉ cần tránh làm việc quá sức và duy trì sinh hoạt lành mạnh.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "33_knight_of_cups",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 95–96",
+      "rawExcerpt": "[Sứ giả cảm xúc & Tin tốt lành] Tổng quan: Lá bài lạc quan báo hiệu tin tốt, lời mời thú vị, trải nghiệm cảm xúc mới và sự khôn ngoan đến từ trực giác, giấc mơ. | Tình yêu: Cực kỳ tích cực: người độc thân sắp gặp người gây ấn tượng mạnh; cặp đôi có thể đón lời cầu hôn hoặc hôn nhân. | Công việc: Các dự án công việc diễn ra tích cực và sớm hơn mong đợi—hãy tự hào về đóng góp của mình. | Tiền bạc: Sớm nhận tin tức tốt lành về tài chính; mọi chuyện khả quan hơn bạn lo nghĩ. | Sức khỏe: Kết quả xét nghiệm khả quan, sức khỏe sớm tốt hơn; tinh thần cởi mở đón nhận những dấu hiệu đồng bộ mới.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "34_queen_of_cups",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 97–98",
+      "rawExcerpt": "[Sự từng trải & Trực giác sâu sắc] Tổng quan: Biểu tượng của tâm hồn nhạy cảm, từng trải, từ bi và trực giác sắc bén; nhắc bạn mở cửa trái tim và đón nhận sự giúp đỡ. | Tình yêu: Tìm hiểu kỹ trước khi yêu để tránh vỡ mộng; mở lòng xoa dịu vết thương cũ và nhìn vào hành động thực tế thay vì lời mật ngọt. | Công việc: Giỏi làm việc độc lập, khao khát môi trường sáng tạo nên đừng ngại nhảy việc; cần quyết đoán, tránh vòng vo thiếu thận trọng. | Tiền bạc: Gặp khó khăn sẽ có người thân quen hỗ trợ; cảnh báo chi tiêu theo cảm tính dễ cháy túi và không giữ quá nhiều tiền mặt. | Sức khỏe: Đề phòng bệnh cũ tái phát và nỗi buồn đổ vỡ quá khứ—nên tham gia hoạt động tập thể hoặc tham vấn tâm lý nếu kéo dài.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "35_king_of_cups",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 99–100",
+      "rawExcerpt": "[Trưởng thành về cảm xúc] Tổng quan: Cân bằng giữa trí tuệ và cảm xúc, trực giác nhạy bén, trưởng thành và có thể nhận giúp đỡ từ người đàn ông đáng tin cậy. | Tình yêu: Tốt đẹp cho người tìm kiếm mối quan hệ ổn định, chân thật; nếu xung đột hãy nhường nhịn và không để người ngoài can dự. | Công việc: Giao tiếp tốt và làm việc chuyên nghiệp nhưng tránh quá khuôn phép gò bó; cảnh báo sự phản bội hoặc ăn chia quyền lợi. | Tiền bạc: Nguy cơ thất thoát khoản tiền lớn do gian xảo đối tác, tiểu nhân hoặc bê bối pháp lý—không phải lúc đầu tư mạo hiểm. | Sức khỏe: Tránh để cú sốc từ kẻ xấu làm suy sụp tinh thần; giữ cân bằng, nghỉ ngơi và bình tĩnh trước sóng gió.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "36_ace_of_swords",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 101–102",
+      "rawExcerpt": "[Thay đổi đột phá] Tổng quan: Khoảnh khắc đột phá về tư duy và ý tưởng mới giúp nhìn nhận mọi thứ khác hẳn; hành động nhanh nhưng tuyệt đối không cẩu thả. | Tình yêu: Người độc thân hãy cải thiện kỹ năng giao tiếp; cặp đôi tránh quá rạch ròi sòng phẳng mà cần chia sẻ tâm sự nhiều hơn. | Công việc: Cảnh báo rắc rối phát sinh nhưng ý tưởng nhanh và giao tiếp thông minh sẽ mang lại thành công; tuyệt đối không làm việc bất chính. | Tiền bạc: Lập kế hoạch chi tiêu rõ ràng, hạn chế mua sắm và dự phòng; cẩn trọng vay mượn để tránh sứt mẻ mối quan hệ. | Sức khỏe: Cảnh báo tai nạn, phẫu thuật hoặc vấn đề nha khoa—đi khám ngay khi bất thường và dành thời gian nghỉ ngơi giảm stress.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "37_two_of_swords",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 103–104",
+      "rawExcerpt": "[Bế tắc & Lựa chọn] Tổng quan: Giai đoạn bế tắc buộc phải ra quyết định giữa những lựa chọn khó khăn và đối thủ ngang sức; nên thận trọng và cân nhắc phương án an toàn theo số đông. | Tình yêu: Cần giữ cân bằng và chia sẻ áp lực với đối phương thay vì chịu đựng một mình và cứng đầu khi xung đột. | Công việc: Chưa phải thời điểm tốt để đầu tư hay ký kết; tìm cố vấn chuyên gia và tuân thủ chặt nguyên tắc pháp lý, không lách luật. | Tiền bạc: Tài chính ổn định nhờ biết tận dụng cơ hội, nhưng không nên phung phí vì sắp có việc cần dùng tiền giải quyết. | Sức khỏe: Không bỏ qua dấu hiệu bất ổn của cơ thể và giấc mơ lo âu—hãy đi khám định kỳ.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "38_three_of_swords",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 105–106",
+      "rawExcerpt": "[Mất mát, tổn thương] Tổng quan: Lá bài của nỗi buồn, tổn thương, mất mát hoặc sự thật cay đắng—nhưng đối mặt và vượt qua đổ vỡ sẽ rèn cho bạn sự mạnh mẽ. | Tình yêu: Cảnh báo cãi vã, đổ vỡ hoặc phản bội; cần hạn chế tranh cãi và nói chuyện thẳng thắn. Người độc thân chưa nên bắt đầu yêu. | Công việc: Công việc tồn đọng do tinh thần ủ rũ thiếu sức sống—cần nhanh chóng lấy lại ý chí để không bị bỏ lại phía sau. | Tiền bạc: Tổn thất tiền bạc do đặt niềm tin nhầm chỗ hoặc bất đồng với đối tác; thu hồi khoản rủi ro và tạm ngừng cho vay. | Sức khỏe: Suy sụp tinh thần, nguy cơ trầm cảm—cần tìm bác sĩ tâm lý, nghỉ ngơi và tránh căng thẳng.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "39_four_of_swords",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 107–108",
+      "rawExcerpt": "[Sống chậm lại & Phục hồi] Tổng quan: Giai đoạn tĩnh lặng, nghỉ ngơi và sạc lại năng lượng sau khủng hoảng hoặc mệt mỏi; một số kế hoạch tạm dừng lại. | Tình yêu: Người độc thân nên chờ đợi và thấu hiểu bản thân trước; cặp đôi tránh lời nói miệt thị khi bất hòa và cùng chia sẻ trách nhiệm. | Công việc: Không làm việc vội vàng kẻo sai sót; giữ kín dự định, âm thầm thực hiện cẩn thận theo hướng dài hạn. | Tiền bạc: Trục trặc tài chính sẽ sớm qua; không nên cho vay mượn vì khó thu hồi, ưu tiên giảm chi và tiết kiệm. | Sức khỏe: Thời gian bắt buộc để nghỉ ngơi phục hồi tinh thần; chú ý quan tâm thêm sức khỏe các thành viên trong gia đình.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "40_five_of_swords",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 109–110",
+      "rawExcerpt": "[Đừng tự đắc thắng] Tổng quan: Cảnh báo mất mát do bất cẩn, cạnh tranh khốc liệt hoặc tham vọng đặt nhầm chỗ làm tổn thương người xung quanh; không khoe khoang. | Tình yêu: Người độc thân chưa nên yêu; cặp đôi khác quan niệm sống dễ mất niềm tin vào nhau—thận trọng từng quyết định để không làm tổn thương đối phương. | Công việc: Công việc khó khăn do vấn đề tài chính/nguồn vốn; giữ tỉnh táo trước quyết định lớn và trau dồi thêm kỹ năng mềm. | Tiền bạc: Tài chính mức trung bình, đủ chi tiêu thường ngày nhưng xu hướng eo hẹp dần—tránh phung phí. | Sức khỏe: Sức khỏe tương đối ổn dù hoàn cảnh rắc rối; giữ tinh thần thoải mái và nghỉ ngơi nhiều hơn.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "41_six_of_swords",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 111–112",
+      "rawExcerpt": "[Chuyến đi xa & Chuyển đổi] Tổng quan: Ám chỉ chuyến đi xa/xuất ngoại hoặc sự chuyển đổi rời bỏ bế tắc cũ để sang giai đoạn mới—nỗi đau rồi sẽ qua. | Tình yêu: Người độc thân sắp gặp nửa kia; cặp đôi có thể đi du lịch cùng nhau bồi đắp tình cảm, mâu thuẫn sớm kết thúc nếu tránh lời xúc phạm. | Công việc: Dự án cũ có thể mất niềm tin hoặc dừng lại, nhưng lĩnh vực mới và các chuyến công tác xa sẽ mở ra hứng thú mới. | Tiền bạc: Vấn đề tài chính xử lý nhanh gọn; không mạo hiểm đầu tư lĩnh vực mới thiếu tư vấn và cần rõ ràng tiền bạc khi góp vốn. | Sức khỏe: Đề phòng stress nặng/trầm cảm vì tiếc nuối quá khứ; nếu đang điều trị sẽ có tín hiệu tích cực.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "42_seven_of_swords",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 113–114",
+      "rawExcerpt": "[Sự phản bội, lừa dối] Tổng quan: Hồi chuông cảnh báo bị lừa dối, phản bội hoặc tự lừa dối chính mình; mặt tích cực là thanh lọc được ai mới là người trung thành. | Tình yêu: Cảnh báo tự huyễn hoặc trong tình yêu và bỏ qua dấu hiệu bất thường; người độc thân chưa phải lúc bắt đầu yêu. | Công việc: Cảnh báo gian dối trong kinh doanh hoặc đồng nghiệp chơi xấu; xác định rõ đam mê mục tiêu thật để không mất thời gian. | Tiền bạc: Nợ cũ và sự bấp bênh tài chính; xử lý nợ tồn đọng, thu hồi vốn chậm hơn dự kiến nên cần kế hoạch chi tiêu ưu tiên rõ ràng. | Sức khỏe: Rắc rối công việc và đặc biệt là vấn đề pháp lý dễ gây suy sụp—cần nghỉ ngơi, thư giãn và ăn uống khoa học.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "43_eight_of_swords",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 115–116",
+      "rawExcerpt": "[Bế tắc, vướng mắc] Tổng quan: Cảm giác bị mắc kẹt, ràng buộc bởi chủ nghĩa hoàn hảo và nỗi sợ chỉ trích; nhưng nếu dám tháo bịt mắt và nỗ lực, lối thoát đơn giản hơn bạn nghĩ. | Tình yêu: Đừng yêu chỉ để lấp cô đơn; cặp đôi cần chia sẻ tâm tư và giải quyết rắc rối ngay thay vì lờ đi. | Công việc: Công việc dễ gián đoạn; chưa nên đầu tư dự án lớn nhưng không bỏ cuộc vì công sức sẽ được đền đáp về sau. | Tiền bạc: Vận may tài chính giúp khó khăn nhanh qua; nên mở rộng nguồn thu bằng công việc mới và thận trọng chuyện vay mượn. | Sức khỏe: Chú ý cả thể chất lẫn tinh thần do áp lực tích tụ—hãy chia sẻ tâm sự với người thân thiết đáng tin cậy.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "44_nine_of_swords",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 117–118",
+      "rawExcerpt": "[Lo âu & Đau khổ cảm xúc] Tổng quan: Thời kỳ nhiều lo âu, ác mộng và muộn phiền cảm xúc, nhưng khi mọi thứ chưa kết thúc hoàn toàn vẫn còn tia hy vọng cứu vãn. | Tình yêu: Cảnh báo đa nghi toan tính làm rạn nứt tình cảm—hãy nói chuyện rõ ràng, khách quan; người độc thân tránh vội vàng yêu tạm. | Công việc: Doanh nghiệp/công việc gặp khó khăn; bình tĩnh tìm giải pháp, không vội quyết định và chưa nên đầu tư lúc này. | Tiền bạc: Tài chính không dư dả; cắt giảm khoản không cần thiết, nhờ gia đình/bạn bè nếu khủng hoảng và không chi tiền một lần quá lớn. | Sức khỏe: Đang dần vượt qua căng thẳng; tránh rượu bia, thuốc ngủ/an thần, đi du lịch khuây khỏa và điều trị bệnh có tín hiệu tích cực.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "45_ten_of_swords",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 119–120",
+      "rawExcerpt": "[Chạm đáy & Bắt đầu lại] Tổng quan: Biểu tượng của sự sụp đổ hoặc kết thúc đau đớn về tinh thần—nhưng phía xa mặt trời đang mọc, kết thúc cũng chính là khởi đầu mới. | Tình yêu: Giai đoạn khó khăn nhiều nước mắt nhưng chưa chắc dẫn tới chia ly; cả hai cần đồng lòng nắm tay và chia sẻ cảm thông. | Công việc: Nguy cơ mất quyền lực/tín nhiệm và mất phương hướng—hãy đón nhận hỗ trợ từ đồng nghiệp và tạm dừng kế hoạch đầu tư. | Tiền bạc: Cảnh báo nợ nần, lợi nhuận giảm sút do chi tiêu quá đà/mạo hiểm; thận trọng với mối làm ăn hào nhoáng bề ngoài. | Sức khỏe: Áp lực dễ gây suy sụp; chuẩn bị tinh thần vững, nghỉ ngơi nhiều hơn và dành thời gian cho gia đình.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "46_page_of_swords",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 121–122",
+      "rawExcerpt": "[Tò mò, sắc bén & Rắc rối thị phi] Tổng quan: Giàu trí tưởng tượng, ngôn ngữ sắc bén và háo hức với kế hoạch mới; nhưng cảnh báo chuyện ngồi lê đôi mách và người lợi dụng thông tin. | Tình yêu: Cả hai cố chấp tranh cãi dễ dẫn tới im lặng xa cách—cần hạ cái tôi cá nhân và thông cảm cho đối phương. | Công việc: Thử thách mới đòi hỏi phản xạ nhanh, linh hoạt và quyết đoán; tập trung toàn lực sẽ có thưởng xứng đáng nhưng đề phòng đối thủ chơi xấu. | Tiền bạc: Chật vật xoay tiền do nhiều khoản cần chi; tiết kiệm chủ động, tránh vay mượn nhiều và hỏi người có kinh nghiệm trước khi đầu tư. | Sức khỏe: Kiềm chế cảm xúc tiêu cực, chia nhỏ vấn đề để giải quyết từng bước và tâm sự với người thân bạn bè.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "47_knight_of_swords",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 123–124",
+      "rawExcerpt": "[Bão tố & Hành động quyết liệt] Tổng quan: Đầy năng lượng chiến đấu lao về phía mục tiêu nhưng cảnh báo tính nóng vội, hung hăng mù quáng dễ gây rắc rối khi thiếu chuẩn bị. | Tình yêu: Cẩn thận nhầm cảm giác mãnh liệt nhất thời với tình yêu đích thực; cặp đôi cần giảm độc đoán và tôn trọng nhau hơn. | Công việc: Khó khăn công việc, quan hệ đồng nghiệp/đối tác xấu đi và cạnh tranh khốc liệt; thận trọng khi đầu tư và dọn sạch việc tồn đọng. | Tiền bạc: Vấn đề tài chính giải quyết êm nhờ khả năng thuyết phục; vẫn cần chi tiêu hợp lý và xin lời khuyên chuyên gia trước khi đầu tư. | Sức khỏe: Cảnh báo sức khỏe bản thân hoặc người thân và nguy cơ trầm cảm do lo âu tích tụ—hãy nghỉ ngơi và trò chuyện cùng gia đình.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "48_queen_of_swords",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 125–126",
+      "rawExcerpt": "[Sáng suốt, thông tuệ & Lý trí] Tổng quan: Người phụ nữ thông tuệ, độc lập, thẳng thắn và đặt lý trí lên trên cảm xúc; cảnh báo có người phụ nữ can dự gây rối hoặc cảm giác cô đơn. | Tình yêu: Xuất hiện khoảng cách và đổ vỡ niềm tin; cần hạ cái tôi, trò chuyện khéo léo rõ ràng để giữ gìn mối quan hệ. | Công việc: Người dẫn dắt có thể thiếu định hướng phù hợp, rủi ro đầu tư hoặc kiện tụng pháp lý—cần làm việc tỉ mỉ, xem xét kỹ lưỡng. | Tiền bạc: Khó khăn mức vừa phải; thắt chặt chi tiêu, cảnh giác chiêu trò lừa lọc tiền bạc và chỉ nên vay người thân/bạn thân nếu thật cần. | Sức khỏe: Mất mát tinh thần hoặc kiện tụng dễ làm suy yếu sức khỏe—nhanh chóng tìm lại sự cân bằng.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "49_king_of_swords",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 127–128",
+      "rawExcerpt": "[Kỷ luật, lý trí & Phát triển vượt bậc] Tổng quan: Vị vua kỷ luật, thông minh và thực tế; có thể gặp người đàn ông có ảnh hưởng (bố, thầy, cấp trên) đánh giá khắt khe—cần cân nhắc kỹ hậu quả trước khi quyết định. | Tình yêu: Bướng bỉnh, quá lý trí hoặc gia trưởng dễ làm đối phương mệt mỏi; hãy nói chuyện nhẹ nhàng, hâm nóng bằng sự lãng mạn. Độc thân chưa vội yêu. | Công việc: Tin tức quan trọng có ích sắp đến; chuẩn bị tinh thần cho rắc rối bất ngờ và thận trọng tuyệt đối với thủ tục pháp lý. | Tiền bạc: Rạch ròi tiền bạc và tình cảm ngay từ đầu; mở rộng kinh doanh phải thận trọng vì sự vội vã sẽ phải trả giá lớn. | Sức khỏe: Gánh quá nhiều trách nhiệm dễ kiệt sức, cáu gắt—cần nghỉ ngơi giảm stress và sống hòa bình với bệnh mãn tính nếu có.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "50_ace_of_wands",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 45–46",
+      "rawExcerpt": "[Sáng tạo đột phá] Tổng quan: Lá bài của sự sáng tạo táo bạo, đam mê và khởi đầu mới đầy hứng khởi, đặc biệt mạnh về đột phá công việc. | Tình yêu: Rất tích cực cho mối quan hệ mới đầy ngọt ngào và điểm chung; nếu có khoảng thời gian xa cách sẽ sớm qua và thấu hiểu sâu sắc hơn. | Công việc: Cơ hội bứt phá lớn nhờ ý tưởng sáng tạo; rất hợp ra mắt sản phẩm mới hoặc mở rộng thị trường kinh doanh. | Tiền bạc: Có thể nhận khoản tiền lớn (tiền thưởng, thừa kế hoặc hỗ trợ gia đình); tài chính dồi dào, nhớ chi tiêu đúng cách. | Sức khỏe: Lưu ý bệnh di truyền trong dòng họ hoặc cúm lây lan (không nặng); ăn uống điều độ và kiêng kỵ tốt sẽ khỏe lại.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "51_two_of_wands",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 47–48",
+      "rawExcerpt": "[Hợp tác thành công] Tổng quan: Đại diện cho sự hợp tác ký kết thành công, thỏa mãn mục tiêu đã đạt và quyết định bước ra khỏi vùng an toàn để khai phá chân trời mới. | Tình yêu: Hòa hợp nhưng cảnh báo dễ giảm hứng thú sau khi chinh phục; cần hâm nóng bằng hành động lãng mạn và chia sẻ nhiều hơn. | Công việc: Sự nghiệp ổn định gần đỉnh cao nhờ hợp tác tiềm năng; cảnh báo tránh trở nên chuyên quyền, áp đặt đồng nghiệp/cấp dưới. | Tiền bạc: Tài chính dồi dào, thuận lợi đầu tư hoặc vay mượn; nên dành phần đầu tư cho sở thích cá nhân và thư giãn. | Sức khỏe: Chú ý chăm lo sức khỏe khi sự nghiệp lên đỉnh; duy trì sinh hoạt lành mạnh, khám định kỳ và nhờ gia đình động viên tinh thần.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "52_three_of_wands",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 49–50",
+      "rawExcerpt": "[Nắm bắt cơ hội] Tổng quan: Lá bài của cơ hội đang đến rất gần, kế hoạch xây dựng tương lai vững chắc và gợi ý môi trường mới hoặc chuyến đi xa mở mang tầm nhìn. | Tình yêu: Người độc thân có cơ hội lớn thoát kiếp độc thân; cặp đôi cần thành thật tuyệt đối, tránh che giấu và thả lỏng tâm lý. | Công việc: Rất tốt cho tìm việc, khởi nghiệp và lập kế hoạch dài hạn; hợp tác hiệu quả nhất theo cặp (tránh quá đông gây rối) và làm tốt nhiệm vụ nhóm. | Tiền bạc: Không nên phung phí ngân sách cho nghỉ mát cá nhân; hãy tiết kiệm chuẩn bị tài chính cho cơ hội đầu tư và gọi vốn sắp tới. | Sức khỏe: Tránh lao động quá sức gây kiệt quệ; vận động nhẹ, ăn nhiều rau củ, ngủ điều độ và lưu ý sức khỏe tình dục.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "53_four_of_wands",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 51–52",
+      "rawExcerpt": "[Mọi việc tốt đẹp & Gia đình] Tổng quan: Lá bài của sự ổn định, lễ hội ăn mừng và hạnh phúc gia đình—mọi xung đột sắp được giải quyết êm đẹp. Tránh quá an phận trong vỏ bọc cũ. | Tình yêu: Hòa hợp, ăn ý và dễ tiến tới hôn nhân; người độc thân sớm gặp nửa kia; cả hai vẫn cần tiếp tục vun đắp. | Công việc: Công việc ổn định, hưng thịnh dài lâu và nhận thưởng xứng đáng; nếu định nhảy việc/khởi nghiệp nên cân nhắc thật kỹ. | Tiền bạc: Tài chính dồi dào vượt dự tính; nên đầu tư dự án tăng thu nhập, có quỹ dự phòng và gặp may khi mua nhà/bất động sản. | Sức khỏe: Có thể gặp chút mệt mỏi thể chất liên quan đến tiền bạc nhưng sớm qua; làm điều mình thích giúp tinh thần phấn chấn.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "54_five_of_wands",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 53–54",
+      "rawExcerpt": "[Cạnh tranh lành mạnh] Tổng quan: Báo hiệu sự cạnh tranh, thử thách trong lĩnh vực mới hoặc mâu thuẫn nội bộ do ai cũng muốn nói mà thiếu lắng nghe—hãy thi đấu chơi đẹp. | Tình yêu: Cảm giác bất an hoặc hơn thua trong tình cảm; cần bình tĩnh trò chuyện thẳng thắn, có thể phát sinh khúc mắc nhỏ với người cũ. | Công việc: Mâu thuẫn làm việc nhóm và cạnh tranh xin việc cao; cần khéo léo cân bằng giữa thể hiện bản thân và lắng nghe người khác. | Tiền bạc: Cảnh báo chủ quan, thiếu thận trọng dễ dẫn đến nợ nần và thâm hụt; hạn chế vay mượn và chi tiêu khoa học hơn. | Sức khỏe: Tổn thương tinh thần, tâm tính thất thường—nên tập yoga/thiền, nghỉ ngơi, tránh kích động và giữ thái độ lạc quan.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "55_six_of_wands",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 55–56",
+      "rawExcerpt": "[Phần thưởng xứng đáng] Tổng quan: Dự đoán thành công vang dội, được công khai công nhận, khen ngợi và nhận phần thưởng xứng đáng; cảnh báo tránh kiêu ngạo. | Tình yêu: Lá bài thiên về thành tích cá nhân nên dễ khiến cái tôi lấn át trong tình yêu; cần nhường nhịn và cảm thông để giữ sự hòa hợp. | Công việc: Viên mãn sự nghiệp, thăng tiến hoặc nhận giải thưởng/danh hiệu; luôn giữ khiêm tốn và làm người tiên phong có đức có tài. | Tiền bạc: Tiền bạc dư dả theo thành công sự nghiệp; cân nhắc kỹ khi lấn sang thị trường mới và đọc kỹ hợp đồng trước khi ký. | Sức khỏe: Sức khỏe ổn định, năng lượng cao và kết quả xét nghiệm/điều trị khả quan; giữ bình tĩnh và cẩn trọng lời phát ngôn.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "56_seven_of_wands",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 57–58",
+      "rawExcerpt": "[Thách thức & Giữ vững lập trường] Tổng quan: Đại diện cho cuộc chiến bảo vệ thành quả và quyền lợi trước sự cạnh tranh hoặc chơi xấu; bạn vẫn là người giữ lợi thế nếu vững lập trường. | Tình yêu: Dễ xảy ra tranh cãi bất đồng quan điểm; không nên nhượng bộ im lặng dồn nén mà hãy thẳng thắn bày tỏ nguyện vọng của mình. | Công việc: Cạnh tranh gay gắt, điều khoản hợp đồng mới dễ gây tranh cãi; giữ vững bản lĩnh vì bạn đang nắm nhiều lợi thế. | Tiền bạc: Thiếu dứt khoát trong chi tiêu; chưa nên góp vốn đầu tư chung do dễ xung đột lợi ích—hãy cương quyết bảo vệ quyền lợi bản thân. | Sức khỏe: Áp lực công việc làm giảm sức đề kháng; cần ăn uống, sinh hoạt điều độ và dành thời gian nghỉ ngơi.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "57_eight_of_wands",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 59–60",
+      "rawExcerpt": "[Trao đổi thông tin & Tăng tốc] Tổng quan: Đại diện cho giao tiếp, tin tức quan trọng sắp đến và tiến triển tăng tốc nhanh chóng; khuyên kiên nhẫn, tránh hấp tấp và hạn chế nghiện mạng xã hội. | Tình yêu: Thời điểm lý tưởng để giãi bày tâm tư, tỏ tình hoặc cầu hôn; các mâu thuẫn chỉ được giải quyết khi cả hai thẳng thắn trò chuyện. | Công việc: Công việc thuận lợi, xử lý êm đẹp; nên lên lộ trình phát triển dài hạn và đầu tư mạnh vào chăm sóc khách hàng. | Tiền bạc: Khó khăn tiền bạc và nợ nần sớm được giải quyết; thuận lợi thử lĩnh vực mới nhưng nên hỏi người có kinh nghiệm trước khi đầu tư. | Sức khỏe: Cảnh báo vấn đề sức khỏe phát sinh đột ngột do làm việc quá sức—cần chuẩn bị dự phòng và bảo vệ sức khỏe kịp thời.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "58_nine_of_wands",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 61–62",
+      "rawExcerpt": "[Kiên cường qua bế tắc] Tổng quan: Xuất hiện khi bạn mệt mỏi muốn bỏ cuộc hoặc đa nghi dựng tường phòng vệ; vượt qua thử thách này sẽ mang lại sức mạnh và tinh thần lạc quan. | Tình yêu: Cả hai đều có trách nhiệm và tin tưởng nhau; tuy nhiên tránh im lặng trông chờ đối phương tự thay đổi mà hãy mạnh dạn mở lời. | Công việc: Cạnh tranh gay gắt và có thể gặp phản bội khiến nản lòng; hãy nhanh chóng lấy lại tinh thần vì thành công chỉ đến muộn hơn dự kiến. | Tiền bạc: Sự thận trọng giúp quản lý chi tiêu và tiết kiệm hiệu quả hơn; đầu tư kinh doanh khả quan nhưng tránh quỹ mạo hiểm quá rủi ro. | Sức khỏe: Sức khỏe nhìn chung khả quan nhờ thói quen sinh hoạt hợp lý; chỉ cần tránh căng thẳng ngắn hạn và kích động từ bên ngoài.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "59_ten_of_wands",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 63–64",
+      "rawExcerpt": "[Chăm chỉ, nỗ lực & Gánh nặng] Tổng quan: Thông điệp về sự chăm chỉ và gánh vác nhiều trách nhiệm cùng lúc; vượt qua giai đoạn áp lực này bạn sẽ sớm chạm tới thành công. | Tình yêu: Cảm thấy mệt mỏi vì một mình gánh vác hoặc quá nồng nhiệt khiến đối phương bị động; cần cả hai cùng vun đắp và hạ cái tôi. | Công việc: Nhiều rắc rối dồn dập khiến cách làm việc dễ lan man; hãy tập trung vào mục tiêu chính, sắp xếp ưu tiên thay vì ôm đồm. | Tiền bạc: Chưa phải lúc đầu tư hay chi tiêu thoải mái; dự báo có khoản chi ngoài dự tính nên cần tiết kiệm và tránh vay mượn. | Sức khỏe: Áp lực công việc và tiền bạc dễ gây suy kiệt, buồn rầu—không hy sinh sức khỏe cho công việc, hãy nghỉ ngơi lấy lại cân bằng.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "60_page_of_wands",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 65–66",
+      "rawExcerpt": "[Khám phá thú vị] Tổng quan: Đại diện cho sự tò mò, tinh thần ham học hỏi, giàu ý tưởng sáng tạo và nguồn năng lượng trẻ trung; cần vượt qua nỗi sợ nội tâm để không bỏ dở giữa chừng. | Tình yêu: Tránh nóng vội và lời hoa mỹ thiếu bền lâu; cặp đôi đang yêu nên tạo thêm sự lãng mạn và cho đi tương xứng khi nhận lại. | Công việc: Mức trung bình—rắc rối bất ngờ dễ gây hoảng loạn nếu bỏ cuộc, nhưng kiên trì giải quyết sẽ qua rất nhanh và giúp bạn trưởng thành. | Tiền bạc: Không phải lá bài tốt về tiền bạc do tác nhân đe dọa bên ngoài; cân nhắc kỹ vay mượn/đầu tư và ưu tiên tiết kiệm. | Sức khỏe: Năng lượng bùng nổ lúc đầu nhưng dễ hụt hơi thành mệt mỏi—cần bình tĩnh chăm sóc bản thân và giữ tinh thần lạc quan.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "61_knight_of_wands",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 67–68",
+      "rawExcerpt": "[Hành động nhanh nhẹn] Tổng quan: Lá bài của tốc độ, hành động phiêu lưu, nhiệt huyết và sự tự tin; khuyên sống chậm lại suy ngẫm để tránh vội vàng rồi nhanh chán. | Tình yêu: Dự báo sự xa cách (cả cảm xúc hoặc yêu xa) và xung đột do tính cách muốn làm chủ; cần hạ cái tôi và chấp nhận thay đổi. | Công việc: Có tố chất chỉ huy, linh hoạt xử lý công việc nhanh gọn và có tin vui; tuy nhiên tránh xoay kế hoạch quá nhanh khiến cộng sự không theo kịp. | Tiền bạc: May mắn trong đầu tư, tiền bạc rủng rỉnh và có khách hàng/mối làm ăn mới; nên để tiền lưu động nhưng vẫn giữ khoản tiết kiệm phòng thân. | Sức khỏe: Sức khỏe ổn định và có chuyển biến tốt; thời điểm lý tưởng cho những chuyến đi nghỉ ngơi cùng gia đình, bạn bè.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "62_queen_of_wands",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 69–70",
+      "rawExcerpt": "[Chinh phục quyền lực] Tổng quan: Đại diện cho người phụ nữ thông minh, can đảm, tham vọng và có khả năng lãnh đạo logic; cảnh báo tránh độc đoán tạo áp lực cho xung quanh. | Tình yêu: Cảnh báo quá bận rộn công việc làm xuất hiện khoảng trống tình cảm hoặc tạo áp lực thành tích lên đối phương; người độc thân nên nới lỏng tiêu chuẩn. | Công việc: Tín hiệu tốt trong kinh doanh, có thành tích đáng tự hào và có thể gặp sếp nữ/quý nhân nữ nâng đỡ; lưu ý áp lực cao dễ kiệt sức. | Tiền bạc: Cơ hội kinh doanh đến bất ngờ nhưng tiềm ẩn rủi ro tài chính; xử lý tiền bạc khách quan, không để tình cảm chi phối. | Sức khỏe: Tập trung quá độ cho công việc dễ ảnh hưởng sức khỏe—cần nghỉ ngơi, bỏ thói quen xấu và không dùng thuốc không rõ nguồn gốc.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "63_king_of_wands",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 71–72",
+      "rawExcerpt": "[Lãnh đạo thông thái] Tổng quan: Đại diện cho người đàn ông quyền lực, sáng tạo, bản lĩnh lãnh đạo và tầm nhìn rõ ràng; cần giữ sự cởi mở để không trở nên độc đoán. | Tình yêu: Lý tưởng để người độc thân bắt đầu tình yêu mới; cặp đôi lâu năm bền chặt hạnh phúc, chỉ cần tránh lời trách móc gây tổn thương khi cãi vã. | Công việc: Hoàn thành xuất sắc nhiệm vụ, nhanh chóng tiến lên đỉnh cao; cần chia sẻ vấn đề với đồng đội thay vì ôm hết và chuyên quyền. | Tiền bạc: Có biến động tài chính nên cần chi tiêu điều độ và dự phòng; có thể nhận sự hỗ trợ tài chính từ người đàn ông quan trọng (bố, bạn trai, cấp trên). | Sức khỏe: Cảnh báo vấn đề tiêu hóa hoặc ngộ độc thực phẩm—cẩn trọng nguồn gốc thức ăn, ăn đủ bữa và kiểm tra sức khỏe định kỳ.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "64_ace_of_pentacles",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 129–130",
+      "rawExcerpt": "[Sự khởi đầu thịnh vượng] Tổng quan: Hạt giống tốt mang lại dấu hiệu thịnh vượng, ổn định và thành quả lao động đầu tiên; không ngủ quên trên chiến thắng mà tiếp tục nỗ lực. | Tình yêu: Thời điểm của mối quan hệ mới thực tế—những hành động quan tâm ấm áp có giá trị hơn lời thề hẹn; thẳng thắn trò chuyện nếu còn nghi ngờ. | Công việc: Giai đoạn đầu có trở ngại cần thiết để rèn bản lĩnh; giữ khiêm tốn và tham vọng đúng mực sẽ gặt hái phần thưởng lớn hơn. | Tiền bạc: Nhiều cơ hội kiếm tiền và kinh doanh béo bở; vẫn cần lập kế hoạch chi tiêu hợp lý và hỏi người có kinh nghiệm khi đầu tư lĩnh vực lạ. | Sức khỏe: Không có dấu hiệu bất lợi lớn, nhưng tránh làm việc liên tục quá tải và giữ nếp sống lành mạnh.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "65_two_of_pentacles",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 131–132",
+      "rawExcerpt": "[Kiểm soát & Cân bằng cuộc sống] Tổng quan: Đánh dấu giai đoạn cần quản lý chặt tài chính, thời gian và cân bằng mọi khía cạnh với tinh thần lạc quan, tỉnh táo. | Tình yêu: Cảm xúc lãng mạn dễ phai nhạt—cần cân bằng lại, san sẻ trách nhiệm và tránh lời tổn thương; người độc thân nên hoàn thiện mình trước. | Công việc: Dấu hiệu quá tải vì ôm quá nhiều việc—hãy sắp xếp ưu tiên làm lần lượt và nhờ đồng nghiệp hỗ trợ. | Tiền bạc: Thu chi chênh lệch—cắt giảm khoản không cần thiết, tích lũy cho kế hoạch tới và hạn chế vay mượn tránh sứt mẻ tình cảm. | Sức khỏe: Mất cân bằng nghiêm trọng giữa công việc và sức khỏe; tạm gác việc nghỉ ngơi, tập thể thao nhẹ và quan tâm sức khỏe người thân.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "66_three_of_pentacles",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 133–134",
+      "rawExcerpt": "[Phát triển bản thân & Cộng tác] Tổng quan: Giai đoạn nỗ lực học hỏi, rèn luyện kỹ năng và làm việc nhóm hiệu quả mang lại thành công ngoài mong đợi; tránh kiêu ngạo. | Tình yêu: Tránh quan tâm kiểm soát quá mức gây ngột ngạt—hãy tôn trọng không gian riêng; người độc thân thích hợp ra ngoài tìm nửa kia. | Công việc: Công việc thăng hoa, được công nhận và thăng tiến; có thể luân chuyển hoặc đầu tư thận trọng nhưng không được kiêu ngạo. | Tiền bạc: Tài chính ổn định hơn và thu khoản tiền lớn nhờ thăng tiến; thận trọng biến động đầu tư, tiết kiệm và hạn chế vay mượn. | Sức khỏe: Khắc phục hậu quả bỏ bê bản thân trước đây bằng chế độ ăn thanh lọc và tập thể dục; tinh thần lạc quan giúp nhanh khỏi bệnh.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "67_four_of_pentacles",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 135–136",
+      "rawExcerpt": "[Sở hữu, tích trữ & Quản lý] Tổng quan: Quản lý tiền bạc và giữ gìn thành quả rất chặt chẽ tạo sự ổn định, nhưng cảnh báo sự cố chấp, bảo thủ và không chịu buông thứ đã hết giá trị. | Tình yêu: Kỳ vọng quá hoàn hảo gây thất vọng và mệt mỏi nhưng không ai muốn buông—hãy hạ tiêu chuẩn và chấp nhận cùng nhau thay đổi. | Công việc: Nhận phần thưởng xứng đáng nhưng cảnh báo ngủ quên trên chiến thắng và sự xuất hiện của đối thủ cạnh tranh. | Tiền bạc: Nguồn thu dồi dào, chi tiêu ít nhưng việc tích trữ quá chặt không lưu động tiền dễ làm vụt mất cơ hội tốt. | Sức khỏe: Tiết kiệm quá mức đến mức bỏ quên khám sức khỏe định kỳ; tuyệt đối không tự ý uống thuốc và phòng bệnh cũ tái phát.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "68_five_of_pentacles",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 137–138",
+      "rawExcerpt": "[Bất an, khó khăn & Nghịch cảnh] Tổng quan: Cảnh báo giai đoạn thiếu thốn, bất an tài chính, nợ cũ và cảm giác cô đơn—cần giữ vững cân bằng và nghị lực để vượt qua. | Tình yêu: Điểm sáng là tình yêu khá hòa hợp và cảm thông nhau hơn qua nỗ lực của bạn; chỉ cần tránh tranh cãi tiền bạc gây rạn nứt. | Công việc: Rắc rối kinh doanh, hợp tác không thuận lợi; cực kỳ cẩn trọng khi đầu tư/mở rộng và tìm hiểu kỹ trước khi nhảy việc. | Tiền bạc: Sụt giảm tài chính nghiêm trọng, dễ rơi vào nợ nần—cần tiết chế tối đa chi tiêu không cần thiết và nhờ người có kinh nghiệm tư vấn. | Sức khỏe: Giai đoạn nhạy cảm dễ ốm đau, tai nạn và kiệt sức—cẩn thận đi lại, ăn uống và cố gắng thư giãn.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "69_six_of_pentacles",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 139–140",
+      "rawExcerpt": "[Sự chia sẻ & Công bằng] Tổng quan: Biểu tượng của sự cho và nhận công bằng: bạn có vị thế an toàn để giúp đỡ người khác hoặc sẽ nhận được sự hỗ trợ kịp thời khi khó khăn. | Tình yêu: Người độc thân có nhiều lựa chọn nên đừng hấp tấp; cặp đôi dễ tranh cãi vì cảm thấy hy sinh mất cân bằng—cần bình tĩnh tháo gỡ. | Công việc: Công việc sớm ổn định, nhận được giúp đỡ từ đồng nghiệp/cấp trên và sửa sai quá khứ; chưa nên đầu tư mở rộng mạo hiểm. | Tiền bạc: Cảnh báo lòng tham kiếm lợi từ khó khăn người khác dễ vướng pháp lý; biết hài lòng và trân trọng sự giúp đỡ tài chính từ người thân. | Sức khỏe: Sức khỏe khá ổn nhưng cảnh báo đánh đổi sức khỏe lấy tiền—chấm dứt làm việc quá sức và ngủ nghỉ điều độ.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "70_seven_of_pentacles",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 141–142",
+      "rawExcerpt": "[Kiên trì vững tin & Tăng trưởng] Tổng quan: Giai đoạn tăng trưởng dài hạn sau lao động chăm chỉ; kiên trì vững tin vào kế hoạch đang chuẩn bị và rút bài học khách quan từ sai lầm. | Tình yêu: Người độc thân chưa sẵn sàng do mặc cảm quá khứ; cặp đôi đang yêu được ghi nhận hy sinh và có thể tiến tới ổn định/hôn nhân. | Công việc: Nỗ lực quá khứ được đền đáp nhưng đừng tận hưởng sớm làm chậm tiến độ; cân nhắc kỹ trước khi mở rộng kinh doanh. | Tiền bạc: Mạnh dạn nắm bắt cơ hội tài chính có chọn lọc thay vì do dự, nhưng tránh phung phí dẫn đến thiếu thốn nợ nần. | Sức khỏe: Diễn biến sức khỏe dễ xấu đi do sinh hoạt thiếu khoa học hoặc môi trường ô nhiễm—cần nghỉ ngơi và giữ tinh thần bình yên.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "71_eight_of_pentacles",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 143–144",
+      "rawExcerpt": "[Đam mê, tay nghề & Thành công] Tổng quan: Làm chủ kỹ năng chuyên môn đến mức biến đam mê, sở thích thành sự nghiệp kiếm tiền; cảnh báo thái độ độc tài không nghe góp ý. | Tình yêu: Người độc thân có người đang bật đèn xanh; cặp đôi tình cảm tốt nhưng cần cân đối thời gian vì công việc quá bận rộn. | Công việc: Làm việc bằng đam mê và trách nhiệm nhưng dễ quá tải—đừng ngại nhờ đồng nghiệp giúp và giữ cân bằng cuộc sống. | Tiền bạc: Thu nhập kha khá từ lao động bền bỉ; chi tiêu có kế hoạch và hỏi ý kiến người lớn tuổi trước khi đầu tư hay vay mượn. | Sức khỏe: Cảnh báo bỏ bê ăn uống, sinh hoạt vì quá đắm chìm công việc—hãy tập thể dục giữ sức khỏe dẻo dai.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "72_nine_of_pentacles",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 145–146",
+      "rawExcerpt": "[Tận hưởng thành quả & Độc lập] Tổng quan: Trạng thái ổn định, tự tin, tự lập và dư dả tài chính để tận hưởng thành quả sau quá trình chăm chỉ; thuận lợi mua nhà/xe mới. | Tình yêu: Mối quan hệ mới nghiêm túc, bền vững và ngọt ngào; người độc thân đang rất hài lòng tận hưởng cuộc sống tự do. | Công việc: Thành công rực rỡ, tìm việc mới thuận lợi hơn mong đợi; nên chia sẻ kinh nghiệm cho người trẻ và không ngủ quên trên chiến thắng. | Tiền bạc: Quản lý tài chính tốt và thu khoản lớn, nhưng cảnh báo hưởng thụ thiếu kiểm soát dễ dẫn tới thâm hụt. | Sức khỏe: Lười vận động dễ làm đầu óc kém minh mẫn và phát sinh cơn đau bất ngờ—hãy tập luyện trở lại và khám định kỳ.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "73_ten_of_pentacles",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 147–148",
+      "rawExcerpt": "[Dồi dào tài chính & Gia tộc] Tổng quan: Biểu tượng của sự sung túc, kế thừa truyền thống gia đình và thành công bền vững mang lại lợi ích cho cả các thành viên trong nhà. | Tình yêu: Căng thẳng do áp lực điều kiện gia đình hoặc vật chất khiến dễ cãi vã; nếu hai bạn kiên định nắm tay vượt qua sẽ sang trang mới. | Công việc: Ổn định vững chắc gần đỉnh cao nhờ người có kinh nghiệm dẫn dắt; cảnh giác kẻ xu nịnh tiểu nhân và tích lũy dự phòng biến cố. | Tiền bạc: Nền móng tài chính vững có gia đình hỗ trợ; thích hợp đầu tư và chia sẻ gánh nặng tài chính cùng người thân. | Sức khỏe: Sức khỏe bản thân ổn định nhưng cần đặc biệt quan tâm và đưa người lớn tuổi trong gia đình đi khám định kỳ.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "74_page_of_pentacles",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 149–150",
+      "rawExcerpt": "[Tham vọng cháy bỏng & Học hỏi] Tổng quan: Sở hữu tham vọng lớn và sự nghiêm túc phát triển tài chính từng bước; cảnh báo không vay mượn quá sức khi tiềm lực chưa đủ. | Tình yêu: Tình cảm dễ phai nhạt và tranh cãi vì tiền bạc, nợ nần; cần tập trung điều hòa. Người độc thân chưa cần vội vàng yêu. | Công việc: Khối lượng công việc lớn trong khi thời gian hạn hẹp—hãy chia nhỏ từng nhiệm vụ, nhờ hỗ trợ và bạn sẽ nhận thưởng xứng đáng. | Tiền bạc: Thận trọng, điều chỉnh chi tiêu và ưu tiên tiết kiệm cho tham vọng; chưa phải lúc chấp nhận rủi ro đầu tư cao. | Sức khỏe: Sức khỏe đi xuống do bỏ bê bản thân—cần nghỉ ngơi, sinh hoạt điều độ và tránh thể thao mạo hiểm.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "75_knight_of_pentacles",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 151–152",
+      "rawExcerpt": "[Chăm chỉ, bền bỉ & Không vội vàng] Tổng quan: Đại diện cho sự chăm chỉ tạo ra chất lượng bền vững, cẩn trọng hướng tới tương lai dài hạn; chỉ cần tránh đắn đo quá lâu lỡ cơ hội. | Tình yêu: Suy nghĩ kỹ trước khi yêu mới; cặp đôi cần sẻ chia cảm thông và cân bằng giữa công việc với tình cảm để không bỏ bê đối phương. | Công việc: Không chủ quan dù công việc ổn định; chưa phải lúc mở rộng kinh doanh, tập trung củng cố hiện tại và khéo léo tránh thẳng thắn quá gây rạn nứt đồng nghiệp. | Tiền bạc: Tài chính có dấu hiệu tốt nhưng chưa đủ lớn cho tham vọng—tiếp tục tiết kiệm và rạch ròi mọi khoản vay mượn. | Sức khỏe: Thói quen xấu và lười tập luyện dễ gây bệnh—cần thay đổi ngay, tập luyện đều và nghe chỉ dẫn bác sĩ, không tự ý uống thuốc.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "76_queen_of_pentacles",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 153–154",
+      "rawExcerpt": "[Thực tế, hào phóng & Khôn ngoan] Tổng quan: Người phụ nữ thông minh, thực tế, tài năng và hào phóng, nhận phần thưởng nhờ sự cẩn trọng nghiêm túc; tránh quá bảo thủ tự thu hẹp tầm nhìn. | Tình yêu: Khi yêu dễ trao hết lòng và vương vấn quá khứ nếu chia tay—hãy mở lòng đón cơ hội mới; người đang yêu tận hưởng giai đoạn ngọt ngào. | Công việc: Đẩy nhanh tiến độ xử lý việc tồn đọng để đón nhiệm vụ quan trọng và cơ hội thăng tiến; làm việc quy củ và hạn chế tranh cãi đồng nghiệp. | Tiền bạc: Công việc khởi sắc nhưng tài chính chưa quá dư dả—điều chỉnh chi tiêu, để tiền lưu động và cẩn trọng lời mời góp vốn chung. | Sức khỏe: Sức khỏe không đáng lo ngại và bệnh đang điều trị có khởi sắc; vẫn cần tập luyện và ăn uống khoa học.",
+      "extractedAt": "2026-11-21"
+    },
+    {
+      "cardId": "77_king_of_pentacles",
+      "sourceTitle": "Ý nghĩa 78 lá bài Tarot (Tài liệu giải bài)",
+      "pdfFile": "Ý nghĩa 78 lá bài Tarot.pdf",
+      "pageRange": "trang 155–156",
+      "rawExcerpt": "[Giàu có, thịnh vượng & Truyền thống] Tổng quan: Định hướng kinh doanh sắc bén, giàu có thịnh vượng và làm gia đình tự hào; cảnh báo không quá đặt nặng tiền bạc mà quên giá trị tình cảm. | Tình yêu: Người độc thân rất thích hợp bắt đầu tình yêu; cặp đôi cần tránh để tham vọng vật chất gây căng thẳng—hãy cùng nhau tiến bộ trên tinh thần tôn trọng. | Công việc: Tín hiệu kinh doanh rất tích cực với lộ trình hiệu quả; tránh tham lam ôm hết việc gây kiệt sức mà nên chia sẻ với đồng nghiệp. | Tiền bạc: Tài chính ổn định nhờ đầu tư khôn ngoan; tính toán kỹ trước dự án mới và giữ tầm nhìn dài hạn khi có biến động ngắn hạn. | Sức khỏe: Đầu tư chăm sóc bản thân, thư giãn, hạn chế thức khuya và không để tham vọng làm kiệt sức; tìm động viên từ người thân nếu đang điều trị.",
+      "extractedAt": "2026-11-21"
+    }
+  ]
+}
