@@ -38,7 +38,7 @@ export function BlenderCardModel({
   onPointerOver,
   onPointerOut,
 }: BlenderCardModelProps) {
-  const fullUrl = withBasePath(glbPath);
+  const fullUrl = `${withBasePath(glbPath)}?v=3`;
   const { scene } = useGLTF(fullUrl);
   const gl = useThree((s) => s.gl);
   const groupRef = useRef<THREE.Group>(null);

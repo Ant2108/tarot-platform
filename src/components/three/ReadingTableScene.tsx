@@ -87,7 +87,7 @@ function SharedDeckCards({
 }) {
   const backTexture = useLoader(
     THREE.TextureLoader,
-    withBasePath("/tarot-assets/textures/card_back.png")
+    `${withBasePath("/tarot-assets/textures/card_back.png")}?v=3`
   );
   const gl = useThree((s) => s.gl);
   const [hoveredSlot, setHoveredSlot] = useState<number | null>(null);
@@ -101,19 +101,58 @@ function SharedDeckCards({
     backTexture.needsUpdate = true;
   }, [backTexture, gl]);
 
-  const geometry = useMemo(() => new THREE.BoxGeometry(0.68, 1.16, 0.01), []);
-  const materials = useMemo(() => {
-    const edgeMat = new THREE.MeshStandardMaterial({
-      color: "#d4b475",
-      metalness: 0.8,
-      roughness: 0.28,
+  // Gently rounded-corner Tarot card geometry (matches real Rider-Waite-Smith cards & 78 .glb models)
+  const geometry = useMemo(() => {
+    const w = 0.7;
+    const h = 1.2;
+    const r = 0.032;
+    const depth = 0.008;
+    const hw = w / 2;
+    const hh = h / 2;
+
+    const shape = new THREE.Shape();
+    shape.moveTo(-hw + r, -hh);
+    shape.lineTo(hw - r, -hh);
+    shape.absarc(hw - r, -hh + r, r, -Math.PI / 2, 0, false);
+    shape.lineTo(hw, hh - r);
+    shape.absarc(hw - r, hh - r, r, 0, Math.PI / 2, false);
+    shape.lineTo(-hw + r, hh);
+    shape.absarc(-hw + r, hh - r, r, Math.PI / 2, Math.PI, false);
+    shape.lineTo(-hw, -hh + r);
+    shape.absarc(-hw + r, -hh + r, r, Math.PI, Math.PI * 1.5, false);
+
+    const geo = new THREE.ExtrudeGeometry(shape, {
+      depth,
+      bevelEnabled: false,
+      curveSegments: 8,
     });
+    geo.translate(0, 0, -depth / 2);
+
+    // Normalize UVs to [0, 1] across the card face so card_back.png maps cleanly edge-to-edge
+    const pos = geo.attributes.position;
+    const uv = geo.attributes.uv;
+    for (let i = 0; i < pos.count; i++) {
+      const u = (pos.getX(i) + hw) / w;
+      const v = (pos.getY(i) + hh) / h;
+      uv.setXY(i, u, v);
+    }
+    uv.needsUpdate = true;
+    return geo;
+  }, []);
+
+  const materials = useMemo(() => {
     const faceMat = new THREE.MeshStandardMaterial({
       map: backTexture,
-      roughness: 0.45,
-      metalness: 0.08,
+      roughness: 0.62,
+      metalness: 0.05,
     });
-    return [edgeMat, edgeMat, edgeMat, edgeMat, faceMat, faceMat];
+    const edgeMat = new THREE.MeshStandardMaterial({
+      color: "#d4b475",
+      metalness: 0.78,
+      roughness: 0.3,
+    });
+    // ExtrudeGeometry group 0 = front & back caps, group 1 = extruded side rim
+    return [faceMat, edgeMat];
   }, [backTexture]);
 
   useEffect(() => {
@@ -266,9 +305,9 @@ function ReadingFallback2D({
     return (
       <div className="flex h-full flex-col items-center justify-center gap-3 p-6 text-center">
         <img
-          src={withBasePath("/tarot-assets/textures/card_back.png")}
+          src={`${withBasePath("/tarot-assets/textures/card_back.png")}?v=3`}
           alt="Tarot deck back"
-          className="h-44 w-auto rounded-md border border-[rgba(212,180,117,0.45)] shadow-2xl"
+          className="h-44 w-auto rounded-lg border border-[rgba(212,180,117,0.45)] shadow-2xl"
         />
         <p className="text-xs uppercase tracking-[0.18em] text-[var(--arcana-stone)]">
           {locale === "vi" ? "Đang hiển thị bộ bài 2D" : "2D Deck View Active"}
@@ -289,14 +328,14 @@ function ReadingFallback2D({
               disabled={picked}
               onClick={() => onSelectSlot(i)}
               aria-label={`Draw card ${i + 1}`}
-              className={`aspect-[7/12] w-full max-w-[68px] sm:max-w-[78px] overflow-hidden rounded-sm border transition-transform cursor-pointer ${
+              className={`aspect-[7/12] w-full max-w-[68px] sm:max-w-[78px] overflow-hidden rounded-lg border transition-transform cursor-pointer ${
                 picked
                   ? "opacity-20 scale-90 border-white/10"
                   : "border-[rgba(212,180,117,0.4)] hover:-translate-y-1.5"
               }`}
             >
               <img
-                src={withBasePath("/tarot-assets/textures/card_back.png")}
+                src={`${withBasePath("/tarot-assets/textures/card_back.png")}?v=3`}
                 alt=""
                 className="h-full w-full object-cover"
               />
@@ -316,13 +355,13 @@ function ReadingFallback2D({
           onClick={() => !item.revealed && onRevealCard(idx)}
           className="flex flex-col items-center gap-2 cursor-pointer"
         >
-          <div className="aspect-[7/12] w-full max-w-[100px] sm:max-w-[144px] overflow-hidden rounded-md border border-[rgba(212,180,117,0.4)] bg-[#0b0d14] shadow-xl">
+          <div className="aspect-[7/12] w-full max-w-[100px] sm:max-w-[144px] overflow-hidden rounded-lg border border-[rgba(212,180,117,0.4)] bg-[#0b0d14] shadow-xl">
             <img
-              src={withBasePath(
+              src={
                 item.revealed
-                  ? item.card.image
-                  : "/tarot-assets/textures/card_back.png"
-              )}
+                  ? withBasePath(item.card.image)
+                  : `${withBasePath("/tarot-assets/textures/card_back.png")}?v=3`
+              }
               alt={item.revealed ? item.card.name : "Unrevealed tarot card"}
               className={`h-full w-full object-cover transition-transform duration-500 ${
                 item.revealed && item.orientation === "reversed" ? "rotate-180" : ""
