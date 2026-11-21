@@ -4,13 +4,20 @@ export type SuitType = "Wands" | "Cups" | "Swords" | "Pentacles" | null;
 
 export type CardOrientation = "upright" | "reversed";
 
-export type TarotTopicId =
+export type CardTopicKey =
   | "general"
   | "love"
   | "family"
   | "career"
   | "finance"
   | "personalGrowth";
+
+export type TarotTopicId =
+  | CardTopicKey
+  | "customQuestion"
+  | "energyCheck"
+  | "study"
+  | "health";
 
 export interface OrientationText {
   upright: string;
@@ -45,14 +52,14 @@ export interface TarotCard {
     reversed: string[];
   };
   general: OrientationText;
-  topics: Record<TarotTopicId, OrientationText>;
+  topics: Record<CardTopicKey, OrientationText>;
   en?: {
     keywords: {
       upright: string[];
       reversed: string[];
     };
     general: OrientationText;
-    topics: Record<TarotTopicId, OrientationText>;
+    topics: Record<CardTopicKey, OrientationText>;
   };
   /**
    * Explicitly distinguishes demonstration data from verified book/PDF extractions.

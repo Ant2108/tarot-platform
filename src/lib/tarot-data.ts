@@ -1,10 +1,26 @@
 import rawDeck from "@/data/tarot-cards.json";
 import rawSources from "@/data/extracted-sources.json";
 import type {
+  CardTopicKey,
   TarotCard,
+  TarotTopicId,
   ExtractedSourcesDataset,
   ExtractedSourceEntry,
 } from "@/types/tarot";
+
+export function resolveCardTopicKey(topicId: TarotTopicId): CardTopicKey {
+  switch (topicId) {
+    case "study":
+      return "career";
+    case "health":
+    case "energyCheck":
+      return "personalGrowth";
+    case "customQuestion":
+      return "general";
+    default:
+      return topicId;
+  }
+}
 
 export const TAROT_CARDS: TarotCard[] = rawDeck.cards as TarotCard[];
 export const TAROT_DATA_DISCLAIMER: string = rawDeck.disclaimer;

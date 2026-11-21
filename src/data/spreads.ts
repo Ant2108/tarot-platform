@@ -379,6 +379,258 @@ export const TAROT_TOPICS: TopicMeta[] = [
       },
     ],
   },
+  {
+    id: "customQuestion",
+    label: "Ask Any Question",
+    shortLabel: "Question",
+    description:
+      "Draw strictly around your specific question—no fixed category required.",
+    spreads: [
+      {
+        id: "question-focus",
+        topicId: "customQuestion",
+        name: "Direct Question Reading",
+        description:
+          "Focuses all three cards directly on your exact question, hidden factors, and best outcome.",
+        positions: [
+          {
+            index: 0,
+            label: "Current Context",
+            subtitle: "Where Things Stand",
+            promptHint: "The active reality behind your question.",
+          },
+          {
+            index: 1,
+            label: "Key Factor",
+            subtitle: "What Matters Most",
+            promptHint: "The hidden influence or turning point to watch.",
+          },
+          {
+            index: 2,
+            label: "Outcome & Advice",
+            subtitle: "Best Direction",
+            promptHint: "Likely trend and wisest action to take.",
+          },
+        ],
+      },
+      {
+        id: "question-decision",
+        topicId: "customQuestion",
+        name: "Crossroads & Decision",
+        description:
+          "Compare two options or paths and receive grounded clarity before choosing.",
+        positions: [
+          {
+            index: 0,
+            label: "Option A",
+            subtitle: "First Path",
+            promptHint: "The energy and outcome of the first choice.",
+          },
+          {
+            index: 1,
+            label: "Option B",
+            subtitle: "Second Path",
+            promptHint: "The energy and outcome of the second choice.",
+          },
+          {
+            index: 2,
+            label: "Clear Guidance",
+            subtitle: "Compass",
+            promptHint: "What helps you decide with confidence.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "energyCheck",
+    label: "Daily Energy Check",
+    shortLabel: "Energy",
+    description:
+      "Quickly check your current vibration, subtle blocks, and a gentle message for today.",
+    spreads: [
+      {
+        id: "energy-pulse",
+        topicId: "energyCheck",
+        name: "Current Energy Pulse",
+        description:
+          "A fast, clear snapshot of your present aura, what drains you, and what restores balance.",
+        positions: [
+          {
+            index: 0,
+            label: "Dominant Energy",
+            subtitle: "Your Current Pulse",
+            promptHint: "The main emotional and mental tone around you.",
+          },
+          {
+            index: 1,
+            label: "Energy Block",
+            subtitle: "What Drains You",
+            promptHint: "Subtle friction or distraction to release.",
+          },
+          {
+            index: 2,
+            label: "Balancing Message",
+            subtitle: "Alignment",
+            promptHint: "What keeps you grounded and clear today.",
+          },
+        ],
+      },
+      {
+        id: "energy-week",
+        topicId: "energyCheck",
+        name: "Week Ahead Rhythm",
+        description:
+          "Tune into the opening wave, peak moment, and anchor theme of your upcoming week.",
+        positions: [
+          {
+            index: 0,
+            label: "Opening Wave",
+            subtitle: "Early Week",
+            promptHint: "The energy welcoming your week.",
+          },
+          {
+            index: 1,
+            label: "Key Moment",
+            subtitle: "Midweek Shift",
+            promptHint: "What deserves your focus.",
+          },
+          {
+            index: 2,
+            label: "Anchor Theme",
+            subtitle: "Steady Center",
+            promptHint: "The mindset to carry through.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "study",
+    label: "Study & Exams",
+    shortLabel: "Study",
+    description:
+      "Check exam readiness, learning bottlenecks, focus habits, and academic direction.",
+    spreads: [
+      {
+        id: "study-exam",
+        topicId: "study",
+        name: "Exam Readiness & Focus",
+        description:
+          "Assess your current preparation, potential exam pitfalls, and best strategy.",
+        positions: [
+          {
+            index: 0,
+            label: "Preparation",
+            subtitle: "Current Foundation",
+            promptHint: "How solid your readiness and mindset are right now.",
+          },
+          {
+            index: 1,
+            label: "Obstacle",
+            subtitle: "Watch Out For",
+            promptHint: "Stress, distraction, or blind spot to guard against.",
+          },
+          {
+            index: 2,
+            label: "Result & Strategy",
+            subtitle: "Best Approach",
+            promptHint: "Likely trend and smartest way to perform well.",
+          },
+        ],
+      },
+      {
+        id: "study-path",
+        topicId: "study",
+        name: "Learning Direction",
+        description:
+          "Clarify your natural academic strengths, skill gaps, and next milestone.",
+        positions: [
+          {
+            index: 0,
+            label: "Strength",
+            subtitle: "Natural Edge",
+            promptHint: "Where you learn and shine fastest.",
+          },
+          {
+            index: 1,
+            label: "Gap to Fill",
+            subtitle: "Needs Practice",
+            promptHint: "Area asking for steady attention.",
+          },
+          {
+            index: 2,
+            label: "Next Milestone",
+            subtitle: "Forward Step",
+            promptHint: "Constructive action for your studies.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "health",
+    label: "Wellness & Mind",
+    shortLabel: "Wellness",
+    description:
+      "Reflect on emotional fatigue, rest habits, stress release, and gentle mind-body balance.",
+    spreads: [
+      {
+        id: "health-balance",
+        topicId: "health",
+        name: "Mind–Body Balance",
+        description:
+          "Check your vitality, root of emotional fatigue, and gentle ways to recharge.",
+        positions: [
+          {
+            index: 0,
+            label: "Current Vitality",
+            subtitle: "Inner State",
+            promptHint: "How your energy and mood feel right now.",
+          },
+          {
+            index: 1,
+            label: "Root of Fatigue",
+            subtitle: "Hidden Stressor",
+            promptHint: "What is quietly weighing on your mind.",
+          },
+          {
+            index: 2,
+            label: "Healing Shift",
+            subtitle: "Restoration",
+            promptHint: "Gentle habit or mindset to restore peace.",
+          },
+        ],
+      },
+      {
+        id: "health-reset",
+        topicId: "health",
+        name: "Rest & Renewal",
+        description:
+          "Identify what to let go, what to nourish, and how to build a calmer rhythm.",
+        positions: [
+          {
+            index: 0,
+            label: "Release",
+            subtitle: "Let Go",
+            promptHint: "Pressure or habit to put down.",
+          },
+          {
+            index: 1,
+            label: "Nourish",
+            subtitle: "Replenish",
+            promptHint: "What genuinely feeds your peace.",
+          },
+          {
+            index: 2,
+            label: "New Rhythm",
+            subtitle: "Sustainable Pace",
+            promptHint: "A healthier routine going forward.",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export function getTopicById(topicId: TarotTopicId): TopicMeta {

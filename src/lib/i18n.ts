@@ -410,6 +410,30 @@ export const TOPIC_LABELS_VI: Record<
     description:
       "Bức tranh toàn cảnh về giai đoạn hiện tại, điểm nghẽn và thông điệp dẫn lối.",
   },
+  customQuestion: {
+    label: "Hỏi Tự Do Theo Câu Hỏi",
+    shortLabel: "Câu Hỏi Riêng",
+    description:
+      "Bốc bài tập trung thẳng vào đúng câu hỏi của bạn mà không cần gò bó theo chủ đề cố định.",
+  },
+  energyCheck: {
+    label: "Check Năng Lượng Hôm Nay",
+    shortLabel: "Năng Lượng",
+    description:
+      "Bốc nhanh 3 lá để kiểm tra dòng năng lượng hiện tại, điều đang gây cản trở và thông điệp cân bằng.",
+  },
+  study: {
+    label: "Học Tập & Thi Cử",
+    shortLabel: "Học Tập",
+    description:
+      "Soi chiếu mức độ sẵn sàng trước kỳ thi, điểm cần tập trung ôn luyện và chiến lược đạt kết quả tốt.",
+  },
+  health: {
+    label: "Sức Khỏe & Tinh Thần",
+    shortLabel: "Tinh Thần",
+    description:
+      "Lắng nghe trạng thái thân–tâm, nhận diện nguồn gốc mệt mỏi và cách nghỉ ngơi, chữa lành nhẹ nhàng.",
+  },
 };
 
 export const SPREAD_LABELS_VI: Record<
@@ -487,6 +511,54 @@ export const SPREAD_LABELS_VI: Record<
     description:
       "Trải bài chẩn đoán trực diện cho bất kỳ câu hỏi mở nào bạn đang quan tâm.",
     positions: ["Tình Huống", "Thử Thách", "Lời Khuyên"],
+  },
+  "question-focus": {
+    name: "Trọng Tâm Câu Hỏi",
+    description:
+      "Giải trực tiếp đúng câu hỏi của bạn: bối cảnh hiện tại, yếu tố then chốt và kết quả / lời khuyên.",
+    positions: ["Bối Cảnh Hiện Tại", "Điều Cần Lưu Ý", "Kết Quả & Lời Khuyên"],
+  },
+  "question-decision": {
+    name: "Lựa Chọn & Quyết Định",
+    description:
+      "So sánh hai hướng đi đang phân vân và tìm ra góc nhìn sáng suốt nhất trước khi chọn.",
+    positions: ["Hướng Đi A", "Hướng Đi B", "Gợi Ý Sáng Suốt"],
+  },
+  "energy-pulse": {
+    name: "Check Năng Lượng Hiện Tại",
+    description:
+      "Bắt nhịp nhanh năng lượng chủ đạo hôm nay, điều làm bạn hao sức và thông điệp cân bằng.",
+    positions: ["Năng Lượng Chủ Đạo", "Điều Đang Cản Trở", "Thông Điệp Cân Bằng"],
+  },
+  "energy-week": {
+    name: "Nhịp Năng Lượng Tuần Tới",
+    description:
+      "Nhìn trước làn sóng mở đầu, điểm nhấn giữa tuần và tâm thế vững vàng nên giữ.",
+    positions: ["Khởi Đầu Tuần", "Điểm Nhấn", "Điều Cần Giữ Vững"],
+  },
+  "study-exam": {
+    name: "Ôn Tập & Thi Cử",
+    description:
+      "Đánh giá nền tảng ôn luyện hiện tại, rủi ro tâm lý cần tránh và chiến lược làm bài tốt.",
+    positions: ["Nền Tảng Hiện Tại", "Thử Thách Cần Tránh", "Kết Quả & Chiến Lược"],
+  },
+  "study-path": {
+    name: "Định Hướng Học Tập",
+    description:
+      "Nhận diện thế mạnh tiếp thu, lỗ hổng cần bổ sung và bước tiến tiếp theo.",
+    positions: ["Thế Mạnh", "Lỗ Hổng Cần Bù", "Bước Đi Tiếp Theo"],
+  },
+  "health-balance": {
+    name: "Cân Bằng Thân – Tâm",
+    description:
+      "Kiểm tra trạng thái sinh lực, nguyên nhân mệt mỏi ẩn sâu và cách hồi phục phù hợp.",
+    positions: ["Trạng Thái Năng Lượng", "Nguồn Gốc Mệt Mỏi", "Cách Chữa Lành"],
+  },
+  "health-reset": {
+    name: "Nghỉ Ngơi & Tái Tạo",
+    description:
+      "Nhận ra áp lực nên buông xuống, điều cần nuôi dưỡng và nhịp sống lành mạnh hơn.",
+    positions: ["Điều Cần Buông", "Điều Cần Nuôi Dưỡng", "Nhịp Sống Mới"],
   },
 };
 

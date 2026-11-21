@@ -1,5 +1,5 @@
 import tarotRules from "@/data/tarot-rules.json";
-import { getCardLocalized } from "@/lib/tarot-data";
+import { getCardLocalized, resolveCardTopicKey } from "@/lib/tarot-data";
 import {
   getLocalizedPositionLabel,
   getLocalizedSpreadName,
@@ -306,7 +306,8 @@ export function generateCombinedSynthesis(
       item.position.label
     );
     const localized = getCardLocalized(item.card, locale);
-    const topicMeaning = localized.topics[topic.id][item.orientation];
+    const topicMeaning =
+      localized.topics[resolveCardTopicKey(topic.id)][item.orientation];
     const kws = localized.keywords[item.orientation].slice(0, 3).join(", ");
     const dirText =
       locale === "en"

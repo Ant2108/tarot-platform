@@ -10,13 +10,17 @@ import {
   Coins,
   Compass,
   Eye,
+  GraduationCap,
   Heart,
+  HeartPulse,
   History,
   Home,
+  MessageCircleQuestion,
   RotateCcw,
   Shuffle,
   Sparkles,
   Trash2,
+  Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -58,6 +62,10 @@ const TOPIC_ICONS: Record<TarotTopicId, typeof Heart> = {
   finance: Coins,
   personalGrowth: Sparkles,
   general: Compass,
+  customQuestion: MessageCircleQuestion,
+  energyCheck: Zap,
+  study: GraduationCap,
+  health: HeartPulse,
 };
 
 const PHASE_ORDER: ReadingPhase[] = [
@@ -273,6 +281,48 @@ export function ReadingExperienceClient() {
                 placeholder={t.questionPlaceholder}
                 className="mt-2.5 w-full rounded-sm border border-[rgba(212,180,117,0.22)] bg-[rgba(7,8,13,0.75)] px-3.5 py-2.5 text-sm text-[var(--arcana-ink)] placeholder:text-[var(--arcana-stone)]/65 focus:border-[var(--arcana-gold)] focus:outline-none"
               />
+              <div className="mt-3 flex flex-wrap items-center gap-2">
+                <Button
+                  type="button"
+                  size="sm"
+                  variant="gold"
+                  onClick={() => {
+                    setTopic("customQuestion");
+                    shuffleDeck();
+                    setPhase("shuffle");
+                  }}
+                >
+                  <MessageCircleQuestion
+                    className="h-3.5 w-3.5"
+                    aria-hidden="true"
+                  />
+                  {locale === "vi"
+                    ? "Bốc Ngay Theo Câu Hỏi Này"
+                    : "Draw Directly for This Question"}
+                </Button>
+                <Button
+                  type="button"
+                  size="sm"
+                  variant="outline"
+                  onClick={() => {
+                    setTopic("energyCheck");
+                    if (!userQuestion.trim()) {
+                      setUserQuestion(
+                        locale === "vi"
+                          ? "Check năng lượng hiện tại của mình hôm nay"
+                          : "Check my current energy today"
+                      );
+                    }
+                    shuffleDeck();
+                    setPhase("shuffle");
+                  }}
+                >
+                  <Zap className="h-3.5 w-3.5" aria-hidden="true" />
+                  {locale === "vi"
+                    ? "Check Năng Lượng Nhanh"
+                    : "Quick Energy Check"}
+                </Button>
+              </div>
             </Panel>
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -496,22 +546,39 @@ export function ReadingExperienceClient() {
             {phase === "select" && (
               <Panel className="flex flex-col items-center justify-between gap-4 p-6 sm:flex-row">
                 <div>
-                  <h2 className="font-editorial text-2xl font-semibold">
-                    {t.selectMorePrefix} {3 - drawnCards.length}{" "}
-                    {t.selectMoreSuffix}
-                  </h2>
-                  <p className="mt-1 text-xs text-[var(--arcana-stone)]">
-                    {t.selectHint}{" "}
-                    <strong className="text-[var(--arcana-gold-light)]">
-                      {getLocalizedPositionLabel(
-                        activeSpread.id,
-                        drawnCards.length,
-                        locale,
-                        activeSpread.positions[drawnCards.length]?.label ?? ""
-                      )}
-                    </strong>
-                    .
-                  </p>
+                  {drawnCards.length >= 3 ? (
+                    <>
+                      <h2 className="font-editorial text-2xl font-semibold text-[var(--arcana-gold-light)]">
+                        {locale === "vi"
+                          ? "Đã rút đủ 3 lá bài..."
+                          : "All 3 cards drawn..."}
+                      </h2>
+                      <p className="mt-1 text-xs text-[var(--arcana-stone)]">
+                        {locale === "vi"
+                          ? "Đang sắp xếp 3 lá bài lên bàn trải bài để bạn lật mở."
+                          : "Arranging your three cards on the reading table."}
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <h2 className="font-editorial text-2xl font-semibold">
+                        {t.selectMorePrefix} {3 - drawnCards.length}{" "}
+                        {t.selectMoreSuffix}
+                      </h2>
+                      <p className="mt-1 text-xs text-[var(--arcana-stone)]">
+                        {t.selectHint}{" "}
+                        <strong className="text-[var(--arcana-gold-light)]">
+                          {getLocalizedPositionLabel(
+                            activeSpread.id,
+                            drawnCards.length,
+                            locale,
+                            activeSpread.positions[drawnCards.length]?.label ?? ""
+                          )}
+                        </strong>
+                        .
+                      </p>
+                    </>
+                  )}
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {activeSpread.positions.map((pos, idx) => (
@@ -536,10 +603,18 @@ export function ReadingExperienceClient() {
               <Panel className="flex flex-col items-center justify-between gap-4 p-6 sm:flex-row">
                 <div>
                   <h2 className="font-editorial text-2xl font-semibold">
-                    {t.revealTitle}
+                    {drawnCards.length === 3 && drawnCards.every((d) => d.revealed)
+                      ? locale === "vi"
+                        ? "Đang mở lá bài cuối cùng..."
+                        : "Revealing your final card..."
+                      : t.revealTitle}
                   </h2>
                   <p className="mt-1 text-xs text-[var(--arcana-stone)]">
-                    {t.revealDesc}
+                    {drawnCards.length === 3 && drawnCards.every((d) => d.revealed)
+                      ? locale === "vi"
+                        ? "Chờ lá bài lật xong để bắt đầu luận giải trọn vẹn."
+                        : "Finishing card flip before starting your reading."
+                      : t.revealDesc}
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -565,6 +640,10 @@ export function ReadingExperienceClient() {
                     type="button"
                     size="sm"
                     variant="gold"
+                    disabled={
+                      drawnCards.length === 3 &&
+                      drawnCards.every((d) => d.revealed)
+                    }
                     onClick={revealAllCards}
                   >
                     {t.revealAll}

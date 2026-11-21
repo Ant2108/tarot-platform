@@ -15,12 +15,12 @@ import { useLocaleStore } from "@/store/locale-store";
 import type {
   ArcanaType,
   CardOrientation,
+  CardTopicKey,
   SuitType,
   TarotCard,
-  TarotTopicId,
 } from "@/types/tarot";
 
-const TOPIC_IDS: TarotTopicId[] = [
+const TOPIC_IDS: CardTopicKey[] = [
   "general",
   "love",
   "family",
@@ -50,7 +50,7 @@ export function TarotLibraryClient({
   const [query, setQuery] = useState("");
   const [arcanaFilter, setArcanaFilter] = useState<"all" | ArcanaType>("all");
   const [suitFilter, setSuitFilter] = useState<"all" | Exclude<SuitType, null>>("all");
-  const [topicFilter, setTopicFilter] = useState<TarotTopicId>("general");
+  const [topicFilter, setTopicFilter] = useState<CardTopicKey>("general");
   const [orientation, setOrientation] = useState<CardOrientation>("upright");
 
   const filteredCards = useMemo(() => {
@@ -221,7 +221,7 @@ export function TarotLibraryClient({
             <select
               aria-label={t.topicLens}
               value={topicFilter}
-              onChange={(e) => setTopicFilter(e.target.value as TarotTopicId)}
+              onChange={(e) => setTopicFilter(e.target.value as CardTopicKey)}
               className="h-9 rounded-sm border border-[rgba(212,180,117,0.24)] bg-[#07080d] px-3 text-xs text-[var(--arcana-ink)] focus:border-[var(--arcana-gold)] focus:outline-none cursor-pointer"
             >
               {TOPIC_IDS.map((id) => (

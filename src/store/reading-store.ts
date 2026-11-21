@@ -173,12 +173,27 @@ export const useReadingStore = create<ReadingState>()(
 
         const updatedDrawn = [...state.drawnCards, nextDrawn];
         const updatedSlots = [...state.selectedDeckSlots, slotIndex];
+        const activeReadingId = state.readingId;
 
+        // Keep phase in "select" while the 3rd card finishes its smooth lift-up animation
         set({
           selectedDeckSlots: updatedSlots,
           drawnCards: updatedDrawn,
-          phase: updatedDrawn.length === 3 ? "reveal" : "select",
+          phase: "select",
         });
+
+        if (updatedDrawn.length === 3) {
+          setTimeout(() => {
+            const latest = get();
+            if (
+              latest.readingId === activeReadingId &&
+              latest.phase === "select" &&
+              latest.drawnCards.length === 3
+            ) {
+              set({ phase: "reveal" });
+            }
+          }, 850);
+        }
       },
 
       revealCardAt: (positionIndex) => {
@@ -188,24 +203,56 @@ export const useReadingStore = create<ReadingState>()(
         );
         const allRevealed =
           updated.length === 3 && updated.every((d) => d.revealed);
+        const activeReadingId = state.readingId;
+
+        // Flip card immediately, then wait for the 3D flip animation to finish before entering "result"
         set({
           drawnCards: updated,
-          phase: allRevealed ? "result" : state.phase,
         });
+
         if (allRevealed) {
-          get().saveCurrentReadingToHistory();
+          setTimeout(() => {
+            const latest = get();
+            if (
+              latest.readingId === activeReadingId &&
+              latest.phase === "reveal" &&
+              latest.drawnCards.length === 3 &&
+              latest.drawnCards.every((d) => d.revealed)
+            ) {
+              set({ phase: "result" });
+              latest.saveCurrentReadingToHistory();
+            }
+          }, 950);
         }
       },
 
       revealAllCards: () => {
         const state = get();
         if (state.drawnCards.length < 3) return;
+        const alreadyAllRevealed = state.drawnCards.every((d) => d.revealed);
+        if (alreadyAllRevealed) {
+          set({ phase: "result" });
+          get().saveCurrentReadingToHistory();
+          return;
+        }
         const updated = state.drawnCards.map((d) => ({ ...d, revealed: true }));
+        const activeReadingId = state.readingId;
+
         set({
           drawnCards: updated,
-          phase: "result",
         });
-        get().saveCurrentReadingToHistory();
+
+        setTimeout(() => {
+          const latest = get();
+          if (
+            latest.readingId === activeReadingId &&
+            latest.phase === "reveal" &&
+            latest.drawnCards.length === 3
+          ) {
+            set({ phase: "result" });
+            latest.saveCurrentReadingToHistory();
+          }
+        }, 950);
       },
 
       setAIReadingLoading: () =>

@@ -1,4 +1,4 @@
-import { getCardLocalized } from "@/lib/tarot-data";
+import { getCardLocalized, resolveCardTopicKey } from "@/lib/tarot-data";
 import {
   getLocalizedPositionLabel,
   getLocalizedSpreadName,
@@ -75,7 +75,7 @@ export function buildCompactGroundingPayload(
       astrology: item.card.astrology,
       keywords: loc.keywords[item.orientation],
       generalMeaning: loc.general[item.orientation],
-      topicMeaning: loc.topics[topic.id][item.orientation],
+      topicMeaning: loc.topics[resolveCardTopicKey(topic.id)][item.orientation],
       growthMeaning: loc.topics.personalGrowth[item.orientation],
       symbolismHint: getSymbolismCue(item.card, locale),
     };

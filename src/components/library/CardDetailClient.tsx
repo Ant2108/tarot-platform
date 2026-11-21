@@ -22,9 +22,9 @@ import { withBasePath } from "@/lib/utils";
 import { useLocaleStore } from "@/store/locale-store";
 import type {
   CardOrientation,
+  CardTopicKey,
   ExtractedSourceEntry,
   TarotCard,
-  TarotTopicId,
 } from "@/types/tarot";
 
 const CardInspectScene = dynamic(
@@ -42,7 +42,7 @@ const CardInspectScene = dynamic(
   }
 );
 
-const TOPIC_IDS: TarotTopicId[] = [
+const TOPIC_IDS: CardTopicKey[] = [
   "love",
   "family",
   "career",
