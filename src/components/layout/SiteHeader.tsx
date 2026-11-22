@@ -3,10 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen, Compass, Globe, HelpCircle, KeyRound, Menu, Settings2, Sparkles, X } from "lucide-react";
+import { BookOpen, Globe, HelpCircle, KeyRound, Menu, Settings2, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { UI_TEXT } from "@/lib/i18n";
-import { cn } from "@/lib/utils";
+import { cn, withBasePath } from "@/lib/utils";
 import { useAISettingsStore } from "@/store/ai-settings-store";
 import { useLocaleStore } from "@/store/locale-store";
 import { useTutorialStore } from "@/store/tutorial-store";
@@ -43,9 +43,11 @@ export function SiteHeader() {
           href="/"
           className="group flex items-center gap-2.5 text-[var(--arcana-ink)]"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[rgba(212,180,117,0.4)] bg-[rgba(212,180,117,0.08)] text-[var(--arcana-gold)] transition-colors group-hover:border-[var(--arcana-gold)]">
-            <Compass className="h-4 w-4" aria-hidden="true" />
-          </span>
+          <img
+            src={withBasePath("/vespera-logo.png")}
+            alt="Vespera Tarot"
+            className="h-9 w-9 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105"
+          />
           <span className="font-editorial text-xl font-semibold tracking-wider uppercase">
             Vespera <span className="text-[var(--arcana-gold)]">Tarot</span>
           </span>
