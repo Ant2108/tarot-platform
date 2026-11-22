@@ -135,7 +135,7 @@ export function LandingExperience({
             </div>
           </div>
 
-          <div className="relative h-[340px] sm:h-[430px] lg:col-span-6 lg:h-[480px]">
+          <div className="relative h-[360px] sm:h-[440px] lg:col-span-5 lg:h-[490px]">
             <HeroTarotScene />
           </div>
         </div>
