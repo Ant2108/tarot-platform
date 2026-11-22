@@ -38,31 +38,31 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-[rgba(212,180,117,0.14)] bg-[rgba(7,8,13,0.82)] backdrop-blur-md">
-      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="group flex items-center gap-2.5 text-[var(--arcana-ink)]"
+          className="group flex shrink-0 items-center gap-2.5 text-[var(--arcana-ink)]"
         >
           <img
             src={withBasePath("/vespera-logo.png")}
             alt="Vespera Tarot"
             className="h-9 w-9 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105"
           />
-          <span className="font-editorial text-xl font-semibold tracking-wider uppercase">
+          <span className="whitespace-nowrap font-editorial text-lg font-semibold tracking-wider uppercase xl:text-xl">
             Vespera <span className="text-[var(--arcana-gold)]">Tarot</span>
           </span>
         </Link>
 
         <nav
           aria-label="Primary navigation"
-          className="hidden items-center gap-8 md:flex"
+          className="hidden min-w-0 items-center gap-4 lg:flex xl:gap-7"
         >
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
-                "text-xs font-medium uppercase tracking-[0.16em] transition-colors",
+                "whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.08em] transition-colors xl:text-xs xl:tracking-[0.15em]",
                 isActive(item.href)
                   ? "text-[var(--arcana-gold-light)]"
                   : "text-[var(--arcana-stone)] hover:text-[var(--arcana-ink)]"
@@ -73,7 +73,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden shrink-0 items-center gap-2 lg:flex xl:gap-3">
           {/* VI / EN Switcher */}
           <div
             role="group"
@@ -119,14 +119,15 @@ export function SiteHeader() {
                 : "Gemini AI API Key Settings"
             }
             className={cn(
-              "inline-flex h-9 items-center gap-1.5 rounded-sm border px-2.5 text-[11px] font-medium uppercase tracking-wider transition-colors cursor-pointer",
+              "inline-flex h-9 items-center gap-1.5 whitespace-nowrap rounded-sm border px-2.5 text-[11px] font-medium uppercase tracking-wider transition-colors cursor-pointer",
               hasGeminiKey
                 ? "border-[rgba(212,180,117,0.45)] bg-[rgba(212,180,117,0.12)] text-[var(--arcana-gold-light)] hover:bg-[rgba(212,180,117,0.18)]"
                 : "border-[rgba(212,180,117,0.22)] bg-[rgba(7,8,13,0.7)] text-[var(--arcana-stone)] hover:border-[rgba(212,180,117,0.4)] hover:text-[var(--arcana-ink)]"
             )}
           >
             <KeyRound className="h-3.5 w-3.5 text-[var(--arcana-gold)]" aria-hidden="true" />
-            <span>Gemini AI</span>
+            <span className="hidden xl:inline">Gemini AI</span>
+            <span className="xl:hidden">AI</span>
             <span
               className={cn(
                 "h-1.5 w-1.5 rounded-full",
@@ -146,12 +147,12 @@ export function SiteHeader() {
             <HelpCircle className="h-4 w-4" aria-hidden="true" />
           </button>
 
-          <Button asChild size="sm" variant="gold">
+          <Button asChild size="sm" variant="gold" className="hidden xl:inline-flex">
             <Link href="/reading">{t.cta}</Link>
           </Button>
         </div>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <button
             type="button"
             onClick={openSettings}
@@ -194,7 +195,7 @@ export function SiteHeader() {
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-[rgba(212,180,117,0.14)] bg-[var(--arcana-bg)] px-4 py-5 md:hidden">
+        <div className="border-t border-[rgba(212,180,117,0.14)] bg-[var(--arcana-bg)] px-4 py-5 lg:hidden">
           <nav aria-label="Mobile navigation" className="flex flex-col gap-3">
             {navItems.map((item) => (
               <Link
