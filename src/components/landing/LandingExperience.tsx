@@ -105,12 +105,12 @@ export function LandingExperience({
     <div ref={containerRef}>
       {/* Hero Section */}
       <section className="relative overflow-hidden border-b border-[rgba(212,180,117,0.12)]">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-12 lg:px-8">
-          <div className="space-y-6 lg:col-span-6">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-12 lg:px-8">
+          <div className="space-y-6 lg:col-span-7">
             <div className="hero-stagger">
               <Badge tone="gold">{t.badge}</Badge>
             </div>
-            <h1 className="hero-stagger font-editorial text-[clamp(1.45rem,5.7vw,2.85rem)] sm:text-[clamp(2.2rem,5vw,3.15rem)] lg:text-[clamp(2.25rem,3.1vw,3.35rem)] font-semibold leading-[1.12] tracking-tight text-[var(--arcana-ink)]">
+            <h1 className="hero-stagger font-editorial text-[clamp(1.75rem,7.1vw,3.4rem)] sm:text-[clamp(2.85rem,6.3vw,4rem)] lg:text-[clamp(3.1rem,4vw,4.35rem)] font-semibold leading-[1.08] tracking-tight text-[var(--arcana-ink)]">
               <span className="block whitespace-nowrap">{t.heroTitle1}</span>
               <span className="block whitespace-nowrap text-[var(--arcana-gold)]">
                 {t.heroTitle2}
