@@ -110,9 +110,11 @@ export function LandingExperience({
             <div className="hero-stagger">
               <Badge tone="gold">{t.badge}</Badge>
             </div>
-            <h1 className="hero-stagger font-editorial text-4xl font-semibold leading-[1.08] tracking-tight text-[var(--arcana-ink)] sm:text-5xl lg:text-6xl">
-              {t.heroTitle1}{" "}
-              <span className="text-[var(--arcana-gold)]">{t.heroTitle2}</span>
+            <h1 className="hero-stagger font-editorial text-4xl font-semibold leading-[1.1] tracking-tight text-[var(--arcana-ink)] sm:text-5xl lg:text-6xl">
+              <span className="block">{t.heroTitle1}</span>
+              <span className="block text-[var(--arcana-gold)]">
+                {t.heroTitle2}
+              </span>
             </h1>
             <p className="hero-stagger max-w-xl text-sm leading-relaxed text-[var(--arcana-stone)] sm:text-base">
               {t.heroDesc}
